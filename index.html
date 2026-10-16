@@ -3,649 +3,615 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Felicity — Events, from Jaipur to everywhere</title>
-<meta name="description" content="Felicity Integrated Marketing Services. An event company from Jaipur — 13 years, 2,500+ projects, 200+ brands. Conferences, MICE, launches, concerts, sports and activations across India and overseas.">
+<title>Felicity Integrated Marketing Services — Event Management, Jaipur</title>
+<meta name="description" content="Felicity Integrated Marketing Services: event management and brand activation company from Jaipur. 13 years, 2,500+ projects, 200+ brands. Conferences, MICE, product launches, concerts, sports and activations across India and overseas.">
 <link rel="icon" type="image/png" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
-/* ---------------------------------------------------------
-   Felicity — black & white. Photos stay as they were shot.
-   --------------------------------------------------------- */
 :root{
-  --bk:#0B0B0B;
-  --bk2:#161616;
-  --pa:#F3F2EE;
-  --wh:#FFFFFF;
-  --gr:#7A7A76;
-  --gr2:#A7A7A2;
-  --ln:rgba(11,11,11,.16);
-  --lnd:rgba(255,255,255,.16);
-  --sans:"Archivo",system-ui,sans-serif;
-  --ser:"Instrument Serif",Georgia,serif;
-  --hand:"Caveat","Comic Sans MS",cursive;
-  --pad:clamp(16px,3.2vw,48px);
+  --black:#0A0A0A;
+  --ink:#141414;
+  --white:#FFFFFF;
+  --off:#F4F4F2;
+  --line:#E3E3E0;
+  --line-d:rgba(255,255,255,.14);
+  --muted:#5F5F5B;
+  --muted-d:#A3A3A0;
+  --font:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --wrap:min(1200px,100% - 48px);
+  --hh:76px;
+  --r:12px;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--hh)}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
-body{background:var(--pa);color:var(--bk);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
+body{background:var(--white);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit}
 button{background:none;border:0;cursor:pointer}
-::selection{background:var(--bk);color:var(--pa)}
-.inv ::selection{background:var(--pa);color:var(--bk)}
-:focus-visible{outline:2px solid currentColor;outline-offset:3px}
-.inv{background:var(--bk);color:var(--pa)}
-.px{padding-inline:var(--pad)}
-.sec{position:relative;padding-block:clamp(100px,12vw,170px)}
-.tag{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.tag i{font-style:normal;color:var(--gr)}
-.inv .tag i{color:var(--gr2)}
-.big{font-family:var(--sans);font-stretch:68%;font-weight:800;text-transform:uppercase;line-height:.86;letter-spacing:-.01em}
-.ser{font-family:var(--ser);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em}
-.hand{font-family:var(--hand);font-weight:700}
-.h2{font-size:clamp(56px,10vw,170px)}
-.ln{display:block;overflow:hidden;padding-bottom:.04em}
-.ln>span{display:inline-block}
-.rule{height:1px;background:var(--ln)}
-.inv .rule{background:var(--lnd)}
+:focus-visible{outline:2px solid var(--black);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--white)}
+::selection{background:var(--black);color:var(--white)}
+.wrap{width:var(--wrap);margin-inline:auto}
+section{position:relative}
+.pad{padding:clamp(72px,9vw,120px) 0}
+.off{background:var(--off)}
+.dark{background:var(--black);color:var(--white)}
+
+/* type */
+.label{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.dark .label{color:var(--muted-d)}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
+.h2{font-size:clamp(32px,4.2vw,52px);margin-top:12px}
+.h2 em,.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.lead{font-size:clamp(16px,1.3vw,18px);color:var(--muted);max-width:560px}
+.dark .lead{color:var(--muted-d)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:clamp(36px,4.5vw,56px)}
+.head .lead{max-width:440px}
 
 /* buttons */
-.pill{position:relative;display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 26px;border-radius:999px;border:1.5px solid currentColor;font-size:14px;font-weight:700;letter-spacing:.02em;overflow:hidden;isolation:isolate;transition:color .45s cubic-bezier(.2,.8,.2,1)}
-.pill::before{content:"";position:absolute;left:50%;top:50%;width:0;height:0;border-radius:50%;background:currentColor;transform:translate(-50%,-50%);transition:width .55s cubic-bezier(.2,.8,.2,1),height .55s cubic-bezier(.2,.8,.2,1);z-index:-1}
-.pill:hover::before{width:340px;height:340px}
-.pill:hover{color:var(--pa)}
-.inv .pill:hover{color:var(--bk)}
-.pill.fill{background:var(--bk);color:var(--pa);border-color:var(--bk)}
-.pill.fill::before{background:var(--pa)}
-.pill.fill:hover{color:var(--bk)}
-.inv .pill.fill{background:var(--pa);color:var(--bk);border-color:var(--pa)}
-.inv .pill.fill::before{background:var(--bk)}
-.inv .pill.fill:hover{color:var(--pa)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-size:15px;font-weight:700;white-space:nowrap;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-dark{background:var(--black);color:var(--white)}
+.btn-dark:hover{background:#2A2A2A}
+.btn-light{background:var(--white);color:var(--black)}
+.btn-light:hover{background:#E9E9E6}
+.btn-outline{border:1.5px solid currentColor}
+.btn-outline:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+.dark .btn-outline:hover,.hero .btn-outline:hover{background:var(--white);color:var(--black);border-color:var(--white)}
 
-/* ---------- cursor ---------- */
-.cur{position:fixed;left:0;top:0;z-index:900;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;display:grid;place-items:center;transition:width .35s,height .35s,margin .35s;opacity:0}
-.cur b{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#000;opacity:0;transition:opacity .2s;white-space:nowrap}
-.cur.lbl{width:86px;height:86px;margin:-43px 0 0 -43px}
-.cur.lbl b{opacity:1}
-.cur.hov{width:44px;height:44px;margin:-22px 0 0 -22px}
-.peek{position:fixed;left:0;top:0;z-index:80;width:0;height:0;pointer-events:none}
-.peek .pi{position:absolute;left:-130px;top:-98px;width:260px;height:195px;overflow:hidden;opacity:0;transform:scale(.6) rotate(-4deg);transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
-.peek.on .pi{opacity:1;transform:scale(1) rotate(-4deg)}
-.peek img{width:100%;height:100%;object-fit:cover}
-@media (hover:none),(pointer:coarse){.cur,.peek{display:none}}
+/* ============ HEADER ============ */
+.hdr{position:fixed;inset:0 0 auto;z-index:100;height:var(--hh);background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.hdr.scrolled{border-color:var(--line);box-shadow:0 6px 24px -18px rgba(0,0,0,.35)}
+.hdr .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{height:50px;width:auto}
+.brand span{font-size:11px;font-weight:700;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-left:12px;border-left:1px solid var(--line)}
+.nav{display:flex;gap:30px;list-style:none}
+.nav a{position:relative;font-size:15px;font-weight:600;color:#3A3A37;padding:6px 0;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--black);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a:hover,.nav a.on{color:var(--black)}
+.nav a:hover::after,.nav a.on::after{transform:scaleX(1)}
+.hdr .btn{height:44px;padding:0 20px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);position:relative}
+.burger i{position:absolute;left:13px;right:13px;height:2px;background:var(--black);transition:transform .3s,opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:28px}
+.burger.open i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.burger.open i:nth-child(2){opacity:0}
+.burger.open i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
-/* ---------- loader ---------- */
-.loader{position:fixed;inset:0;z-index:800;background:var(--bk);color:var(--pa);display:none;place-items:center;overflow:hidden}
-.js .loader{display:grid}
-.loader .stack{position:relative;width:min(34vw,260px);aspect-ratio:3/4}
-.loader .stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;visibility:hidden}
-.loader .stack img.on{visibility:visible}
-.loader .cnt{position:absolute;right:var(--pad);bottom:16px;font-stretch:68%;font-weight:800;font-size:clamp(80px,16vw,240px);line-height:.8}
-.loader .who{position:absolute;left:50%;top:clamp(20px,5vh,44px);height:clamp(56px,9vh,84px);width:auto;transform:translateX(-50%)}
-.loader .note{position:absolute;left:var(--pad);bottom:28px;font-family:var(--hand);font-size:clamp(24px,2.6vw,34px)}
-.no-js .loader,.no-gsap .loader{display:none}
+.mnav{position:fixed;inset:var(--hh) 0 0;z-index:99;background:var(--white);overflow-y:auto;visibility:hidden;opacity:0;transition:opacity .3s,visibility 0s .3s}
+.mnav.open{visibility:visible;opacity:1;transition:opacity .3s}
+.mnav .wrap{padding:16px 0 32px;display:flex;flex-direction:column;min-height:100%}
+.mnav ul{list-style:none}
+.mnav li{border-bottom:1px solid var(--line)}
+.mnav ul a{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:clamp(22px,6vw,30px);font-weight:700;letter-spacing:-.02em}
+.mnav ul a::after{content:"→";font-weight:400;color:var(--muted)}
+.mnav .info{margin-top:auto;padding-top:28px;display:grid;gap:6px;font-size:15px;color:var(--muted)}
+.mnav .info a:not(.btn){color:var(--black);font-weight:600}
+.mnav .btn{margin-top:18px;width:100%}
 
-/* ---------- header ---------- */
-.hdr{position:fixed;top:12px;left:var(--pad);right:var(--pad);z-index:500;height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 8px 0 14px;border-radius:999px;background:rgba(243,242,238,.86);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--ln);box-shadow:0 10px 30px -18px rgba(0,0,0,.35);color:var(--bk);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.hdr.hide{transform:translateY(-140%)}
-.logo{display:flex;align-items:center;gap:12px}
-.logo img{height:46px;width:auto}
-.logo span{font-size:10.5px;font-weight:600;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;color:var(--gr);padding-left:12px;border-left:1px solid var(--ln)}
-.hdr nav{display:flex;align-items:center;gap:22px;font-size:13.5px;font-weight:600}
-.hdr nav a.opt{position:relative}
-.hdr nav a.opt::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.hdr nav a.opt:hover::after{transform:scaleX(1);transform-origin:left}
-.hdr .clock{font-variant-numeric:tabular-nums;color:var(--gr)}
-.hdr .talk{height:46px;display:inline-flex;align-items:center;padding:0 20px;border-radius:999px;background:var(--bk);color:var(--pa);font-weight:700;transition:transform .3s}
-.hdr .talk:hover{transform:scale(1.04)}
-.mbtn{display:flex;align-items:center;gap:10px;height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--ln);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-.mbtn i{position:relative;width:26px;height:10px}
-.mbtn i::before,.mbtn i::after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor;transition:transform .4s,top .4s}
-.mbtn i::before{top:0}.mbtn i::after{top:8px}
-.mbtn.open i::before{top:4px;transform:rotate(45deg)}
-.mbtn.open i::after{top:4px;transform:rotate(-45deg)}
+/* ============ HERO ============ */
+.hero{margin-top:var(--hh);height:calc(100svh - var(--hh));min-height:540px;max-height:860px;display:flex;align-items:center;color:var(--white);overflow:hidden;background:var(--black)}
+.slides{position:absolute;inset:0}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.slides img.on{opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.25) 100%),linear-gradient(0deg,rgba(0,0,0,.6),transparent 40%)}
+.hero .wrap{position:relative;z-index:2}
+.hero .label{color:rgba(255,255,255,.75)}
+.hero h1{margin-top:16px;max-width:760px;font-size:clamp(38px,min(5.6vw,9vh),76px)}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.05em}
+.hero h1 .line>span{display:inline-block}
+.hero p{margin-top:20px;max-width:540px;font-size:clamp(16px,1.35vw,19px);color:rgba(255,255,255,.82)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .btn-outline{color:var(--white)}
+.slide-nav{position:absolute;right:max(24px,calc(50vw - 600px));bottom:32px;z-index:2;display:flex;align-items:center;gap:16px;font-size:13px;color:rgba(255,255,255,.8)}
+.slide-nav .cap{min-width:200px;text-align:right}
+.slide-nav .bars{display:flex;gap:6px}
+.slide-nav button{width:34px;height:20px;position:relative}
+.slide-nav button::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:rgba(255,255,255,.3)}
+.slide-nav button i{position:absolute;left:0;right:0;top:9px;height:2px;background:var(--white);transform:scaleX(0);transform-origin:left}
+.slide-nav button.done i{transform:scaleX(1)}
 
-/* ---------- menu ---------- */
-.menu{position:fixed;inset:0;z-index:450;background:var(--bk);color:var(--pa);display:grid;grid-template-columns:1.1fr 1fr;visibility:hidden}
-.menu.open{visibility:visible}
-.menu .links{display:flex;flex-direction:column;justify-content:center;padding:80px var(--pad) 30px;overflow-y:auto}
-.menu .links a{display:flex;align-items:baseline;gap:14px;font-stretch:68%;font-weight:800;text-transform:uppercase;font-size:clamp(34px,min(6.4vw,8.4vh),92px);line-height:.98;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
-.menu .links a small{font-stretch:100%;font-size:12px;font-weight:600;color:var(--gr2)}
-.menu .links:hover a{opacity:.3}
-.menu .links a:hover{opacity:1;transform:translateX(14px)}
-.menu .links .mfoot{display:none}
-@media (max-width:860px){.menu .links .mfoot{display:flex;flex-direction:column;gap:6px;margin-top:28px;padding-top:18px;border-top:1px solid var(--lnd)}.menu .links .mfoot a{font-stretch:100%;font-size:15px;font-weight:600;text-transform:none;opacity:1!important;transform:none!important}}
-.menu .side{position:relative;border-left:1px solid var(--lnd);display:flex;flex-direction:column;justify-content:flex-end;padding:80px var(--pad) 30px;gap:18px;overflow:hidden}
-.menu .side .ph{position:absolute;inset:0;opacity:.35}
-.menu .side .ph img{width:100%;height:100%;object-fit:cover}
-.menu .side>*:not(.ph){position:relative}
-.menu .side p{font-size:15px;max-width:340px}
-.menu .side a{font-size:15px;font-weight:600}
-.menu .hand{font-size:30px}
+/* ============ STATS ============ */
+.stats{border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:32px 24px 30px 0}
+.stat+.stat{padding-left:24px;border-left:1px solid var(--line)}
+.stat b{display:block;font-size:clamp(34px,3.6vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.stat span{display:block;margin-top:8px;font-size:14px;color:var(--muted)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:max(620px,100svh);padding:100px var(--pad) 28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
-.hp{position:absolute;inset:0;pointer-events:none}
-.hp figure{position:absolute;width:min(var(--w),22vh);aspect-ratio:3/4;overflow:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
-.hp img{width:100%;height:100%;object-fit:cover}
-.h-meta{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.h-meta span:nth-child(2){text-align:center}
-.h-meta span:nth-child(3){text-align:right}
-.h-title{position:relative;margin-top:auto;display:flex;justify-content:space-between;font-stretch:62%;font-weight:900;font-size:clamp(96px,24.6vw,470px);line-height:.78;text-transform:uppercase;color:#fff;mix-blend-mode:difference;letter-spacing:-.01em}
-.h-title span{display:inline-block;overflow:hidden;padding-top:.05em}
-.h-title span i{display:inline-block;font-style:normal}
-.h-foot{position:relative;display:grid;grid-template-columns:1fr 1fr auto;gap:24px;align-items:end;margin-top:22px;padding-top:18px;border-top:1px solid var(--bk)}
-.h-foot .ser{font-size:clamp(30px,3.4vw,56px);line-height:.95}
-.h-foot p{max-width:430px;font-size:15px}
-.h-note{position:absolute;right:calc(var(--pad) + 3vw);top:24%;font-size:clamp(24px,2.3vw,34px);line-height:1;transform:rotate(-6deg);color:var(--bk)}
-.h-note svg{display:block;width:90px;height:70px;margin:6px 0 0 40px;overflow:visible}
-.draw path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+/* ============ ABOUT ============ */
+.about .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,88px);align-items:center}
+.about p.body{margin-top:20px;color:var(--muted);font-size:17px}
+.about blockquote{margin-top:24px;padding:4px 0 4px 20px;border-left:3px solid var(--black);font-family:var(--serif);font-style:italic;font-size:clamp(22px,2vw,27px);line-height:1.3}
+.ticks{list-style:none;margin-top:28px;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.ticks svg{flex:none;width:22px;height:22px;margin-top:1px}
+.collage{position:relative;max-width:520px;justify-self:end;width:100%;padding-bottom:22%}
+.collage .a{width:88%;max-width:480px;border-radius:var(--r);overflow:hidden}
+.collage .b{position:absolute;right:0;bottom:0;width:62%;max-width:423px;border-radius:var(--r);overflow:hidden;border:6px solid var(--white);box-shadow:0 24px 50px -24px rgba(0,0,0,.45)}
+.collage img{width:100%}
+.collage .tag{position:absolute;left:0;bottom:6%;padding:14px 18px;border-radius:10px;background:var(--black);color:var(--white);font-size:13px;line-height:1.3}
+.collage .tag b{display:block;font-size:28px;line-height:1;margin-bottom:2px}
 
-/* ---------- marquee ---------- */
-.mq{background:var(--bk);color:var(--pa);padding:22px 0;overflow:hidden;border-block:1px solid var(--bk)}
-.mq .sk{display:flex;width:max-content}
-.mq .row{display:flex;width:max-content;animation:mq 34s linear infinite}
-.mq span{display:inline-flex;align-items:center;gap:30px;padding-right:30px;font-stretch:68%;font-weight:800;font-size:clamp(40px,5.4vw,84px);line-height:1;text-transform:uppercase;white-space:nowrap}
-.mq span em{font-family:var(--ser);font-weight:400;text-transform:none}
-.mq svg{width:.5em;height:.5em;fill:currentColor}
-@keyframes mq{to{transform:translateX(-50%)}}
+/* ============ SERVICES ============ */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc article{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.svc article:hover{transform:translateY(-6px);box-shadow:0 24px 50px -30px rgba(0,0,0,.35);border-color:#CFCFCB}
+.svc .ic{width:48px;height:48px;border-radius:12px;background:var(--black);display:grid;place-items:center}
+.svc .ic svg{width:24px;height:24px;stroke:var(--white);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{margin-top:20px;font-size:22px}
+.svc ul{list-style:none;margin-top:14px;display:grid;gap:2px}
+.svc li a{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--off);font-size:15px;color:#3A3A37;transition:color .2s,padding .3s var(--ease)}
+.svc li:last-child a{border-bottom:0}
+.svc li a::after{content:"→";opacity:0;transition:opacity .2s}
+.svc li a:hover{color:var(--black);padding-left:4px}
+.svc li a:hover::after{opacity:1}
 
-/* ---------- 01 who ---------- */
-.who .grid{display:grid;grid-template-columns:200px 1fr;gap:30px}
-.stmt{font-size:clamp(30px,4.2vw,68px);font-weight:500;line-height:1.08;letter-spacing:-.025em}
-.stmt .ser{font-size:1.06em}
-.mark{position:relative;white-space:nowrap}
-.mark svg{position:absolute;pointer-events:none;overflow:visible}
-.mark.circ svg{left:-6%;top:-18%;width:112%;height:136%}
-.mark.und svg{left:0;bottom:-.12em;width:100%;height:.3em}
-.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(70px,9vw,130px);border-top:1px solid var(--bk)}
-.facts div{padding:18px 18px 0 0}
-.facts div+div{padding-left:18px;border-left:1px solid var(--ln)}
-.facts b{display:block;font-stretch:68%;font-weight:800;font-size:clamp(56px,7vw,120px);line-height:.85}
-.facts span{display:block;margin-top:10px;font-size:13px;color:var(--gr)}
-.who .note{display:block;margin-top:40px;font-size:clamp(24px,2.2vw,32px);transform:rotate(-2deg);max-width:520px}
+/* ============ CORPORATE ============ */
+.corp .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.corp ul.pts{list-style:none;margin-top:26px;display:grid;gap:14px}
+.corp ul.pts li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:15.5px;color:#D6D6D3}
+.corp ul.pts b{color:var(--white)}
+.corp ul.pts span.n{font-size:13px;font-weight:700;color:var(--muted-d);padding-top:2px}
+.corp .btn{margin-top:32px}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ccard{position:relative;text-align:left;border-radius:var(--r);overflow:hidden;background:#1A1A1A}
+.ccard .im{aspect-ratio:4/3;overflow:hidden}
+.ccard img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.ccard:hover img{transform:scale(1.05)}
+.ccard .t{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent)}
+.ccard b{display:block;font-size:16px;color:var(--white)}
+.ccard small{font-size:13px;color:#CFCFCB}
 
-/* ---------- 02 pillars ---------- */
-.pillars{position:relative;overflow:hidden;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,70px);align-items:center;padding:110px var(--pad) 60px}
-.pillars .tag{position:absolute;left:var(--pad);top:100px}
-@media (min-width:861px){.pillars{padding-top:140px;padding-bottom:40px}}
-.pw{list-style:none}
-.pw li{padding:6px 0;border-bottom:1px solid var(--lnd)}
-.pw h3{display:flex;align-items:baseline;gap:14px;font-stretch:66%;font-weight:800;text-transform:uppercase;font-size:clamp(54px,8.6vw,140px);line-height:.9;opacity:.18;transition:opacity .5s}
-.pw h3 small{font-stretch:100%;font-size:13px;font-weight:600}
-.pw li.on h3{opacity:1}
-.pw .svcs{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.2,.8,.2,1)}
-.pw li.on .svcs{grid-template-rows:1fr}
-.pw .svcs>div{overflow:hidden}
-.pw .svcs p{padding:4px 0 12px;font-size:15px;color:var(--gr2);max-width:520px}
-.pw .m{display:none}
-.pframe{position:relative;aspect-ratio:4/5;height:min(72vh,640px);width:auto;max-width:100%;overflow:hidden;justify-self:end}
-.pframe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:inset(100% 0 0 0);transform:scale(1.2);transition:clip-path 1s cubic-bezier(.76,0,.24,1),transform 1.4s cubic-bezier(.2,.8,.2,1)}
-.pframe img.on{clip-path:inset(0 0 0 0);transform:scale(1)}
-.pframe img.was{clip-path:inset(0 0 0 0);transform:scale(1)}
-.pframe .cap{position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--hand);font-size:26px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+/* ============ WORK ============ */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{height:40px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:600;color:#3A3A37;transition:all .25s}
+.filters button:hover{border-color:var(--black);color:var(--black)}
+.filters button.on{background:var(--black);border-color:var(--black);color:var(--white)}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 20px}
+.case{text-align:left;display:block;width:100%}
+.case.hide{display:none}
+.case .im{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--off)}
+.case img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.case:hover img{transform:scale(1.05)}
+.case .mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;width:100%;height:100%}
+.case .mosaic img{min-height:0}
+.case .count{position:absolute;right:12px;bottom:12px;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.95);font-size:12.5px;font-weight:700}
+.case .meta{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.case h3{margin-top:6px;font-size:21px;letter-spacing:-.02em}
+.case p{margin-top:4px;font-size:15px;color:var(--muted)}
 
-/* ---------- 03 index ---------- */
-.ix-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:40px}
-.ix-head p{max-width:420px;color:var(--gr)}
-.ix{list-style:none;border-top:1px solid var(--bk)}
-.ix a{position:relative;display:grid;grid-template-columns:70px 1fr 200px 30px;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--ln);isolation:isolate;transition:color .35s,padding .5s cubic-bezier(.2,.8,.2,1)}
-.ix a::before{content:"";position:absolute;inset:0 calc(var(--pad) * -1);background:var(--bk);transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
-.ix a:hover{color:var(--pa);padding-left:14px}
-.ix a:hover::before{transform:none;transform-origin:top}
-.ix .n{font-size:13px;color:var(--gr)}
-.ix .t{font-stretch:75%;font-weight:700;font-size:clamp(26px,3vw,46px);line-height:1;text-transform:uppercase}
-.ix .g{font-size:13px;color:var(--gr)}
-.ix a:hover .n,.ix a:hover .g{color:var(--gr2)}
-.ix .ar{font-size:20px;transition:transform .45s}
-.ix a:hover .ar{transform:rotate(-45deg)}
+/* ============ NUMBERS ============ */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-d)}
+.nums div{padding:32px 24px 34px 0;border-bottom:1px solid var(--line-d)}
+.nums div:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--line-d)}
+.nums b{display:block;font-size:clamp(40px,4.4vw,60px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.nums span{display:block;margin-top:10px;font-size:15px;color:var(--muted-d);max-width:280px}
 
-/* ---------- 04 work (horizontal) ---------- */
-.work{padding:clamp(90px,12vw,150px) 0 0;overflow:hidden}
-.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
-.work-head p{max-width:400px;color:var(--gr2)}
-.hz{height:100vh;display:flex;flex-direction:column;justify-content:center}
-.track{display:flex;align-items:center;gap:clamp(20px,3vw,48px);padding:0 var(--pad);width:max-content}
-.card{position:relative;flex:none;text-align:left;color:var(--pa)}
-.card .ph{position:relative;overflow:hidden;width:var(--cw);aspect-ratio:var(--ar);max-height:58vh}
-.card .ph img{position:absolute;top:0;left:-8%;width:116%;height:100%;object-fit:cover;transition:filter .5s}
-.card:hover .ph img{filter:brightness(.8)}
-.card .hd{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:12px}
-.card h3{font-stretch:70%;font-weight:800;font-size:clamp(26px,2.4vw,40px);line-height:.95;text-transform:uppercase}
-.card .no{font-size:13px;color:var(--gr2)}
-.card p{margin-top:6px;font-size:14px;color:var(--gr2);max-width:var(--cw)}
-.card .cnt{position:absolute;right:12px;top:12px;padding:5px 11px;border-radius:999px;background:var(--pa);color:var(--bk);font-size:12px;font-weight:700}
-.card.up{align-self:flex-start;margin-top:4vh}
-.card.dn{align-self:flex-end;margin-bottom:4vh}
-.card.intro{width:min(420px,80vw);color:var(--pa)}
-.card.intro .big{font-size:clamp(90px,11vw,190px)}
-.card.intro p{font-size:16px;max-width:340px;color:var(--gr2)}
-.card.intro .hand{display:block;margin-top:18px;font-size:30px;color:var(--pa);transform:rotate(-3deg)}
-@media (min-width:861px){
-  .work{height:100vh;min-height:600px;display:flex;flex-direction:column;padding:100px 0 28px}
-  .work .h2{font-size:clamp(46px,6.2vw,104px)}
-  .hz{flex:1;height:auto;min-height:0}
-  .card .ph{max-height:44vh}
-  .card.up{margin-top:0}
-  .card.dn{margin-bottom:0}
-}
-.prog{position:relative;height:2px;margin:30px var(--pad) 0;background:var(--lnd)}
-.prog i{position:absolute;inset:0;background:var(--pa);transform:scaleX(0);transform-origin:left}
+/* ============ PROCESS ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{position:relative;padding:28px 24px;border-radius:var(--r);background:var(--white);border:1px solid var(--line)}
+.step .n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--black);font-size:14px;font-weight:800}
+.step h3{margin-top:18px;font-size:20px}
+.step p{margin-top:8px;font-size:15px;color:var(--muted)}
+.why{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:clamp(56px,7vw,88px);border-top:1px solid var(--line)}
+.why div{padding:24px 20px 4px 0}
+.why div+div{padding-left:20px;border-left:1px solid var(--line)}
+.why b{display:block;font-size:17px;line-height:1.3}
+.why span{display:block;margin-top:6px;font-size:14.5px;color:var(--muted)}
 
-/* ---------- 05 desk (draggable) ---------- */
-.desk-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
-.desk-head .hand{font-size:clamp(26px,2.4vw,36px);transform:rotate(-3deg);margin-right:10px}
-.desk{position:relative;height:min(92vh,860px);margin-top:30px;border:1px dashed var(--ln);overflow:hidden;background:
-  radial-gradient(circle,rgba(11,11,11,.12) 1px,transparent 1.4px) 0 0/22px 22px}
-.pol{position:absolute;left:0;top:0;width:clamp(150px,15vw,230px);padding:10px 10px 0;background:var(--wh);box-shadow:0 18px 30px -18px rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.08);cursor:grab;touch-action:none;user-select:none}
-.pol:active{cursor:grabbing}
-.pol img{width:100%;aspect-ratio:1;object-fit:cover;pointer-events:none}
-.pol figcaption{font-family:var(--hand);font-weight:700;font-size:21px;line-height:1.1;padding:8px 2px 10px;color:#222}
-.desk .tip{position:absolute;right:20px;bottom:16px;font-size:12px;color:var(--gr);pointer-events:none}
+/* ============ CLIENTS ============ */
+.boards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.board{border:1px solid var(--line);border-radius:var(--r);background:var(--white);padding:clamp(12px,2vw,24px);transition:box-shadow .35s}
+.board:hover{box-shadow:0 24px 50px -32px rgba(0,0,0,.3)}
+.partners{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:center;margin-top:clamp(56px,7vw,88px)}
+.partners .board{max-width:640px;justify-self:end;width:100%}
+.sectors{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.sectors span{padding:8px 16px;border-radius:999px;background:var(--off);font-size:14px;font-weight:600}
 
-/* ---------- 06 numbers ---------- */
-.nums{list-style:none;border-top:1px solid var(--lnd)}
-.nums li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) 60px;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid var(--lnd)}
-.nums b{font-stretch:66%;font-weight:800;font-size:clamp(64px,9vw,150px);line-height:.85;font-variant-numeric:tabular-nums}
-.nums p{font-size:clamp(16px,1.5vw,20px);max-width:420px}
-.nums small{justify-self:end;font-size:13px;color:var(--gr2)}
+/* ============ GALLERY ============ */
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+@media (max-width:1080px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal button{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:var(--line)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.gal button:hover img{transform:scale(1.06)}
+.gal button span{position:absolute;left:8px;right:8px;bottom:8px;padding:5px 9px;border-radius:6px;background:rgba(0,0,0,.72);color:var(--white);font-size:12px;font-weight:600;text-align:left;opacity:0;transform:translateY(4px);transition:opacity .25s,transform .3s}
+.gal button:hover span,.gal button:focus-visible span{opacity:1;transform:none}
+.gal.short button:nth-child(n+25){display:none}
+.center{display:flex;justify-content:center;margin-top:32px}
 
-/* ---------- 07 why ---------- */
-.why{list-style:none;border-top:1px solid var(--bk)}
-.why li{position:relative;display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,.8fr);gap:20px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--ln);isolation:isolate;transition:color .35s}
-.why li::before{content:"";position:absolute;inset:0 calc(var(--pad) * -1);background:var(--bk);clip-path:inset(0 100% 0 0);transition:clip-path .6s cubic-bezier(.76,0,.24,1);z-index:-1}
-.why li:hover{color:var(--pa)}
-.why li:hover::before{clip-path:inset(0 0 0 0)}
-.why .n{font-family:var(--ser);font-style:italic;font-size:26px}
-.why h3{font-stretch:75%;font-weight:700;font-size:clamp(26px,3vw,48px);line-height:1;text-transform:uppercase}
-.why p{font-size:15.5px;color:var(--gr)}
-.why li:hover p{color:var(--gr2)}
+/* ============ FILMS ============ */
+.films{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 20px}
+.film .im{border-radius:10px;overflow:hidden;background:#1A1A1A;aspect-ratio:524/218}
+.film img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.film:hover img{transform:scale(1.04)}
+.film b{display:block;margin-top:12px;font-size:16px}
+.film span{font-size:13.5px;color:var(--muted-d)}
 
-/* ---------- 08 sectors + clients ---------- */
-.sect{font-stretch:68%;font-weight:800;font-size:clamp(36px,5.6vw,92px);line-height:1.02;text-transform:uppercase}
-.sect span{transition:color .3s}
-.sect span:hover{color:transparent;-webkit-text-stroke:1.5px var(--bk)}
-.sect em{font-family:var(--ser);font-weight:400;font-style:italic;text-transform:none;color:var(--gr)}
-.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(60px,8vw,110px)}
-.fc .ph{aspect-ratio:4/3;overflow:hidden}
-.fc .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
-.fc:hover .ph img{transform:scale(1.06)}
-.fc h3{margin-top:14px;font-stretch:72%;font-weight:800;font-size:30px;line-height:1;text-transform:uppercase}
-.fc p{margin-top:8px;font-size:14.5px;color:var(--gr)}
-.cmq{margin-top:clamp(70px,9vw,120px);border-block:1px solid var(--bk);overflow:hidden}
-.cmq .row{display:flex;width:max-content;padding:16px 0;animation:mq 70s linear infinite}
-.cmq .row.r{animation-direction:reverse;border-top:1px solid var(--ln)}
-.cmq span{display:inline-flex;align-items:center;gap:26px;padding-right:26px;font-family:var(--ser);font-size:clamp(28px,3vw,46px);white-space:nowrap}
-.cmq span i{width:8px;height:8px;border-radius:50%;background:var(--bk)}
-.cmq:hover .row{animation-play-state:paused}
-.call{columns:4;column-gap:30px;margin-top:40px;list-style:none;font-size:15px}
-.call li{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--ln)}
-.call.short li:nth-child(n+21){display:none}
-.assoc{margin-top:60px;display:grid;grid-template-columns:200px 1fr;gap:30px}
-.assoc p{font-size:clamp(20px,2vw,28px);line-height:1.35}
-.assoc p span{white-space:nowrap}
-.assoc p span::after{content:" / ";color:var(--gr2)}
-.assoc p span:last-child::after{content:""}
-
-/* ---------- 09 films ---------- */
-.films{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px)}
-.film .ph{position:relative;aspect-ratio:16/9;overflow:hidden}
-.film img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
-.film:hover img{transform:scale(1.07)}
-.film .ph::after{content:"";position:absolute;inset:0;border:1px solid var(--lnd)}
-.film h3{margin-top:10px;font-size:15px;font-weight:600}
-.film small{font-size:12px;color:var(--gr2)}
-
-/* ---------- 10 network ---------- */
-.off{list-style:none;border-top:1px solid var(--bk)}
-.off li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 140px;gap:24px;align-items:center;padding:22px 0;border-bottom:1px solid var(--ln)}
-.off h3{font-stretch:64%;font-weight:800;font-size:clamp(54px,8vw,130px);line-height:.85;text-transform:uppercase}
-.off p{font-size:15px;color:var(--gr);max-width:380px}
-.off small{justify-self:end;font-size:12px;font-weight:700;text-transform:uppercase}
-.assoc-c{margin-top:30px;font-size:clamp(20px,2.2vw,30px);line-height:1.4}
-.assoc-c b{font-size:12px;letter-spacing:.04em;text-transform:uppercase;margin-right:12px;vertical-align:middle}
-.assoc-c span::after{content:" · ";color:var(--gr2)}
-.assoc-c span:last-child::after{content:""}
-
-/* ---------- 11 contact ---------- */
-.contact .top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
-.contact .big{font-size:clamp(80px,17vw,300px)}
-.magnet{position:relative;flex:none;width:clamp(140px,14vw,190px);aspect-ratio:1;border-radius:50%;background:var(--pa);color:var(--bk);display:grid;place-items:center;text-align:center;font-weight:700;font-size:15px;line-height:1.2}
-.cgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,100px);margin-top:clamp(60px,8vw,110px)}
-.cl{list-style:none}
-.cl li{padding:16px 0;border-bottom:1px solid var(--lnd)}
-.cl small{display:block;font-size:12px;color:var(--gr2);text-transform:uppercase;letter-spacing:.04em}
-.cl a,.cl span{font-size:clamp(18px,1.7vw,24px);font-weight:600}
-.cl a:hover{text-decoration:underline;text-underline-offset:5px}
-.form .row{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
-.fld{position:relative;padding-top:24px}
-.fld label{position:absolute;left:0;top:34px;font-size:16px;color:var(--gr2);pointer-events:none;transition:top .3s,font-size .3s,color .3s}
-.fld input,.fld select,.fld textarea{width:100%;padding:10px 0 12px;border:0;border-bottom:1px solid var(--lnd);background:transparent;font-size:17px;color:var(--pa);outline:none;border-radius:0;transition:border-color .3s}
-.fld select{appearance:none;-webkit-appearance:none;cursor:pointer}
-.fld select option{color:#000}
-.fld textarea{min-height:110px;resize:vertical}
-.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--pa)}
-.fld.f label,.fld:focus-within label,.fld.sel label{top:4px;font-size:12px;color:var(--gr2)}
-.fld.bad input{border-color:#fff;border-bottom-width:2px}
-.fld .err{display:none;margin-top:6px;font-size:13px}
-.fld.bad .err{display:block}
-.form .act{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px}
-.form .fine{font-size:13px;color:var(--gr2);max-width:300px}
-.form .ok{display:none;margin-top:20px;font-family:var(--hand);font-size:28px}
+/* ============ CONTACT ============ */
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:start}
+.offices{margin-top:28px;display:grid;gap:12px}
+.office{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:18px 20px;border:1px solid var(--line);border-radius:var(--r)}
+.office .pin{grid-row:span 2;width:40px;height:40px;border-radius:50%;background:var(--off);display:grid;place-items:center}
+.office .pin svg{width:19px;height:19px;stroke:var(--black);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.office b{font-size:16px}
+.office b small{margin-left:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.office span{font-size:14.5px;color:var(--muted)}
+.assoc-cities{margin-top:16px;font-size:14.5px;color:var(--muted)}
+.assoc-cities b{color:var(--ink)}
+.direct{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.direct a{display:block;padding:16px 18px;border-radius:var(--r);background:var(--off);transition:background .2s}
+.direct a:hover{background:#E9E9E6}
+.direct small{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.direct b{display:block;margin-top:2px;font-size:16px;word-break:break-word}
+.form{padding:clamp(24px,3.4vw,40px);border-radius:16px;background:var(--black);color:var(--white)}
+.form h3{font-size:clamp(24px,2.4vw,30px)}
+.form > p{margin-top:6px;font-size:15px;color:var(--muted-d)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.fld{display:grid;gap:7px}
+.fld.full{grid-column:1/-1}
+.fld label{font-size:13px;font-weight:600;color:#D6D6D3}
+.fld input,.fld select,.fld textarea{width:100%;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#1A1A1A;color:var(--white);font-size:15.5px;outline:none;transition:border-color .2s,background .2s}
+.fld select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.fld select option{background:#1A1A1A}
+.fld textarea{height:auto;min-height:120px;padding:12px 14px;resize:vertical;line-height:1.5}
+.fld input::placeholder,.fld textarea::placeholder{color:#7C7C78}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--white);background:#202020}
+.fld.err input{border-color:#FF8A80}
+.fld .msg{display:none;font-size:13px;color:#FF8A80}
+.fld.err .msg{display:block}
+.form .btn{width:100%;margin-top:22px}
+.form .note{margin-top:12px;font-size:13px;color:var(--muted-d);text-align:center}
+.form .ok{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;background:#1E1E1E;border:1px solid rgba(255,255,255,.2);font-size:14.5px}
 .form.sent .ok{display:block}
 
-/* ---------- footer ---------- */
-.foot{padding:60px var(--pad) 24px;overflow:hidden}
-.foot .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;font-size:14px}
-.foot h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--gr2);margin-bottom:10px}
-.foot ul{list-style:none;display:grid;gap:6px}
-.foot a:hover{text-decoration:underline;text-underline-offset:4px}
-.fbig{display:flex;justify-content:space-between;margin-top:50px;font-stretch:62%;font-weight:900;font-size:clamp(90px,24.6vw,470px);line-height:.78;text-transform:uppercase}
-.fbig span{display:inline-block;overflow:hidden}
-.fbig span i{display:inline-block;font-style:normal}
-.foot .base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;font-size:12px;color:var(--gr2)}
+/* ============ FOOTER ============ */
+.foot{background:var(--black);color:#D6D6D3;padding:64px 0 28px}
+.foot .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
+.foot img{height:64px;width:auto}
+.foot p{margin-top:16px;font-size:14.5px;color:var(--muted-d);max-width:300px}
+.foot h4{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:8px;font-size:14.5px}
+.foot ul a:hover{color:var(--white);text-decoration:underline;text-underline-offset:3px}
+.foot .base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding:22px 64px 0 0;border-top:1px solid var(--line-d);font-size:13.5px;color:var(--muted-d)}
+.totop{position:fixed;right:20px;bottom:20px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--black);color:var(--white);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,visibility 0s .3s}
+.totop.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .3s}
+.totop svg{width:18px;height:18px}
 
-/* ---------- lightbox ---------- */
-.lb{position:fixed;inset:0;z-index:700;background:rgba(11,11,11,.97);color:var(--pa);display:grid;grid-template-rows:auto minmax(0,1fr) auto;opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s}
-.lb.open{opacity:1;visibility:visible;transition:opacity .35s}
-.lb .t,.lb .b{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px var(--pad)}
-.lb h3{font-stretch:70%;font-weight:800;font-size:clamp(26px,2.6vw,38px);line-height:1;text-transform:uppercase}
-.lb .t p{font-size:14px;color:var(--gr2)}
-.lb .x,.lb .nv{flex:none;width:50px;height:50px;border-radius:50%;border:1.5px solid var(--pa);display:grid;place-items:center;font-size:18px;transition:background .3s,color .3s}
-.lb .x:hover,.lb .nv:hover{background:var(--pa);color:var(--bk)}
-.lb .st{position:relative;display:flex;align-items:center;justify-content:center;padding:0 clamp(16px,7vw,110px);min-height:0}
-.lb .st img{max-width:100%;max-height:100%;object-fit:contain}
+/* ============ LIGHTBOX ============ */
+.lb{position:fixed;inset:0;z-index:200;background:#0A0A0A;color:var(--white);display:grid;grid-template-rows:auto minmax(0,1fr) auto;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .3s}
+.lb .t,.lb .b{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 24px}
+.lb h3{font-size:20px}
+.lb .t p{font-size:14px;color:var(--muted-d)}
+.lb .x,.lb .nv{flex:none;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;transition:background .2s}
+.lb .x:hover,.lb .nv:hover{background:rgba(255,255,255,.22)}
+.lb svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lb .st{position:relative;display:flex;align-items:center;justify-content:center;padding:0 84px;min-height:0}
+.lb .st img{max-height:100%;width:auto;border-radius:6px;object-fit:contain}
 .lb .nv{position:absolute;top:50%;transform:translateY(-50%)}
-.lb .nv.p{left:clamp(8px,2vw,28px)}.lb .nv.n{right:clamp(8px,2vw,28px)}
-.lb .c{font-stretch:70%;font-weight:800;font-size:26px}
+.lb .nv.p{left:20px}.lb .nv.n{right:20px}
+.lb .c{font-size:14px;font-weight:700;color:var(--muted-d)}
 .lb .th{display:flex;gap:6px;overflow-x:auto;max-width:72vw}
-.lb .th button{flex:none;width:64px;height:46px;overflow:hidden;opacity:.35;transition:opacity .3s}
+.lb .th button{flex:none;width:64px;height:46px;border-radius:5px;overflow:hidden;opacity:.4;outline-offset:2px;transition:opacity .2s}
 .lb .th button.on,.lb .th button:hover{opacity:1}
 .lb .th img{width:100%;height:100%;object-fit:cover}
 
-/* ---------- responsive ---------- */
-@media (max-width:1100px){
-  .hdr nav .opt{display:none}
-  .films{grid-template-columns:1fr 1fr}
-  .call{columns:3}
+/* ============ RESPONSIVE ============ */
+@media (max-width:1080px){
+  .nav,.hdr .btn{display:none}
+  .burger{display:block}
+  .svc{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .why{grid-template-columns:repeat(2,1fr);border-top:0}
+  .why div,.why div+div{padding:20px 0;border-left:0;border-top:1px solid var(--line)}
+  .why div:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}
 }
-@media (max-width:860px){
-  .hdr .clock{display:none}
-  .menu{grid-template-columns:1fr}
-  .menu .side{display:none}
-  .who .grid,.assoc{grid-template-columns:1fr}
-  .pillars{display:block;min-height:0;padding:90px var(--pad)}
-  .pillars .tag{position:static;display:block;margin-bottom:24px}
-  .pframe{display:none}
-  .pw h3{opacity:1}
-  .pw .svcs{grid-template-rows:1fr}
-  .pw .m{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:6px 0 16px}
-  .ix a{grid-template-columns:44px 1fr 24px}
-  .ix .g{display:none}
-  .hz{height:auto;padding:40px 0 0}
-  .track{overflow-x:auto;width:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:none}
-  .track::-webkit-scrollbar{display:none}
-  .card{scroll-snap-align:start}
-  .card.up,.card.dn{align-self:auto;margin:0}
-  .card .ph{width:min(78vw,var(--cw))}
-  .prog{display:none}
-  .desk{height:auto;display:flex;gap:14px;overflow-x:auto;padding:24px 16px;scroll-snap-type:x mandatory}
-  .pol{position:relative;flex:none;transform:none!important;scroll-snap-align:center;width:200px;cursor:pointer;touch-action:auto}
-  .desk .tip{display:none}
-  .nums li{grid-template-columns:1fr;gap:6px}
-  .nums small{justify-self:start}
-  .why li{grid-template-columns:44px 1fr}
-  .why p{grid-column:2}
-  .focus{grid-template-columns:1fr}
-  .call{columns:2}
-  .off li{grid-template-columns:1fr;gap:8px}
-  .off small{justify-self:start}
-  .cgrid{grid-template-columns:1fr}
-  .foot .cols{grid-template-columns:1fr 1fr}
-  .films{grid-template-columns:1fr}
+@media (max-width:900px){
+  .about .wrap,.corp .wrap,.contact .wrap,.partners{grid-template-columns:1fr}
+  .collage{justify-self:start}
+  .partners .board{justify-self:start}
+  .cases,.films{grid-template-columns:repeat(2,1fr)}
+  .boards{grid-template-columns:1fr}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .nums div:not(:nth-child(3n+1)){padding-left:0;border-left:0}
+  .nums div:nth-child(even){padding-left:24px;border-left:1px solid var(--line-d)}
+  .foot .top{grid-template-columns:1fr 1fr}
+  .slide-nav .cap{display:none}
 }
-@media (max-width:600px){
-  .hdr{height:58px;top:8px;padding:0 6px 0 10px}
-  .logo img{height:40px}
-  .logo span{display:none}
-  .hdr nav{gap:8px}
-  .hdr .talk,.mbtn{height:42px;padding:0 14px}
-  .mbtn span{display:none}
-  .h-meta{grid-template-columns:1fr 1fr}
-  .h-meta span:nth-child(1){display:none}
-  .h-meta span:nth-child(2){text-align:left}
-  .hp figure{width:27vw!important}
-  .hp figure:nth-child(1){left:4%!important;top:21%!important}
-  .hp figure:nth-child(2){left:37%!important;top:26%!important}
-  .hp figure:nth-child(3){left:68%!important;top:20%!important}
-  .h-foot{grid-template-columns:1fr}
-  .h-note{display:none}
-  .hp figure:nth-child(n+4){display:none}
-  .facts{grid-template-columns:1fr 1fr}
-  .facts div:nth-child(3){padding-left:0;border-left:0}
-  .facts div:nth-child(n+3){margin-top:18px;border-top:1px solid var(--ln);padding-top:18px}
-  .form .row{grid-template-columns:1fr}
+@media (max-width:640px){
+  :root{--wrap:calc(100% - 32px);--hh:66px}
+  .brand img{height:42px}
+  .brand span{display:none}
+  .head{flex-direction:column;align-items:flex-start;gap:14px}
+  .hero{height:auto;min-height:calc(100svh - var(--hh));padding:48px 0 90px;align-items:flex-end}
+  .hero .ctas .btn{flex:1}
+  .slide-nav{left:16px;right:auto;bottom:24px}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat,.stat+.stat{padding:22px 0}
+  .stat:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+  .stat:nth-child(odd){border-left:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .svc,.steps,.cases,.films,.cgrid,.fgrid,.direct{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr}
+  .why div:nth-child(even){padding-left:0;border-left:0}
+  .nums div,.nums div:nth-child(even){padding:22px 0;border-left:0}
+  .nums{grid-template-columns:1fr 1fr;column-gap:16px}
+  .gal{grid-template-columns:repeat(3,1fr);gap:6px}
+  .gal.short button:nth-child(n+13){display:none}
+  .gal button span{display:none}
+  .foot .top{grid-template-columns:1fr}
+  .lb .st{padding:0 12px}
+  .lb .nv{top:auto;bottom:-62px;transform:none}
+  .lb .nv.p{left:auto;right:76px}.lb .nv.n{right:16px}
+  .lb .b{padding-right:140px}
   .lb .th{display:none}
 }
 @media (prefers-reduced-motion:reduce){
-  .mq .row,.cmq .row{animation:none}
+  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
 }
 </style>
 </head>
 <body>
-<script>document.documentElement.classList.add('js')</script>
 
-<div class="loader" id="loader" aria-hidden="true">
-  <img class="who" src="images/logo-white.png" alt="">
-  <div class="stack" id="lstack"></div>
-  <span class="note">getting the stage ready…</span>
-  <span class="cnt" id="lcnt">0</span>
-</div>
-
-<div class="cur" id="cur" aria-hidden="true"><b id="curT"></b></div>
-<div class="peek" id="peek" aria-hidden="true"><div class="pi"><img id="peekI" alt=""></div></div>
-
-<header class="hdr">
-  <a href="#top" class="logo" aria-label="Felicity, back to top"><img src="images/logo.png" alt="Felicity"><span>Integrated<br>Marketing Services</span></a>
-  <nav aria-label="Primary">
-    <span class="clock" id="clock" title="Time in Jaipur"></span>
-    <a href="#work" class="opt">Work</a>
-    <a href="#services" class="opt">Services</a>
-    <a href="#clients" class="opt">Clients</a>
-    <a href="#contact" class="talk">Let's talk</a>
-    <button class="mbtn" id="mbtn" aria-expanded="false" aria-controls="menu"><span>Menu</span><i></i></button>
-  </nav>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Felicity — home"><img src="images/logo.png" alt="Felicity" width="614" height="493"><span>Integrated<br>Marketing Services</span></a>
+    <ul class="nav" id="nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-dark">Plan an event</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><i></i><i></i><i></i></button>
+  </div>
 </header>
 
-<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
-  <div class="links" id="mlinks"></div>
-  <div class="side">
-    <div class="ph"><img src="images/sm-1.jpg" alt=""></div>
-    <img src="images/logo-white.png" alt="" style="height:70px;width:auto;margin-bottom:auto;align-self:flex-start">
-    <span class="hand">say hello ↓</span>
-    <p>B-207 A, Rajender Marg, Bapu Nagar, Jaipur 302015</p>
-    <a href="tel:+919828158918">+91 98281 58918</a>
-    <a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a>
+<nav class="mnav" id="mnav" aria-label="Menu">
+  <div class="wrap">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="info">
+      <span>Call <a href="tel:+919828158918">+91 98281 58918</a></span>
+      <span>Email <a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></span>
+      <a href="#contact" class="btn btn-dark">Plan an event</a>
+    </div>
   </div>
-</div>
+</nav>
 
 <main>
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hp" id="hp"></div>
-  <div class="h-meta"><span>Events · Marketing · Promotion · Activation</span><span>Jaipur · New Delhi · Ahmedabad</span><span>Est. 13 years ago</span></div>
-  <p class="h-note hand" aria-hidden="true">2,500+ projects<br>&amp; still counting
-    <svg class="draw" viewBox="0 0 90 70"><path d="M8 6 C 30 10, 52 26, 58 56"/><path d="M44 46 L 58 58 L 66 40"/></svg>
-  </p>
-  <h1 class="h-title" id="htitle" aria-label="Felicity"><span><i>F</i></span><span><i>E</i></span><span><i>L</i></span><span><i>I</i></span><span><i>C</i></span><span><i>I</i></span><span><i>T</i></span><span><i>Y</i></span></h1>
-  <div class="h-foot">
-    <span class="ser">The way towards wonderful.</span>
-    <p>We're an event company from Jaipur. For 13 years we've run conferences, launches, concerts, kabaddi leagues and motorcycle rides into the Himalayas — for more than 200 brands.</p>
-    <a href="#contact" class="pill fill mag">Plan an event ↗</a>
+  <div class="slides" id="slides"></div>
+  <div class="wrap">
+    <span class="label" data-hero>Felicity Integrated Marketing Services · Since 13 years</span>
+    <h1><span class="line"><span>Events that leave a</span></span><span class="line"><span><em>long-lasting impression.</em></span></span></h1>
+    <p data-hero>Conferences, MICE, product launches, concerts, sports and brand activations — planned meticulously and executed flawlessly across India and overseas.</p>
+    <div class="ctas" data-hero>
+      <a href="#contact" class="btn btn-light">Plan your event <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a href="#work" class="btn btn-outline">See our work</a>
+    </div>
   </div>
+  <div class="slide-nav" id="slideNav"><span class="cap" id="cap"></span><div class="bars" id="bars"></div></div>
 </section>
 
-<div class="mq" aria-hidden="true"><div class="sk" id="mqSk"><div class="row" id="mq"></div></div></div>
+<div class="stats">
+  <div class="wrap">
+    <div class="stat" data-a><b data-n="13">13</b><span>Years in events</span></div>
+    <div class="stat" data-a><b data-n="2500" data-s="+">2,500+</b><span>Projects delivered</span></div>
+    <div class="stat" data-a><b data-n="200" data-s="+">200+</b><span>Brands served</span></div>
+    <div class="stat" data-a><b data-n="600" data-s="+">600+</b><span>Events organised</span></div>
+  </div>
+</div>
 
-<!-- 01 WHO -->
-<section class="sec px who" id="about">
-  <div class="grid">
-    <p class="tag"><i>(01)</i> Who we are</p>
+<!-- ABOUT -->
+<section class="about pad" id="about">
+  <div class="wrap">
     <div>
-      <p class="stmt" id="stmt">13 years and more than 2,500 projects in, we figure we must be doing <span class="mark circ">something right.<svg class="draw" viewBox="0 0 300 100" preserveAspectRatio="none"><path d="M24 58 C 18 22, 120 6, 196 10 C 268 14, 296 40, 286 64 C 276 88, 176 98, 104 92 C 44 87, 6 70, 22 44 C 30 32, 58 22, 92 18"/></svg></span> Our top clients are also our oldest ones, and nearly half our team has been with us for almost a decade. All we can promise is that we give every project <span class="mark und">everything we've got.<svg class="draw" viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M4 12 C 60 4, 130 18, 200 8 S 284 14, 296 7"/></svg></span></p>
-      <div class="facts" id="facts">
-        <div><b data-n="13">13</b><span>years of doing this</span></div>
-        <div><b data-n="2500" data-s="+">2,500+</b><span>projects delivered</span></div>
-        <div><b data-n="200" data-s="+">200+</b><span>brands worked with</span></div>
-        <div><b data-n="14">14</b><span>cities in our network</span></div>
-      </div>
-      <span class="note hand">— and yes, that includes a stunt show at 15,500 ft.</span>
+      <span class="label" data-a>About Felicity</span>
+      <h2 class="h2" data-a>13 years of doing all of this <em>&amp; more.</em></h2>
+      <p class="body" data-a>13 years and more than 2,500 projects into our life, we realise that we must be doing something right. After all, our top clients are also our longest-standing relationships — and nearly half our team has been with us on this journey for almost a decade.</p>
+      <blockquote data-a>“All we can promise you is that we give every project everything we've got.”</blockquote>
+      <ul class="ticks" data-a>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>Own offices in Jaipur, New Delhi and Ahmedabad, plus associates in 11 cities</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>In-house resources for data management and creative design</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>A decade of marketing expertise and a real understanding of Indian consumers</li>
+      </ul>
+    </div>
+    <div class="collage">
+      <div class="a" data-img><img src="images/au-goa-1.jpg" alt="Stage at the AU Financiers business fest, Goa" width="480" height="317" loading="lazy"></div>
+      <div class="b" data-img><img src="images/berger-5.jpg" alt="Berger Paints product launch venue" width="423" height="312" loading="lazy"></div>
+      <div class="tag" data-a><b>200+</b>brands trust us</div>
     </div>
   </div>
 </section>
 
-<!-- 02 PILLARS -->
-<section class="inv pillars" id="what">
-  <p class="tag"><i>(02)</i> What we do</p>
-  <ol class="pw" id="pw"></ol>
-  <div class="pframe" id="pframe"><span class="cap" id="pcap"></span></div>
-</section>
-
-<!-- 03 INDEX -->
-<section class="sec px" id="services">
-  <div class="ix-head">
-    <div><p class="tag"><i>(03)</i> Everything we do</p><h2 class="big h2" style="margin-top:14px"><span class="ln"><span>17 things,</span></span><span class="ln"><span class="ser">one team.</span></span></h2></div>
-    <p>End-to-end — from the first idea to the last guest leaving. Pick one and tell us about it.</p>
-  </div>
-  <ol class="ix" id="ix"></ol>
-</section>
-
-<!-- 04 WORK -->
-<section class="inv work" id="work">
-  <div class="work-head px">
-    <div><p class="tag"><i>(04)</i> Selected work</p><h2 class="big h2" style="margin-top:14px"><span class="ln"><span>600+ events.</span></span><span class="ln"><span class="ser">Here are a few.</span></span></h2></div>
-    <p>Real photos from real nights. Click a project to see the full set.</p>
-  </div>
-  <div class="hz" id="hz">
-    <div class="track" id="track"></div>
-    <div class="prog"><i id="prog"></i></div>
+<!-- SERVICES -->
+<section class="off pad" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label" data-a>What we do</span><h2 class="h2" data-a>Fresh ideas that create <em>unique experiences.</em></h2></div>
+      <p class="lead" data-a>End-to-end solutions with a strong focus on meticulous planning and flawless execution. Choose a service to start an enquiry.</p>
+    </div>
+    <div class="svc" id="svc"></div>
   </div>
 </section>
 
-<!-- 05 DESK -->
-<section class="sec px" id="desk-sec">
-  <div class="desk-head">
-    <div><p class="tag"><i>(05)</i> The messy desk</p><h2 class="big h2" style="margin-top:14px"><span class="ln"><span>Our photo</span></span><span class="ln"><span class="ser">pile.</span></span></h2></div>
-    <span class="hand">go on, move them around ↘</span>
-  </div>
-  <div class="desk" id="desk"><span class="tip">Drag to move · click to open</span></div>
-</section>
-
-<!-- 06 NUMBERS -->
-<section class="sec px inv" id="numbers">
-  <p class="tag" style="margin-bottom:30px"><i>(06)</i> Some numbers we're proud of</p>
-  <ol class="nums" id="nums"></ol>
-</section>
-
-<!-- 07 WHY -->
-<section class="sec px" id="why">
-  <div class="ix-head">
-    <div><p class="tag"><i>(07)</i> Why Felicity</p><h2 class="big h2" style="margin-top:14px"><span class="ln"><span>Why people</span></span><span class="ln"><span class="ser">keep coming back.</span></span></h2></div>
-  </div>
-  <ol class="why" id="whyL"></ol>
-</section>
-
-<!-- 08 SECTORS + CLIENTS -->
-<section class="sec px" id="clients" style="padding-top:0">
-  <p class="tag" style="margin-bottom:24px"><i>(08)</i> Who we've worked for</p>
-  <p class="sect" id="sect"></p>
-  <div class="focus" id="focus"></div>
-  <div class="cmq" aria-hidden="true"><div class="row" id="cm1"></div><div class="row r" id="cm2"></div></div>
-  <ul class="call short" id="call"></ul>
-  <p style="margin-top:20px"><button class="pill" id="cmore">See all 51 clients</button></p>
-  <div class="assoc">
-    <p class="tag"><i>(08b)</i> Agencies &amp; media partners</p>
-    <p id="assoc"></p>
+<!-- CORPORATE -->
+<section class="dark pad corp" id="corporate">
+  <div class="wrap">
+    <div>
+      <span class="label" data-a>Corporate &amp; MICE</span>
+      <h2 class="h2" data-a>Conferences, incentives and <em>celebrations.</em></h2>
+      <ul class="pts" data-a>
+        <li><span class="n">01</span><span><b>125+ conferences for Nokia</b>, each with a theme gala dinner</span></li>
+        <li><span class="n">02</span><span><b>AU Financiers employee meet</b> in Goa for 450 guests</span></li>
+        <li><span class="n">03</span><span><b>AU Bond &amp; 10th Superheroes Summit</b>, Thailand 2018</span></li>
+        <li><span class="n">04</span><span><b>Product launches</b>, award nights, R&amp;R and corporate offsites</span></li>
+      </ul>
+      <a href="#contact" class="btn btn-light" data-a>Plan a corporate event</a>
+    </div>
+    <div class="cgrid" id="cgrid"></div>
   </div>
 </section>
 
-<!-- 09 FILMS -->
-<section class="sec px inv" id="films-sec">
-  <div class="ix-head">
-    <div><p class="tag"><i>(09)</i> Content creation</p><h2 class="big h2" style="margin-top:14px"><span class="ln"><span>We shoot</span></span><span class="ln"><span class="ser">the films too.</span></span></h2></div>
-    <p style="color:var(--gr2)">Ride films and brand stories, made by the same crew that runs the event.</p>
+<!-- WORK -->
+<section class="pad" id="work">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label" data-a>Our work</span><h2 class="h2" data-a>Organised more than <em>600 events.</em></h2></div>
+      <p class="lead" data-a>A few snapshots from our events. Open any project to browse its photos.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter projects" data-a></div>
+    <div class="cases" id="cases"></div>
   </div>
-  <div class="films" id="films"></div>
 </section>
 
-<!-- 10 NETWORK -->
-<section class="sec px" id="network">
-  <p class="tag" style="margin-bottom:30px"><i>(10)</i> Where to find us</p>
-  <ol class="off" id="off"></ol>
-  <p class="assoc-c" id="assocC"><b>+ associates in</b></p>
+<!-- NUMBERS -->
+<section class="dark pad" id="numbers">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label" data-a>By the numbers</span><h2 class="h2" data-a>Proof from <em>the ground.</em></h2></div>
+    </div>
+    <div class="nums" id="nums"></div>
+  </div>
 </section>
 
-<!-- 11 CONTACT -->
-<section class="sec px inv contact" id="contact">
-  <div class="top">
-    <h2 class="big"><span class="ln"><span>Let's</span></span><span class="ln"><span>talk<span class="ser">.</span></span></span></h2>
-    <a class="magnet mag" href="mailto:ruchin@felicity-intg.com">Write to<br>Ruchin ↗</a>
+<!-- PROCESS + WHY -->
+<section class="off pad" id="process">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label" data-a>How we work</span><h2 class="h2" data-a>From first idea to <em>final applause.</em></h2></div>
+      <p class="lead" data-a>One team takes your event from concept to the last guest leaving.</p>
+    </div>
+    <div class="steps" id="steps"></div>
+    <div class="why" id="why"></div>
   </div>
-  <div class="cgrid">
-    <ul class="cl">
-      <li><small>Phone</small><a href="tel:+919828158918">+91 98281 58918</a></li>
-      <li><small>Email</small><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></li>
-      <li><small>Also</small><a href="mailto:Ruchin.v@gmail.com">Ruchin.v@gmail.com</a></li>
-      <li><small>Jaipur office</small><a href="tel:+911414086410">0141-4086410</a></li>
-      <li><small>Ask for</small><span>Ruchin Vaid</span></li>
-    </ul>
-    <form class="form" id="form" novalidate>
-      <div class="row">
-        <div class="fld"><input id="f-name" name="name" autocomplete="name" required><label for="f-name">Your name *</label><span class="err">We'll need a name.</span></div>
-        <div class="fld"><input id="f-company" name="company" autocomplete="organization"><label for="f-company">Company</label></div>
-        <div class="fld"><input id="f-contact" name="contact" autocomplete="email" required><label for="f-contact">Email or phone *</label><span class="err">So we can reply — email or phone.</span></div>
-        <div class="fld sel"><select id="f-type" name="type"></select><label for="f-type">What kind of event?</label></div>
-        <div class="fld"><input id="f-city" name="city"><label for="f-city">City</label></div>
-        <div class="fld"><input id="f-guests" name="guests" inputmode="numeric"><label for="f-guests">Roughly how many guests?</label></div>
+</section>
+
+<!-- CLIENTS -->
+<section class="pad" id="clients">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label" data-a>Clients</span><h2 class="h2" data-a>Trusted by <em>illustrious brands.</em></h2></div>
+      <p class="lead" data-a>We are honoured to have forged connections with brands from a range of sectors. Customers appreciate our reliable, high-quality service.</p>
+    </div>
+    <div class="boards">
+      <div class="board" data-img><img src="images/clients-1.jpg" alt="Client logos: Central, Big Bazaar, Asian Paints, Rockwoods High School, HDFC Ergo, UltraTech Cement, Jubilant Organosys, Max Bupa, Suzuki, TVS Motor Company, Bajaj, Maruti Suzuki, HP, IDBI Bank, Bharti AXA Life, ICICI Bank, Apollo Munich, Futures First, Pepsi, Exide Life, Coca-Cola, Vi, Ultraviolette Automotive, The Times of India" width="1475" height="1222" loading="lazy"></div>
+      <div class="board" data-img><img src="images/clients-2.jpg" alt="Client logos: Movies Now, Britannia, Exide Life, Piramal, DLF, IDBI Bank, Mahindra, Intel, ITC, Pepsi, 7UP, Kwality Wall's, Bacardi, Godfrey Phillips, ICICI Prudential, Snickers, Sunsilk, Tata Docomo, Tupperware, Lifebuoy, Airtel, Tata Indicom, Dabur, Budweiser, Dish TV, Nokia, Tata Sky, Lux, Bharat Petroleum, Harley-Davidson" width="1479" height="1222" loading="lazy"></div>
+    </div>
+    <div class="partners">
+      <div>
+        <span class="label" data-a>Associations</span>
+        <h2 class="h2" data-a>Agencies &amp; <em>media partners.</em></h2>
+        <p class="lead" data-a style="margin-top:14px">We have worked alongside leading agencies and media houses across India.</p>
+        <span class="label" data-a style="margin-top:32px">Sectors we serve</span>
+        <div class="sectors" id="sectors" data-a></div>
       </div>
-      <div class="fld"><textarea id="f-brief" name="brief"></textarea><label for="f-brief">Tell us a bit about it</label></div>
-      <div class="act">
-        <button class="pill fill mag" type="submit">Send it ↗</button>
-        <p class="fine">This opens your email app with everything filled in. Nothing is sent until you hit send there.</p>
+      <div class="board" data-img><img src="images/partners.jpg" alt="Partner logos: Fountainhead, GroupM, Hansa Vision, Wizcraft, DNA Networks, Rajasthan Patrika, Encompass, Candid, ZeeCo, Beep, Acme Events India, DDB Mudramax, Impresario, Allias Integrated, Impact Marketing Services, MOMS Outdoor Media Solutions" width="1475" height="1222" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="off pad" id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label" data-a>Gallery</span><h2 class="h2" data-a>Moments from <em>our events.</em></h2></div>
+      <p class="lead" data-a>Click any photo to view it larger.</p>
+    </div>
+    <div class="gal short" id="gal"></div>
+    <div class="center"><button class="btn btn-outline" id="galMore"></button></div>
+  </div>
+</section>
+
+<!-- FILMS -->
+<section class="dark pad" id="films">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label" data-a>Content creation</span><h2 class="h2" data-a>We produce stunning <em>content.</em></h2></div>
+      <p class="lead" data-a>Event films and brand stories for our customers, made by the team that runs the event.</p>
+    </div>
+    <div class="films" id="filmGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact pad" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="label" data-a>Get in touch</span>
+      <h2 class="h2" data-a>Let's plan your <em>next event.</em></h2>
+      <p class="lead" data-a style="margin-top:16px">If you're looking for stylish project execution combined with smart marketing acumen, we've got you covered. We'd love to get you onboard the world of Felicity.</p>
+      <div class="direct" data-a>
+        <a href="tel:+919828158918"><small>Call Ruchin Vaid</small><b>+91 98281 58918</b></a>
+        <a href="mailto:ruchin@felicity-intg.com"><small>Email</small><b>ruchin@felicity-intg.com</b></a>
       </div>
-      <p class="ok" role="status">Thanks! Your email should be open now — see you soon.</p>
+      <div class="offices" id="offices"></div>
+      <p class="assoc-cities" data-a><b>Associate cities:</b> Chandigarh, Lucknow, Kolkata, Kanpur, Hyderabad, Bangalore, Chennai, Jodhpur, Indore, Mumbai, Pune</p>
+    </div>
+    <form class="form" id="form" novalidate data-a>
+      <h3>Request a proposal</h3>
+      <p>Share a few details and we'll get back to you.</p>
+      <div class="fgrid">
+        <div class="fld"><label for="f-name">Your name *</label><input id="f-name" name="name" autocomplete="name" required><span class="msg">Please enter your name.</span></div>
+        <div class="fld"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="fld"><label for="f-contact">Email or phone *</label><input id="f-contact" name="contact" autocomplete="email" required><span class="msg">Please add an email or phone number.</span></div>
+        <div class="fld"><label for="f-type">Event type</label><select id="f-type" name="type"></select></div>
+        <div class="fld"><label for="f-city">City</label><input id="f-city" name="city" placeholder="e.g. Jaipur"></div>
+        <div class="fld"><label for="f-guests">Number of guests</label><input id="f-guests" name="guests" inputmode="numeric" placeholder="e.g. 300"></div>
+        <div class="fld full"><label for="f-brief">About the event</label><textarea id="f-brief" name="brief" placeholder="Dates, venue ideas, what you want guests to remember…"></textarea></div>
+      </div>
+      <button class="btn btn-light" type="submit">Send enquiry <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      <p class="note">This opens your email app with the details filled in, addressed to ruchin@felicity-intg.com.</p>
+      <p class="ok" role="status">Thank you! Your email app should now be open — just press send. If it didn't open, write to ruchin@felicity-intg.com or call +91 98281 58918.</p>
     </form>
   </div>
 </section>
 
 </main>
 
-<footer class="foot inv">
-  <div class="cols">
-    <div><img src="images/logo-white.png" alt="Felicity" style="height:64px;width:auto;margin-bottom:14px"><p>Integrated Marketing Services.<br>Marketing · Promotion · Events · Activation.</p></div>
-    <div><h4>Offices</h4><ul><li>Jaipur (HQ)</li><li>New Delhi</li><li>Ahmedabad</li></ul></div>
-    <div><h4>Contact</h4><ul><li><a href="tel:+919828158918">+91 98281 58918</a></li><li><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></li></ul></div>
-    <div><h4>Jump to</h4><ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#top">Back to top ↑</a></li></ul></div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <div><img src="images/logo-white.png" alt="Felicity" width="614" height="493"><p>Felicity Integrated Marketing Services — Marketing · Promotion · Events · Activation. The way towards wonderful.</p></div>
+      <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#work">Our Work</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#clients">Clients</a></li></ul></div>
+      <div><h4>Offices</h4><ul><li>Jaipur (Head office)</li><li>New Delhi</li><li>Ahmedabad</li></ul></div>
+      <div><h4>Contact</h4><ul><li>Ruchin Vaid</li><li><a href="tel:+919828158918">+91 98281 58918</a></li><li><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></li><li><a href="tel:+911414086410">0141-4086410</a></li></ul></div>
+    </div>
+    <div class="base"><span>© <span id="yr"></span> Felicity Integrated Marketing Services. All rights reserved.</span><span>Thanks — see you next time!</span></div>
   </div>
-  <div class="fbig" id="fbig" aria-hidden="true"><span><i>F</i></span><span><i>E</i></span><span><i>L</i></span><span><i>I</i></span><span><i>C</i></span><span><i>I</i></span><span><i>T</i></span><span><i>Y</i></span></div>
-  <div class="base"><span>© <span id="yr"></span> Felicity Integrated Marketing Services</span><span class="hand" style="font-size:22px">Thanks — see you next time!</span></div>
 </footer>
 
+<button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 13V3M4 7l4-4 4 4"/></svg></button>
+
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbT">
-  <div class="t"><div><h3 id="lbT"></h3><p id="lbD"></p></div><button class="x" id="lbX" aria-label="Close">✕</button></div>
-  <div class="st"><button class="nv p" id="lbP" aria-label="Previous photo">←</button><img id="lbI" alt=""><button class="nv n" id="lbN" aria-label="Next photo">→</button></div>
+  <div class="t"><div><h3 id="lbT"></h3><p id="lbD"></p></div><button class="x" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="st"><button class="nv p" id="lbP" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><img id="lbI" alt=""><button class="nv n" id="lbN" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button></div>
   <div class="b"><span class="c" id="lbC"></span><div class="th" id="lbTh"></div></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 (() => {
@@ -655,102 +621,98 @@ button{background:none;border:0;cursor:pointer}
   const I = n => `images/${n}.jpg`;
   const S = (k, n) => Array.from({ length: n }, (_, i) => `${k}-${i + 1}`);
   const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const FINE = matchMedia('(hover:hover) and (pointer:fine)').matches;
-  const G = window.gsap, ST = window.ScrollTrigger, DR = window.Draggable;
-  if (!G) document.documentElement.classList.add('no-gsap');
+  const G = window.gsap, ST = window.ScrollTrigger;
+  const ICON = {
+    events: '<path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/>',
+    marketing: '<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>',
+    promotion: '<path d="M3 3h18v6H3z"/><path d="M5 9v12h14V9M9 13h6"/>',
+    activation: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>',
+    pin: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
+  };
+  const svg = (k, cls = '') => `<svg viewBox="0 0 24 24" class="${cls}" aria-hidden="true">${ICON[k]}</svg>`;
 
-  /* ---------------- content (from the Felicity deck) ---------------- */
-  const MENU = [['#top', 'Home'], ['#about', 'About'], ['#what', 'What we do'], ['#work', 'Work'], ['#desk-sec', 'Photo pile'], ['#clients', 'Clients'], ['#network', 'Offices'], ['#contact', 'Contact']];
-  // [photo, left, top, width, tilt, parallax speed] — kept between the top line and the big title
-  const HERO_PH = [['au-th-6', '3%', '23%', 'clamp(100px,13vw,220px)', -6, .5], ['sm-1', '21%', '26%', 'clamp(80px,10vw,170px)', 4, 1.1], ['berger-5', '37%', '21%', 'clamp(100px,14vw,240px)', -2, .7], ['stunt-1', '57%', '25%', 'clamp(80px,11vw,180px)', 6, 1.3]];
-  const MQ = ['Conferences', 'Product launches', 'MICE', 'Award nights', 'Concerts', 'Kabaddi leagues', 'Stunt shows', 'Mall activations', 'Road shows', 'Gala dinners'];
+  /* ---------- content (from the Felicity company deck) ---------- */
+  // only the high-resolution photos are used full-screen
+  const SLIDES = [['hero-lights', 'Concerts & live shows'], ['dinner', 'Theme gala dinners'], ['au-crowd', 'AU Financiers employee meet'], ['au-league', 'AU Champions League'], ['hero-stage', 'Award nights & conferences']];
 
-  const PILLARS = [
-    ['Events', 'Events & concerts, award ceremonies, conferences & seminars, corporate offsites, sports events and motorsport.', 'sm-3', 'Shankar Mahadevan, Udaipur'],
-    ['Marketing', 'Audits, rural marketing, experiential marketing and consumer promotions that reach people where they are.', 'berger-7', 'Berger Paints launch'],
-    ['Promotion', 'Road shows, SCP & CCP, mall activations and retail activations — 200+ programmes and counting.', 'stunt-2', 'TVS Apache stunt show'],
-    ['Activation', 'BTL, institutional / campus and corporate activations, from stalls to full fan zones.', 'kwc-6', 'Kabaddi World Cup 2016'],
-  ];
   const SERVICES = [
-    ['Events & Concerts', 'Events', 'sm-1'], ['Award Ceremonies', 'Events', 'au-th-12'], ['Conferences & Seminars', 'Events', 'nokia-3'], ['Corporate Offsites', 'Events', 'au-th-2'], ['Sports Events', 'Events', 'pk-1'], ['Motorsport', 'Events', 'stunt-4'],
-    ['Audit', 'Marketing', 'meeting'], ['Rural Marketing', 'Marketing', 'scp-3'], ['Experiential Marketing', 'Marketing', 'berger-9'], ['Consumer Promotions', 'Marketing', 'kwc-5'],
-    ['Road Shows', 'Promotion', 'aog-7'], ['SCP & CCP', 'Promotion', 'scp-6'], ['Mall Activation', 'Promotion', 'stunt-2'], ['Retail Activations', 'Promotion', 'kwc-9'],
-    ['BTL Activation', 'Activation', 'kwc-6'], ['Institutional / Campus Activation', 'Activation', 'scp-1'], ['Corporate Activations', 'Activation', 'au-goa-5'],
+    ['events', 'Events', ['Events & Concerts', 'Award Ceremonies', 'Conferences & Seminars', 'Corporate Offsites', 'Sports Events', 'Motorsport']],
+    ['marketing', 'Marketing', ['Audit', 'Rural Marketing', 'Experiential Marketing', 'Consumer Promotions']],
+    ['promotion', 'Promotion', ['Road Shows', 'SCP & CCP', 'Mall Activation', 'Retail Activations']],
+    ['activation', 'Activation', ['BTL Activation', 'Institutional / Campus Activation', 'Corporate Activations']],
   ];
 
-  // [title, line, place, photos, width, aspect, offset]
+  // [title, short line, filter, label, place, photos]
   const CASES = [
-    ['Nokia MICE', '125+ conferences, each with a theme gala dinner.', 'Pan India', ['nokia-2', 'nokia-1', 'nokia-3', 'nokia-4', 'nokia-5', 'nokia-6'], 'clamp(300px,34vw,560px)', '4/3', 'up'],
-    ['AU Financiers', 'Employee meet in Goa for 450 people.', 'Goa', [...S('au-goa', 5), 'au-crowd', 'au-league'], 'clamp(240px,24vw,400px)', '3/4', 'dn'],
-    ['AU Superheroes Summit', 'AU Bond & the 10th Superheroes Summit.', 'Thailand, 2018', ['au-th-6', ...S('au-th', 12).filter(x => x !== 'au-th-6')], 'clamp(300px,32vw,520px)', '16/10', 'up'],
-    ['Shankar Mahadevan Live', 'A live concert under the Udaipur sky.', 'Udaipur', S('sm', 7), 'clamp(260px,28vw,460px)', '4/3', 'dn'],
-    ['Berger Paints', 'Product launch, start to finish.', 'India', ['berger-5', ...S('berger', 10).filter(x => x !== 'berger-5')], 'clamp(240px,22vw,380px)', '1/1', 'up'],
-    ['Star Pro Kabaddi', 'Every season — Jaipur, Delhi, Ahmedabad, Sonipat, Greater Noida.', '5 cities', [...S('pk', 5), 'kabaddi-team'], 'clamp(300px,32vw,520px)', '16/10', 'dn'],
-    ['Kabaddi World Cup', 'Stalls, branding and fan zones at KWC 2016.', 'Ahmedabad', ['kwc-9', ...S('kwc', 8)], 'clamp(240px,22vw,380px)', '3/4', 'up'],
-    ['TVS AOG Rides', '250+ breakfast rides, 25+ overnighters, Leh-Ladakh in August 2018.', 'Ladakh · Spiti · Bhutan', ['aog-5', ...S('aog', 9).filter(x => x !== 'aog-5'), 'offroad'], 'clamp(300px,34vw,560px)', '4/3', 'dn'],
-    ['TVS Apache Stunts', '100+ shows, and a world record at 15,500 ft.', 'Komic, Spiti', [...S('stunt', 10), 'moto-podium', 'moto-rally'], 'clamp(260px,26vw,420px)', '4/5', 'up'],
-    ['SCP & CCP', '200+ school and college programmes.', 'Pan India', ['scp-6', ...S('scp', 8).filter(x => x !== 'scp-6')], 'clamp(260px,26vw,420px)', '4/3', 'dn'],
-    ['Cricket', 'IPL, RSWS and the Star Sports Paytm IND v SA series.', 'India', ['cricket-ground'], 'clamp(300px,30vw,480px)', '16/9', 'up'],
-    ['Odds & ends', 'A few more nights from the archive.', 'All over', S('ev', 9), 'clamp(240px,24vw,400px)', '4/3', 'dn'],
+    ['Nokia MICE', 'More than 125 conferences with theme gala dinners', 'corp', 'Corporate', 'Pan India', ['nokia-2', 'nokia-1', 'nokia-3', 'nokia-4', 'nokia-5', 'nokia-6']],
+    ['AU Financiers Employee Meet', 'MICE for 450 guests', 'corp', 'MICE', 'Goa', [...S('au-goa', 5), 'au-crowd', 'au-league']],
+    ['AU Superheroes Summit', 'AU Bond & 10th Superheroes Summit', 'corp', 'Incentive', 'Thailand · 2018', ['au-th-6', ...S('au-th', 12).filter(x => x !== 'au-th-6')]],
+    ['Berger Paints', 'Product launch', 'launch', 'Launch', 'India', ['berger-5', ...S('berger', 10).filter(x => x !== 'berger-5')]],
+    ['Shankar Mahadevan Live', 'Live concert', 'launch', 'Concert', 'Udaipur', S('sm', 7)],
+    ['Star Pro Kabaddi', 'All seasons in Jaipur, Delhi, Ahmedabad, Sonipat & Greater Noida', 'sports', 'Sports', '5 cities', [...S('pk', 5), 'kabaddi-team']],
+    ['Kabaddi World Cup 2016', 'Venue branding, stalls and fan zones', 'sports', 'Sports', 'Ahmedabad', ['kwc-9', ...S('kwc', 8)]],
+    ['Cricket', 'IPL, RSWS and the Star Sports Paytm IND v SA series', 'sports', 'Sports', 'India', ['cricket-ground']],
+    ['TVS AOG Rides', '250+ breakfast rides and the Leh-Ladakh ride, August 2018', 'moto', 'Community', 'Ladakh · Spiti · Bhutan', ['aog-5', ...S('aog', 9).filter(x => x !== 'aog-5'), 'offroad']],
+    ['TVS Apache Stunt Shows', '100+ shows and a world record at 15,500 ft', 'moto', 'Motorsport', 'Komic, Spiti', [...S('stunt', 10), 'moto-podium', 'moto-rally']],
+    ['SCP & CCP', 'More than 200 school & college programmes', 'act', 'Activation', 'Pan India', ['scp-6', ...S('scp', 8).filter(x => x !== 'scp-6')]],
+    ['Event Highlights', 'Snapshots from a few of our 600+ events', 'act', 'Highlights', 'Across India', S('ev', 9)],
   ];
-  const DESK = [['sm-2', 'Udaipur, live'], ['nokia-2', 'Nokia — we the force'], ['au-th-4', 'Thailand 2018!'], ['pk-4', 'Pro Kabaddi set'], ['aog-5', 'Top of the world'], ['berger-2', 'Berger launch'], ['stunt-3', 'wheelie o\'clock'], ['au-goa-3', 'Goa, 450 pax'], ['kwc-7', 'KWC ticket booth'], ['scp-3', 'campus day'], ['ev-5', 'Udaipur 2014'], ['au-th-8', 'the dancers'], ['stunt-9', 'no hands'], ['aog-3', 'Ladakh roads']];
-  const DESK_POS = [[3, 6, -8], [20, 22, 5], [36, 4, -3], [52, 26, 9], [70, 8, -6], [84, 30, 4], [8, 48, 6], [27, 58, -7], [45, 46, 3], [62, 56, -4], [78, 52, 8], [14, 74, -2], [40, 72, 5], [66, 76, -9]];
+  const FILTERS = [['all', 'All projects'], ['corp', 'Corporate & MICE'], ['launch', 'Launches & concerts'], ['sports', 'Sports'], ['moto', 'Motorsport & rides'], ['act', 'Activations']];
 
-  const NUMS = [['125', '+', 'conferences for Nokia — and a gala dinner after every one.', 'Corporate'], ['450', '', 'people at one AU Financiers employee meet in Goa.', 'MICE'], ['250', '+', 'TVS AOG breakfast rides. Plus 25+ overnighters.', 'Rides'], ['100', '+', 'TVS Apache stunt shows across India.', 'Stunts'], ['15500', ' ft', 'the altitude of our world-record stunt show at Komic, Spiti.', 'Record'], ['200', '+', 'school & college contact programmes (SCP & CCP).', 'Activation']];
-  const WHY = [['200+ brands, 2,500+ events', 'Our top clients are also our longest-standing relationships.'], ['A network across India & overseas', 'Own offices in Jaipur, New Delhi and Ahmedabad, plus 11 associate cities.'], ['Design & data in-house', 'Well-equipped offices with resources for data management and creative design.'], ['A decade of marketing sense', 'And a real understanding of Indian consumers.'], ['People who stay', 'Nearly half our team has been here almost a decade. Clients notice.']];
+  const NUMS = [['125', '+', 'Conferences delivered for Nokia'], ['450', '', 'Guests at the AU Financiers meet in Goa'], ['250', '+', 'TVS AOG breakfast rides'], ['100', '+', 'TVS Apache stunt shows across India'], ['15500', ' ft', 'World-record stunt show at Komic, Spiti'], ['200', '+', 'School & college contact programmes']];
+
+  const STEPS = [['Fresh ideas', 'Every brief starts with a concept built around your audience and goals.'], ['Meticulous planning', 'In-house teams for data management, creative design and logistics.'], ['Flawless execution', 'Our own crew on the ground, across India and overseas.'], ['Lasting impression', 'Events your guests remember long after the lights go down.']];
+  const WHY = [['200+ brands, 2,500+ events', 'Our top clients are our longest-standing relationships.'], ['India & overseas', 'Three offices and 11 associate cities.'], ['Design & data in-house', 'Well-equipped offices and ample resources.'], ['A decade of marketing', 'In-depth understanding of Indian consumers.'], ['Top-notch service', 'Half our team has been here almost a decade.']];
+
   const SECTORS = ['Banking & Finance', 'Automobiles', 'Telecom', 'IT', 'FMCG', 'Pharma', 'Real Estate', 'Consumer Electronics', 'Sports', 'Liquor & Tobacco'];
-  const FOCUS = [['Banking & finance', 'au-league', 'R&R nights, lead generation, MICE and employee meets.'], ['Automobile', 'stunt-6', 'Community building, motorsport, BTL, mall activities, launches and media buying.'], ['Sports', 'kabaddi-team', 'IPL, cricket (RSWS), Pro Kabaddi League, Kabaddi World Cup, racing and stunt shows.']];
-  const CLIENTS = ['TVS Motor Company', 'Nokia', 'Asian Paints', 'Maruti Suzuki', 'ICICI Bank', 'HDFC Ergo', 'Coca-Cola', 'Pepsi', 'Airtel', 'Intel', 'HP', 'Mahindra', 'Bajaj', 'Suzuki', 'Harley-Davidson', 'IDBI Bank', 'Bharti AXA Life', 'Max Bupa', 'Apollo Munich', 'Exide Life', 'ICICI Prudential', 'Vi', 'Tata Docomo', 'Tata Indicom', 'Tata Sky', 'Dish TV', 'UltraTech Cement', 'DLF', 'Britannia', 'Dabur', 'ITC', 'Godfrey Phillips', 'Bacardi', 'Budweiser', "Kwality Wall's", 'Big Bazaar', 'Central', 'Bharat Petroleum', 'The Times of India', 'Ultraviolette Automotive', 'Piramal', 'Jubilant Organosys', 'Tupperware', 'Sunsilk', 'Lux', 'Lifebuoy', 'Snickers', '7UP', 'Movies Now', 'Futures First', 'Rockwoods High School'];
-  const ASSOC = ['Wizcraft', 'GroupM', 'DDB Mudramax', 'Encompass', 'Fountainhead', 'Hansa Vision', 'DNA Networks', 'Rajasthan Patrika', 'Candid', 'ZeeCo', 'Beep', 'Acme Events India', 'Impresario', 'Allias Integrated', 'Impact Marketing Services', 'MOMS Outdoor Media Solutions'];
-  const FILMS = [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter — Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['AOG South Chapter 2021, Coorg', 'Ride film']];
-  const OFFICES = [['Jaipur', 'B-207 A, Rajender Marg, Bapu Nagar, Jaipur, Rajasthan 302015 · 0141-4086410', 'Head office'], ['New Delhi', 'B-363, C.R. Park, New Delhi 110019', 'Office'], ['Ahmedabad', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054', 'Office']];
-  const CITIES = ['Chandigarh', 'Lucknow', 'Kolkata', 'Kanpur', 'Hyderabad', 'Bangalore', 'Chennai', 'Jodhpur', 'Indore', 'Mumbai', 'Pune'];
-  const TYPES = ['Conference / seminar', 'MICE / employee meet', 'Award night / R&R', 'Product launch', 'Corporate offsite', 'Gala dinner', 'Concert / live show', 'Sports event', 'Activation (BTL / mall / retail)', 'Road show', 'Content / film', 'Something else'];
+  const FILMS = [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']];
+  const OFFICES = [['Jaipur', 'Head office', 'B-207 A, Rajender Marg, Bapu Nagar, Jaipur, Rajasthan 302015 · 0141-4086410'], ['New Delhi', '', 'B-363, C.R. Park, New Delhi 110019'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']];
+  const TYPES = ['Conference / seminar', 'MICE / employee meet', 'Award ceremony / R&R', 'Product launch', 'Corporate offsite', 'Concert / live show', 'Sports event', 'Motorsport / ride', 'BTL / mall / retail activation', 'Road show', 'Rural marketing', 'Content creation', 'Other'];
 
-  /* ---------------- build ---------------- */
-  $('#mlinks').innerHTML = MENU.map(([h, t], i) => `<a href="${h}"><small>${pad(i + 1)}</small>${t}</a>`).join('') +
-    `<div class="mfoot"><a href="tel:+919828158918">+91 98281 58918</a><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></div>`;
-  $('#hp').innerHTML = HERO_PH.map(([p, x, y, w, r, sp]) => `<figure style="left:${x};top:${y};--w:${w};transform:rotate(${r}deg)" data-speed="${sp}" data-rot="${r}"><img src="${I(p)}" alt=""></figure>`).join('');
-  const star = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0l1.2 3.8L10 5 6.2 6.2 5 10 3.8 6.2 0 5l3.8-1.2z"/></svg>';
-  const mqHtml = MQ.map((t, i) => `<span>${i % 3 === 1 ? `<em>${t}</em>` : t}${star}</span>`).join('');
-  $('#mq').innerHTML = mqHtml + mqHtml;
+  /* ---------- build ---------- */
+  const slides = $('#slides');
+  slides.innerHTML = SLIDES.map(([p, c], i) => `<img src="${I(p)}" alt="${c}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('');
+  $('#bars').innerHTML = SLIDES.map((s, i) => `<button type="button" aria-label="Show slide ${i + 1}: ${s[1]}"><i></i></button>`).join('');
 
-  $('#pw').innerHTML = PILLARS.map(([t, d, p], i) => `<li class="${i ? '' : 'on'}"><h3><small>${pad(i + 1)}</small>${t}</h3><div class="svcs"><div><p>${d}</p><img class="m" src="${I(p)}" alt="${t}" loading="lazy"></div></div></li>`).join('');
-  $('#pframe').insertAdjacentHTML('afterbegin', PILLARS.map(([t, , p], i) => `<img src="${I(p)}" alt="${t}" class="${i ? '' : 'on'}" loading="lazy">`).join(''));
+  $('#svc').innerHTML = SERVICES.map(([ic, t, items], i) => `<article data-a style="--i:${i}"><span class="ic">${svg(ic)}</span><h3>${t}</h3><ul>${items.map(s => `<li><a href="#contact" data-type="${s}">${s}</a></li>`).join('')}</ul></article>`).join('');
 
-  $('#ix').innerHTML = SERVICES.map(([t, g, p], i) => `<li><a href="#contact" data-type="${t}" data-img="${I(p)}"><span class="n">${pad(i + 1)}</span><span class="t">${t}</span><span class="g">${g}</span><span class="ar">→</span></a></li>`).join('');
+  $('#cgrid').innerHTML = [0, 1, 2, 3].map(i => { const c = CASES[i]; return `<button type="button" class="ccard" data-case="${i}" data-a aria-label="Open ${c[0]} photos"><div class="im"><img src="${I(c[5][0])}" alt="${c[0]}" loading="lazy"></div><div class="t"><b>${c[0]}</b><small>${c[4]}</small></div></button>`; }).join('');
 
-  $('#track').innerHTML = `<div class="card intro"><span class="big">${CASES.length}</span><p>projects from our archive, picked for this page. There are a few hundred more where these came from.</p><span class="hand">keep scrolling →</span></div>` +
-    CASES.map(([t, l, pl, ph, w, ar, o], i) => `<button type="button" class="card ${o}" data-ev="${i}" data-cur="View" style="--cw:${w};--ar:${ar}" aria-label="Open ${t} photos"><div class="ph"><img src="${I(ph[0])}" alt="${t}" loading="lazy"><span class="cnt">${ph.length} photo${ph.length > 1 ? 's' : ''}</span></div><div class="hd"><h3>${t}</h3><span class="no">${pad(i + 1)}</span></div><p>${l} — ${pl}</p></button>`).join('');
+  const cases = $('#cases');
+  // projects whose photos are all small get a 2×2 mosaic cover, so nothing is stretched and blurry
+  const MOSAIC = new Set(['SCP & CCP', 'Event Highlights']);
+  const cover = (t, ph) => MOSAIC.has(t) ? `<div class="mosaic">${ph.slice(0, 4).map(p => `<img src="${I(p)}" alt="" loading="lazy">`).join('')}</div>` : `<img src="${I(ph[0])}" alt="${t}" loading="lazy">`;
+  cases.innerHTML = CASES.map(([t, d, f, l, p, ph], i) => `<button type="button" class="case" data-f="${f}" data-case="${i}" data-a aria-label="Open ${t} photos"><div class="im">${cover(t, ph)}<span class="count">${ph.length} photo${ph.length > 1 ? 's' : ''}</span></div><div class="meta"><span>${l}</span><span>${p}</span></div><h3>${t}</h3><p>${d}</p></button>`).join('');
+  const filters = $('#filters');
+  filters.innerHTML = FILTERS.map(([k, t], i) => `<button type="button" class="${i ? '' : 'on'}" aria-pressed="${!i}" data-k="${k}">${t}</button>`).join('');
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $$('button', filters).forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
+    $$('.case', cases).forEach(c => { const show = b.dataset.k === 'all' || c.dataset.f === b.dataset.k; c.classList.toggle('hide', !show); if (show && G) G.fromTo(c, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .5, ease: 'power2.out' }); });
+    if (ST) ST.refresh();
+  });
 
-  const desk = $('#desk');
-  desk.insertAdjacentHTML('beforeend', DESK.map(([p, c], i) => {
-    const ci = CASES.findIndex(cs => cs[3].includes(p));
-    return `<figure class="pol" data-i="${i}" data-ev="${ci}" data-j="${CASES[ci][3].indexOf(p)}" data-cur="Drag" tabindex="0" aria-label="${c} — open photo"><img src="${I(p)}" alt="${c}" loading="lazy" draggable="false"><figcaption>${c}</figcaption></figure>`;
-  }).join(''));
+  $('#nums').innerHTML = NUMS.map(([n, s, t]) => `<div data-a><b data-n="${n}" data-s="${s}">${(+n).toLocaleString('en-IN')}${s}</b><span>${t}</span></div>`).join('');
+  $('#steps').innerHTML = STEPS.map(([t, d], i) => `<div class="step" data-a><span class="n">${pad(i + 1)}</span><h3>${t}</h3><p>${d}</p></div>`).join('');
+  $('#why').innerHTML = WHY.map(([t, d]) => `<div data-a><b>${t}</b><span>${d}</span></div>`).join('');
+  $('#sectors').innerHTML = SECTORS.map(s => `<span>${s}</span>`).join('');
 
-  $('#nums').innerHTML = NUMS.map(([n, s, t, k]) => `<li><b data-n="${n}" data-s="${s}">${(+n).toLocaleString('en-IN')}${s}</b><p>${t}</p><small>${k}</small></li>`).join('');
-  $('#whyL').innerHTML = WHY.map(([t, d], i) => `<li><span class="n">${pad(i + 1)}</span><h3>${t}</h3><p>${d}</p></li>`).join('');
-  $('#sect').innerHTML = SECTORS.map((s, i) => `<span>${s}</span>${i < SECTORS.length - 1 ? ' <em>/</em> ' : ''}`).join('');
-  $('#focus').innerHTML = FOCUS.map(([t, p, d]) => `<article class="fc"><div class="ph"><img src="${I(p)}" alt="${t}" loading="lazy"></div><h3>${t}</h3><p>${d}</p></article>`).join('');
-  const cm = (l) => { const h = l.map(c => `<span>${c}<i></i></span>`).join(''); return h + h; };
-  $('#cm1').innerHTML = cm(CLIENTS.slice(0, 26));
-  $('#cm2').innerHTML = cm(CLIENTS.slice(26));
-  const call = $('#call');
-  call.innerHTML = CLIENTS.map(c => `<li>${c}</li>`).join('');
-  $('#cmore').addEventListener('click', e => { const s = call.classList.toggle('short'); e.currentTarget.textContent = s ? `See all ${CLIENTS.length} clients` : 'Show fewer'; if (ST) ST.refresh(); });
-  $('#assoc').innerHTML = ASSOC.map(a => `<span>${a}</span>`).join(' ');
-  $('#films').innerHTML = FILMS.map(([t, c], i) => `<div class="film"><div class="ph"><img src="${I('film-' + (i + 1))}" alt="${t}" loading="lazy"></div><h3>${t}</h3><small>${c}</small></div>`).join('');
-  $('#off').innerHTML = OFFICES.map(([c, a, k]) => `<li><h3>${c}</h3><p>${a}</p><small>${k}</small></li>`).join('');
-  $('#assocC').insertAdjacentHTML('beforeend', CITIES.map(c => `<span>${c}</span>`).join(''));
+  // gallery: photos interleaved across projects so neighbours differ
+  const pool = CASES.map((c, i) => c[5].map((p, j) => [i, j, p]));
+  const galItems = [];
+  for (let r = 0; pool.some(l => l[r]); r++) pool.forEach(l => l[r] && galItems.push(l[r]));
+  const gal = $('#gal');
+  gal.innerHTML = galItems.map(([i, j, p]) => `<button type="button" data-case="${i}" data-j="${j}" aria-label="View ${CASES[i][0]} photo ${j + 1}"><img src="${I(p)}" alt="${CASES[i][0]}" loading="lazy"><span>${CASES[i][0]}</span></button>`).join('');
+  const galMore = $('#galMore');
+  const setGalLabel = () => galMore.textContent = gal.classList.contains('short') ? `View all ${galItems.length} photos` : 'Show fewer photos';
+  setGalLabel();
+  galMore.addEventListener('click', () => { const s = gal.classList.toggle('short'); setGalLabel(); if (ST) ST.refresh(); if (s) goTo('#gallery'); });
+
+  $('#filmGrid').innerHTML = FILMS.map(([t, c], i) => `<div class="film" data-a><div class="im"><img src="${I('film-' + (i + 1))}" alt="${t}" width="524" height="218" loading="lazy"></div><b>${t}</b><span>${c}</span></div>`).join('');
+  $('#offices').innerHTML = OFFICES.map(([c, k, a]) => `<div class="office" data-a><span class="pin">${svg('pin')}</span><b>${c}${k ? `<small>${k}</small>` : ''}</b><span>${a}</span></div>`).join('');
   $('#yr').textContent = new Date().getFullYear();
 
-  // live clock in Jaipur — a small, honest detail
-  const clock = $('#clock');
-  const tick = () => { clock.textContent = 'Jaipur ' + new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Kolkata' }); };
-  tick(); setInterval(tick, 30000);
-
-  /* ---------------- form ---------------- */
+  /* ---------- form ---------- */
   const type = $('#f-type');
   type.innerHTML = TYPES.map(t => `<option>${t}</option>`).join('');
   document.addEventListener('click', e => {
@@ -760,87 +722,74 @@ button{background:none;border:0;cursor:pointer}
     if (best) type.value = best;
   });
   const form = $('#form');
-  $$('.fld input, .fld textarea', form).forEach(el => {
-    const set = () => el.parentElement.classList.toggle('f', !!el.value);
-    el.addEventListener('input', () => { set(); el.parentElement.classList.remove('bad'); }); set();
-  });
   form.addEventListener('submit', e => {
     e.preventDefault();
     const d = new FormData(form);
     let first = null;
-    ['name', 'contact'].forEach(f => { const bad = !String(d.get(f) || '').trim(); $('#f-' + f).parentElement.classList.toggle('bad', bad); if (bad && !first) first = $('#f-' + f); });
+    ['name', 'contact'].forEach(f => { const el = $('#f-' + f), bad = !String(d.get(f) || '').trim(); el.parentElement.classList.toggle('err', bad); if (bad && !first) first = el; });
     if (first) { first.focus(); return; }
-    const body = [`Name: ${d.get('name')}`, `Company: ${d.get('company') || '—'}`, `Contact: ${d.get('contact')}`, `Event: ${d.get('type')}`, `City: ${d.get('city') || '—'}`, `Guests: ${d.get('guests') || '—'}`, '', d.get('brief') || ''].join('\n');
+    const body = [`Name: ${d.get('name')}`, `Company: ${d.get('company') || '—'}`, `Contact: ${d.get('contact')}`, `Event type: ${d.get('type')}`, `City: ${d.get('city') || '—'}`, `Guests: ${d.get('guests') || '—'}`, '', 'About the event:', d.get('brief') || '—'].join('\n');
     location.href = `mailto:ruchin@felicity-intg.com?subject=${encodeURIComponent('Event enquiry — ' + d.get('type'))}&body=${encodeURIComponent(body)}`;
     form.classList.add('sent');
   });
+  form.addEventListener('input', e => e.target.parentElement.classList.remove('err'));
 
-  /* ---------------- smooth scroll ---------------- */
+  /* ---------- smooth scroll + anchors ---------- */
   let lenis = null;
   if (window.Lenis && G && !RM) {
-    lenis = new Lenis({ lerp: .1, smoothWheel: true });
+    lenis = new Lenis({ lerp: .12 });
     if (ST) lenis.on('scroll', ST.update);
     G.ticker.add(t => lenis.raf(t * 1000));
     G.ticker.lagSmoothing(0);
   }
-  const lock = on => { document.documentElement.style.overflow = on ? 'hidden' : ''; if (lenis) on ? lenis.stop() : lenis.start(); };
-  const goTo = sel => {
+  const hh = () => $('#hdr').offsetHeight;
+  function goTo(sel) {
     const t = document.querySelector(sel); if (!t) return;
-    if (lenis) lenis.scrollTo(t, { offset: 0, duration: 1.4 });
-    else scrollTo({ top: t.getBoundingClientRect().top + scrollY, behavior: RM ? 'auto' : 'smooth' });
-  };
-  document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (!a) return; e.preventDefault(); setMenu(false); goTo(a.getAttribute('href')); });
+    const off = sel === '#top' ? -hh() : -hh() + 1;
+    if (lenis) lenis.scrollTo(t, { offset: off, duration: 1.2 });
+    else scrollTo({ top: Math.max(0, t.getBoundingClientRect().top + scrollY + off), behavior: RM ? 'auto' : 'smooth' });
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]'); if (!a) return;
+    e.preventDefault(); setMenu(false); goTo(a.getAttribute('href'));
+  });
+  const lockScroll = on => { document.documentElement.style.overflow = on ? 'hidden' : ''; if (lenis) on ? lenis.stop() : lenis.start(); };
 
-  /* ---------------- menu ---------------- */
-  const menu = $('#menu'), mbtn = $('#mbtn');
+  /* ---------- menu ---------- */
+  const burger = $('#burger'), mnav = $('#mnav');
   let menuOpen = false;
   function setMenu(open) {
     if (menuOpen === open) return;
     menuOpen = open;
-    mbtn.classList.toggle('open', open);
-    mbtn.setAttribute('aria-expanded', open); mbtn.firstElementChild.textContent = open ? 'Close' : 'Menu';
-    lock(open);
-    if (!G || RM) { menu.classList.toggle('open', open); return; }
-    G.killTweensOf(menu);
-    if (open) {
-      menu.classList.add('open');
-      G.fromTo(menu, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .8, ease: 'expo.inOut' });
-      G.fromTo($$('.links a', menu), { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, stagger: .05, duration: .8, ease: 'expo.out', delay: .3 });
-    } else {
-      G.to(menu, { clipPath: 'inset(100% 0% 0% 0%)', duration: .7, ease: 'expo.inOut', onComplete: () => menu.classList.remove('open') });
-    }
+    mnav.classList.toggle('open', open); burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    lockScroll(open);
+    if (open && G && !RM) G.fromTo($$('li, .info', mnav), { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: .45, stagger: .04, ease: 'power2.out' });
   }
-  mbtn.addEventListener('click', () => setMenu(!menuOpen));
+  burger.addEventListener('click', () => setMenu(!menuOpen));
+  addEventListener('resize', () => { if (innerWidth > 1080) setMenu(false); });
 
-  // header tucks away while scrolling down, comes back as soon as you scroll up
-  const hdr = $('.hdr');
-  let lastY = scrollY;
-  addEventListener('scroll', () => {
-    const y = scrollY;
-    hdr.classList.toggle('hide', y > lastY && y > 160 && !menuOpen);
-    lastY = y;
-  }, { passive: true });
-
-  /* ---------------- lightbox ---------------- */
+  /* ---------- lightbox ---------- */
   const lb = $('#lb'), lbI = $('#lbI'), lbTh = $('#lbTh');
   let cur = null, ci = 0, back = null;
+  // never enlarge a photo more than 1.6× its real size, so it stays sharp
+  lbI.addEventListener('load', () => { lbI.style.maxWidth = Math.round(lbI.naturalWidth * 1.6) + 'px'; });
   const show = i => {
-    const l = cur[3]; ci = (i + l.length) % l.length;
-    lbI.src = I(l[ci]); lbI.alt = `${cur[0]} — photo ${ci + 1}`;
-    $('#lbC').textContent = `${pad(ci + 1)} / ${pad(l.length)}`;
+    const list = cur[5]; ci = (i + list.length) % list.length;
+    lbI.src = I(list[ci]); lbI.alt = `${cur[0]} — photo ${ci + 1} of ${list.length}`;
+    $('#lbC').textContent = `${ci + 1} / ${list.length}`;
     $$('button', lbTh).forEach((b, j) => b.classList.toggle('on', j === ci));
-    $('#lbP').hidden = $('#lbN').hidden = l.length < 2;
-    if (G && !RM) G.fromTo(lbI, { opacity: 0, scale: .96 }, { opacity: 1, scale: 1, duration: .5, ease: 'expo.out' });
+    $('#lbP').hidden = $('#lbN').hidden = list.length < 2;
+    if (G && !RM) G.fromTo(lbI, { opacity: 0 }, { opacity: 1, duration: .35 });
   };
   const openLb = (i, j = 0) => {
-    if (i < 0) return;
     cur = CASES[i]; back = document.activeElement;
-    $('#lbT').textContent = cur[0]; $('#lbD').textContent = `${cur[1]} — ${cur[2]}`;
-    lbTh.innerHTML = cur[3].map((p, k) => `<button type="button" data-k="${k}" aria-label="Photo ${k + 1}"><img src="${I(p)}" alt=""></button>`).join('');
-    show(j); lb.classList.add('open'); lock(true); $('#lbX').focus();
+    $('#lbT').textContent = cur[0]; $('#lbD').textContent = `${cur[1]} · ${cur[4]}`;
+    lbTh.innerHTML = cur[5].map((p, k) => `<button type="button" data-k="${k}" aria-label="Photo ${k + 1}"><img src="${I(p)}" alt=""></button>`).join('');
+    show(j); lb.classList.add('open'); lockScroll(true); $('#lbX').focus();
   };
-  const closeLb = () => { lb.classList.remove('open'); lock(false); if (back) back.focus({ preventScroll: true }); };
-  $('#track').addEventListener('click', e => { const b = e.target.closest('[data-ev]'); if (b) openLb(+b.dataset.ev); });
+  const closeLb = () => { lb.classList.remove('open'); lockScroll(false); if (back) back.focus({ preventScroll: true }); };
+  document.addEventListener('click', e => { const b = e.target.closest('[data-case]'); if (b) openLb(+b.dataset.case, +(b.dataset.j || 0)); });
   $('#lbX').addEventListener('click', closeLb);
   $('#lbP').addEventListener('click', () => show(ci - 1));
   $('#lbN').addEventListener('click', () => show(ci + 1));
@@ -853,175 +802,75 @@ button{background:none;border:0;cursor:pointer}
     if (lb.classList.contains('open')) {
       if (e.key === 'Escape') closeLb(); else if (e.key === 'ArrowLeft') show(ci - 1); else if (e.key === 'ArrowRight') show(ci + 1);
       else if (e.key === 'Tab') { const f = $$('button:not([hidden])', lb); const a = f.indexOf(document.activeElement); if (e.shiftKey && a <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && a === f.length - 1) { e.preventDefault(); f[0].focus(); } }
-    } else if (e.key === 'Escape' && menuOpen) { setMenu(false); mbtn.focus(); }
+    } else if (e.key === 'Escape' && menuOpen) { setMenu(false); burger.focus(); }
   });
-  // desk photos open on click / Enter (Draggable only fires onClick when the photo wasn't moved)
-  $$('.pol', desk).forEach(p => p.addEventListener('keydown', e => { if (e.key === 'Enter') openLb(+p.dataset.ev, +p.dataset.j); }));
 
-  /* ---------------- cursor + hover peek ---------------- */
-  const curEl = $('#cur'), curT = $('#curT'), peek = $('#peek'), peekI = $('#peekI');
-  if (FINE) {
-    const mv = G ? { x: G.quickTo(curEl, 'x', { duration: .25, ease: 'power3' }), y: G.quickTo(curEl, 'y', { duration: .25, ease: 'power3' }), px: G.quickTo(peek, 'x', { duration: .6, ease: 'power3' }), py: G.quickTo(peek, 'y', { duration: .6, ease: 'power3' }) } : null;
-    addEventListener('pointermove', e => {
-      curEl.style.opacity = 1;
-      if (mv) { mv.x(e.clientX); mv.y(e.clientY); mv.px(e.clientX); mv.py(e.clientY); }
-      else { curEl.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; peek.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; }
-    });
-    document.addEventListener('pointerleave', () => curEl.style.opacity = 0);
-    document.addEventListener('pointerover', e => {
-      const l = e.target.closest('[data-cur]'), h = e.target.closest('a,button,select,input,textarea');
-      curEl.classList.toggle('lbl', !!l); curEl.classList.toggle('hov', !l && !!h);
-      curT.textContent = l ? l.dataset.cur : '';
-    });
-    const ix = $('#ix');
-    ix.addEventListener('pointerover', e => { const a = e.target.closest('a[data-img]'); if (!a) return; if (peekI.getAttribute('src') !== a.dataset.img) peekI.src = a.dataset.img; peek.classList.add('on'); });
-    ix.addEventListener('pointerleave', () => peek.classList.remove('on'));
-  }
-
-  /* ---------------- no GSAP fallback ---------------- */
-  const loader = $('#loader');
-  const pw = $('#pw'), pframe = $('#pframe'), pcap = $('#pcap');
-  const setPillar = i => {
-    $$('li', pw).forEach((li, j) => li.classList.toggle('on', j === i));
-    $$('img', pframe).forEach((im, j) => { im.classList.toggle('on', j === i); im.classList.toggle('was', j < i); });
-    pcap.textContent = PILLARS[i][3];
+  /* ---------- hero slideshow ---------- */
+  const slideImgs = $$('img', slides), bars = $$('button', $('#bars')), cap = $('#cap');
+  let si = -1, timer = null;
+  const DUR = 6;
+  const go = i => {
+    si = (i + SLIDES.length) % SLIDES.length;
+    slideImgs.forEach((im, j) => im.classList.toggle('on', j === si));
+    cap.textContent = SLIDES[si][1];
+    bars.forEach((b, j) => { b.classList.toggle('done', j < si); const bar = b.firstElementChild; if (G) G.killTweensOf(bar); bar.style.transform = j < si ? 'scaleX(1)' : 'scaleX(0)'; });
+    if (G && !RM) {
+      G.fromTo(slideImgs[si], { scale: 1.08 }, { scale: 1, duration: DUR + 1.2, ease: 'none' });
+      G.fromTo(bars[si].firstElementChild, { scaleX: 0 }, { scaleX: 1, duration: DUR, ease: 'none' });
+    }
+    clearTimeout(timer);
+    if (!RM) timer = setTimeout(() => go(si + 1), DUR * 1000);
   };
-  setPillar(0);
-  if (!G || !ST) {
-    loader.remove();
-    $$('.pol', desk).forEach((p, i) => { const [x, y, r] = DESK_POS[i]; p.style.left = x + '%'; p.style.top = y + '%'; p.style.transform = `rotate(${r}deg)`; p.addEventListener('click', () => openLb(+p.dataset.ev, +p.dataset.j)); });
-    $$('li', pw).forEach((li, i) => li.addEventListener('mouseenter', () => setPillar(i)));
-    return;
-  }
+  bars.forEach((b, j) => b.addEventListener('click', () => go(j)));
+  go(0);
+
+  /* ---------- header + back to top ---------- */
+  const hdr = $('#hdr'), totop = $('#totop');
+  const links = $$('#nav a'), secs = links.map(a => $(a.getAttribute('href')));
+  const onScroll = () => {
+    hdr.classList.toggle('scrolled', scrollY > 10);
+    totop.classList.toggle('show', scrollY > innerHeight);
+    let on = -1; secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .35) on = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === on));
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  totop.addEventListener('click', () => goTo('#top'));
+
+  /* ---------- animation (GSAP) ---------- */
+  if (!G || !ST || RM) return; // without GSAP everything is simply shown
   G.registerPlugin(ST);
-  if (DR) G.registerPlugin(DR);
 
-  /* ---------------- loader ---------------- */
-  const LOADER_PH = ['au-th-6', 'sm-3', 'pk-1', 'berger-5', 'aog-5', 'nokia-2', 'stunt-1', 'au-goa-1', 'kwc-6', 'sm-1'];
-  const lstack = $('#lstack');
-  lstack.innerHTML = LOADER_PH.map(p => `<img src="${I(p)}" alt="">`).join('');
-  const limgs = $$('img', lstack);
-  let li = 0; limgs[0].classList.add('on');
-  const flip = setInterval(() => { limgs[li].classList.remove('on'); li = (li + 1) % limgs.length; limgs[li].classList.add('on'); }, 140);
-  const cnt = { v: 0 };
-  lock(true);
-  const intro = G.timeline({ paused: true });
-  intro.from('#htitle i', { yPercent: 115, duration: 1.3, stagger: .06, ease: 'expo.out' })
-    .from('.hp figure', { scale: 0, rotation: (i, el) => +el.dataset.rot * 4, duration: 1.2, stagger: .08, ease: 'back.out(1.4)' }, '<.2')
-    .from('.h-meta span, .h-foot > *', { y: 30, opacity: 0, stagger: .06, duration: .9, ease: 'expo.out' }, '<.2')
-    .from('.h-note', { opacity: 0, y: 20, duration: .6 }, '<.3')
-    .fromTo('.h-note path', { strokeDasharray: 200, strokeDashoffset: 200 }, { strokeDashoffset: 0, duration: 1, ease: 'power2.inOut' }, '<');
-  const finishLoader = () => {
-    clearInterval(flip);
-    G.timeline()
-      .to(lstack, { scale: 1.15, duration: .5, ease: 'power2.in' })
-      .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'expo.inOut' })
-      .add(() => { loader.remove(); lock(false); ST.refresh(); }, '-=.1')
-      .add(() => intro.play(), '-=.55');
-  };
-  const lcnt = $('#lcnt');
-  let cntTween = null;
-  const skipLoader = () => { clearInterval(flip); if (cntTween) cntTween.kill(); if (loader.isConnected) loader.remove(); lock(false); intro.progress(1); ST.refresh(); };
-  if (RM) skipLoader();
-  else {
-    cntTween = G.to(cnt, { v: 100, duration: 2, ease: 'power2.inOut', onUpdate: () => { lcnt.textContent = Math.round(cnt.v); }, onComplete: finishLoader });
-    // safety net: if animation frames are paused (background tab, power saving), never leave visitors stuck behind the loader
-    setTimeout(() => { if (loader.isConnected) skipLoader(); }, 5000);
-  }
+  // page intro
+  G.timeline({ defaults: { ease: 'power3.out' } })
+    .from(hdr, { yPercent: -100, duration: .8 })
+    .from('.hero h1 .line > span', { yPercent: 110, duration: 1, stagger: .12 }, '-=.4')
+    .from('[data-hero]', { y: 24, opacity: 0, duration: .8, stagger: .1 }, '-=.7')
+    .from('#slideNav', { opacity: 0, duration: .6 }, '-=.4');
 
-  /* ---------------- everything scroll-driven ---------------- */
-  const mm = G.matchMedia();
-  mm.add({ desk: '(min-width: 861px)', mob: '(max-width: 860px)', motion: '(prefers-reduced-motion: no-preference)' }, ctx => {
-    const { desk: isDesk, motion } = ctx.conditions;
+  // content rises in as it enters the screen (grouped so cards stagger left to right)
+  ST.batch('[data-a]', {
+    start: 'top 90%', once: true,
+    onEnter: els => G.fromTo(els, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .08, ease: 'power3.out', overwrite: true, clearProps: 'transform' }),
+  });
+  G.set('[data-a]', { opacity: 0 });
+  // anything already on screen at load
+  ST.refresh();
 
-    // heading lines rise
-    if (motion) $$('.ln>span').forEach(el => G.from(el, { yPercent: 110, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: el.closest('h2') || el, start: 'top 88%' } }));
+  // images unveil with a soft wipe
+  $$('[data-img]').forEach(el => G.fromTo(el, { clipPath: 'inset(12% 0 12% 0 round 12px)', opacity: 0 }, { clipPath: 'inset(0% 0 0% 0 round 12px)', opacity: 1, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
 
-    // hero: photos drift at different speeds, letters spread on scroll
-    if (motion) {
-      $$('.hp figure').forEach(f => G.to(f, { yPercent: -60 * +f.dataset.speed, rotation: +f.dataset.rot * -1.5, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } }));
-      G.to('#htitle span', { y: (i) => (i % 2 ? -1 : 1) * 40, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-      if (FINE) {
-        const figs = $$('.hp figure').map(f => ({ f, x: G.quickTo(f, 'x', { duration: 1, ease: 'power3' }), y: G.quickTo(f, 'y', { duration: 1, ease: 'power3' }), s: +f.dataset.speed }));
-        $('.hero').addEventListener('pointermove', e => { const dx = e.clientX / innerWidth - .5, dy = e.clientY / innerHeight - .5; figs.forEach(o => { o.x(dx * 60 * o.s); o.y(dy * 40 * o.s); }); });
-      }
-    }
+  // gentle parallax in the about collage
+  G.to('.collage .b', { yPercent: -10, ease: 'none', scrollTrigger: { trigger: '.collage', start: 'top bottom', end: 'bottom top', scrub: true } });
 
-    // marquee leans with scroll speed
-    if (motion) {
-      const sk = G.quickTo('#mqSk', 'skewX', { duration: .4, ease: 'power3' });
-      ST.create({ onUpdate: self => sk(G.utils.clamp(-14, 14, self.getVelocity() / -250)) });
-    }
-
-    // statement: words light up as you read, then the pen marks get drawn
-    const words = [];
-    const split = node => [...node.childNodes].forEach(n => {
-      if (n.nodeType === 3) { const fr = document.createDocumentFragment(); n.textContent.split(/(\s+)/).forEach(w => { if (!w) return; if (/^\s+$/.test(w)) fr.append(w); else { const s = document.createElement('span'); s.textContent = w; words.push(s); fr.append(s); } }); n.replaceWith(fr); }
-      else if (n.nodeName !== 'svg') split(n);
-    });
-    if (motion && !$('#stmt').dataset.split) { split($('#stmt')); $('#stmt').dataset.split = 1; }
-    if (motion) {
-      G.fromTo($$('#stmt span:not(.mark)'), { opacity: .12 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: '#stmt', start: 'top 80%', end: 'bottom 45%', scrub: true } });
-      $$('#stmt .mark path').forEach(p => { const L = p.getTotalLength(); G.fromTo(p, { strokeDasharray: L, strokeDashoffset: L }, { strokeDashoffset: 0, duration: 1.2, ease: 'power2.inOut', scrollTrigger: { trigger: p.closest('.mark'), start: 'top 70%' } }); });
-    }
-
-    // counters
-    $$('[data-n]').forEach(b => {
-      const n = +b.dataset.n, s = b.dataset.s || '', o = { v: 0 };
-      ST.create({ trigger: b, start: 'top 90%', once: true, onEnter: () => motion ? G.to(o, { v: n, duration: 1.8, ease: 'power3.out', onUpdate: () => b.textContent = Math.round(o.v).toLocaleString('en-IN') + s }) : null });
-    });
-
-    // what we do: pin and step through the four pillars
-    if (isDesk) {
-      ST.create({ trigger: '#what', start: 'top top', end: '+=260%', pin: true, scrub: true, onUpdate: self => setPillar(Math.min(3, Math.floor(self.progress * 4))) });
-      $$('li', pw).forEach((li, i) => li.addEventListener('mouseenter', () => setPillar(i)));
-    }
-
-    // work: horizontal ride
-    let hTween = null;
-    const track = $('#track');
-    if (isDesk) {
-      const dist = () => track.scrollWidth - innerWidth;
-      hTween = G.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '#work', start: 'top top', end: () => '+=' + dist(), pin: true, pinSpacing: true, scrub: 1, invalidateOnRefresh: true, onUpdate: self => G.set('#prog', { scaleX: self.progress }) } });
-      if (motion) $$('.card .ph img').forEach(img => G.fromTo(img, { xPercent: -7 }, { xPercent: 7, ease: 'none', scrollTrigger: { trigger: img.closest('.card'), containerAnimation: hTween, start: 'left right', end: 'right left', scrub: true } }));
-    }
-
-    // the photo pile
-    const pols = $$('.pol', desk);
-    const drags = [];
-    if (isDesk) {
-      pols.forEach((p, i) => { const [x, y, r] = DESK_POS[i]; G.set(p, { left: x + '%', top: y + '%', rotation: r, x: 0, y: 0 }); });
-      if (motion) G.from(pols, { y: () => 300 + Math.random() * 200, rotation: () => G.utils.random(-40, 40), opacity: 0, duration: 1.1, stagger: .05, ease: 'back.out(1.2)', scrollTrigger: { trigger: desk, start: 'top 75%' } });
-      let z = 10;
-      if (DR) pols.forEach(p => drags.push(...DR.create(p, {
-        type: 'x,y', bounds: desk, edgeResistance: .7,
-        onPress() { p.style.zIndex = ++z; G.to(p, { scale: 1.06, rotation: '+=' + G.utils.random(-6, 6), duration: .25 }); },
-        onRelease() { G.to(p, { scale: 1, duration: .4, ease: 'back.out(2)' }); },
-        onClick() { openLb(+p.dataset.ev, +p.dataset.j); },
-      })));
-      else pols.forEach(p => p.addEventListener('click', () => openLb(+p.dataset.ev, +p.dataset.j)));
-    } else {
-      pols.forEach(p => { G.set(p, { clearProps: 'left,top,transform,x,y,rotation' }); p.onclick = () => openLb(+p.dataset.ev, +p.dataset.j); });
-    }
-
-    // general reveals
-    if (motion) {
-      G.utils.toArray('.facts > div, .ix li, .nums li, .why li, .fc, .film, .off li, .cl li, .call li:nth-child(-n+20)').forEach(el => G.from(el, { y: 50, opacity: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 92%' } }));
-      G.utils.toArray('.fc .ph, .film .ph').forEach(el => G.from(el, { clipPath: 'inset(100% 0 0 0)', duration: 1.2, ease: 'expo.inOut', scrollTrigger: { trigger: el, start: 'top 88%' } }));
-      G.from('.sect span', { yPercent: 60, opacity: 0, stagger: .05, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: '.sect', start: 'top 85%' } });
-      G.from('#fbig i', { yPercent: 110, stagger: .05, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.foot', start: 'top 70%' } });
-      G.from('.magnet', { scale: 0, rotation: -90, duration: 1.2, ease: 'back.out(1.6)', scrollTrigger: { trigger: '.contact', start: 'top 70%' } });
-    }
-
-    return () => { drags.forEach(d => d.kill()); };
+  // counters
+  $$('[data-n]').forEach(b => {
+    const n = +b.dataset.n, s = b.dataset.s || '', o = { v: 0 };
+    ST.create({ trigger: b, start: 'top 92%', once: true, onEnter: () => G.to(o, { v: n, duration: 1.6, ease: 'power2.out', onUpdate: () => { b.textContent = Math.round(o.v).toLocaleString('en-IN') + s; } }) });
   });
 
-  // magnetic buttons
-  if (FINE && !RM) $$('.mag').forEach(el => {
-    const x = G.quickTo(el, 'x', { duration: .5, ease: 'power3' }), y = G.quickTo(el, 'y', { duration: .5, ease: 'power3' });
-    el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); x((e.clientX - r.left - r.width / 2) * .35); y((e.clientY - r.top - r.height / 2) * .35); });
-    el.addEventListener('pointerleave', () => { x(0); y(0); });
-  });
+  // hero content drifts up slightly as you scroll away
+  G.to('.hero .wrap', { yPercent: -12, opacity: .2, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
   addEventListener('load', () => ST.refresh());
 })();
