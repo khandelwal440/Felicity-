@@ -1,0 +1,1308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Felicity — The Way Towards Wonderful</title>
+<meta name="description" content="Felicity Integrated Marketing Services — an event management company with 13 years, 2,500+ projects and 200+ brands. Events, concerts, conferences, sports, activations across India and overseas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   FELICITY — event management · pure black & white
+   ========================================================= */
+:root{
+  --black:#000;--ink:#0A0A0A;--white:#fff;--paper:#F2F2F0;
+  --g1:#8C8C8C;--g2:#5A5A5A;
+  --line:rgba(0,0,0,.14);--line-d:rgba(255,255,255,.16);
+  --display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --text:"Plus Jakarta Sans",system-ui,sans-serif;
+  --e:cubic-bezier(.16,1,.3,1);
+  --wrap:min(1360px,100% - 64px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--white);color:var(--ink);font-family:var(--text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--black);color:var(--white)}
+.dk ::selection{background:var(--white);color:var(--black)}
+.wrap{width:var(--wrap);margin-inline:auto}
+.sec{position:relative;padding:clamp(96px,12vw,170px) 0}
+.dk{background:var(--black);color:var(--white)}
+.ser{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em}
+.out{color:transparent;-webkit-text-stroke:1.5px var(--black)}
+.dk .out{-webkit-text-stroke-color:var(--white)}
+.mono{font-family:var(--mono)}
+.act{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.act b{padding:4px 10px;border:1.5px solid currentColor;border-radius:999px;font-weight:600}
+.h2{font-family:var(--display);font-weight:400;font-size:clamp(54px,9vw,164px);line-height:.88;letter-spacing:-.005em;text-transform:uppercase}
+.h2 .ser{font-size:.92em;letter-spacing:-.02em}
+.h2 .out{-webkit-text-stroke-width:clamp(1.2px,.14vw,2.4px)}
+.lede{max-width:460px;font-size:16px;color:var(--g2)}
+.dk .lede{color:var(--g1)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin:22px 0 clamp(48px,6vw,90px)}
+
+/* film grain */
+body::after{content:"";position:fixed;inset:-50%;z-index:300;pointer-events:none;opacity:.07;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(4) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 28px;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:.02em;white-space:nowrap;overflow:hidden;isolation:isolate;border:1.5px solid currentColor;transition:color .5s var(--e)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:translateY(101%);transition:transform .6s var(--e)}
+.btn:hover::before{transform:none}
+.btn .ar{display:inline-block;transition:transform .6s var(--e)}
+.btn:hover .ar{transform:rotate(45deg)}
+.b-fill{background:var(--black);color:var(--white);border-color:var(--black)}
+.b-fill::before{background:var(--white)}
+.b-fill:hover{color:var(--black)}
+.b-line{color:var(--black)}
+.b-line::before{background:var(--black)}
+.b-line:hover{color:var(--white)}
+.dk .b-fill,.b-white{background:var(--white);color:var(--black);border-color:var(--white)}
+.dk .b-fill::before,.b-white::before{background:var(--black)}
+.dk .b-fill:hover,.b-white:hover{color:var(--white)}
+.dk .b-line{color:var(--white)}
+.dk .b-line::before{background:var(--white)}
+.dk .b-line:hover{color:var(--black)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--e),transform 1.1s var(--e);transition-delay:calc(var(--i,0) * 70ms)}
+.rv.in{opacity:1;transform:none}
+
+/* curtain fabric (used by intro + finale) */
+.fabric{background:
+  linear-gradient(180deg,rgba(255,255,255,.06),transparent 30%,transparent 80%,rgba(0,0,0,.5)),
+  repeating-linear-gradient(90deg,#050505 0,#1b1b1b 18px,#2a2a2a 26px,#151515 36px,#050505 52px)}
+
+/* ============ INTRO CURTAIN ============ */
+.curtain{position:fixed;inset:0;z-index:400}
+.curtain.open{pointer-events:none}
+.curtain .c{position:absolute;top:0;bottom:0;width:51%;transition:transform 1.6s cubic-bezier(.75,0,.2,1)}
+.curtain .c.l{left:0;box-shadow:12px 0 40px rgba(0,0,0,.6)}
+.curtain .c.r{right:0;box-shadow:-12px 0 40px rgba(0,0,0,.6)}
+.curtain.open .c.l{transform:translateX(-102%)}
+.curtain.open .c.r{transform:translateX(102%)}
+.curtain .val{position:absolute;left:0;right:0;top:0;height:clamp(40px,7vh,70px);z-index:2;transition:transform 1.2s var(--e) .5s;background:repeating-linear-gradient(90deg,#111 0 30px,#222 30px 60px);border-bottom:4px solid #000}
+.curtain .val::after{content:"";position:absolute;left:0;right:0;bottom:-18px;height:18px;background:radial-gradient(circle at 15px 0,#1a1a1a 14px,transparent 15px) 0 0/30px 18px}
+.curtain.open .val{transform:translateY(-140%)}
+.curtain .mid{position:absolute;inset:0;z-index:3;display:grid;place-items:center;text-align:center;color:#fff;transition:opacity .5s}
+.curtain.open .mid{opacity:0}
+.curtain .mid small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#aaa}
+.curtain .num{display:block;font-family:var(--display);font-size:clamp(120px,26vw,320px);line-height:.9;text-shadow:0 0 60px rgba(255,255,255,.35)}
+.curtain .num.pop{animation:pop .5s var(--e)}
+@keyframes pop{from{transform:scale(1.5);opacity:0}}
+.curtain .spot{position:absolute;left:50%;top:50%;width:min(80vw,620px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,255,255,.18),transparent 65%);z-index:2;pointer-events:none}
+
+/* ============ CURSOR ============ */
+.cur{position:fixed;left:0;top:0;z-index:350;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;display:grid;place-items:center;transition:width .45s var(--e),height .45s var(--e),margin .45s var(--e),opacity .3s;will-change:transform}
+.cur b{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#000;opacity:0;transition:opacity .3s}
+.cur.big{width:96px;height:96px;margin:-48px 0 0 -48px}
+.cur.big b{opacity:1}
+.cur.link{width:54px;height:54px;margin:-27px 0 0 -27px}
+.halo{position:fixed;left:0;top:0;z-index:5;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,255,255,.09),transparent 62%);mix-blend-mode:screen;will-change:transform}
+@media (hover:none),(pointer:coarse){.cur,.halo{display:none}}
+.confetti{position:fixed;inset:0;z-index:360;pointer-events:none}
+
+/* ============ NAV ============ */
+.nav{position:fixed;inset:0 0 auto;z-index:200;mix-blend-mode:difference;color:#fff;pointer-events:none}
+.nav .bar{width:var(--wrap);margin-inline:auto;height:84px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.nav a,.nav button{pointer-events:auto}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:26px;letter-spacing:.02em;line-height:1}
+.logo i{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center;color:#000;font-style:normal;font-size:15px}
+.nav ul{display:flex;gap:24px;list-style:none;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.nav ul a{position:relative;padding:4px 0}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--e)}
+.nav ul a:hover::after,.nav ul a.on::after{transform:scaleX(1);transform-origin:left}
+.menu{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.menu .ic{width:44px;height:44px;border-radius:50%;border:1.5px solid #fff;position:relative}
+.menu .ic i{position:absolute;left:12px;right:12px;height:1.5px;background:#fff;transition:transform .5s var(--e)}
+.menu .ic i:first-child{top:18px}.menu .ic i:last-child{top:24px}
+.menu.open .ic i:first-child{transform:translateY(3px) rotate(45deg)}.menu.open .ic i:last-child{transform:translateY(-3px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:190;color:var(--white);display:flex;flex-direction:column;justify-content:flex-end;padding:110px clamp(16px,4vw,48px) 36px;visibility:hidden;transition:visibility 0s 1s}
+.mnav .cl,.mnav .cr{position:absolute;top:0;bottom:0;width:50.5%;transition:transform .9s cubic-bezier(.75,0,.2,1)}
+.mnav .cl{left:0;transform:translateX(-101%)}.mnav .cr{right:0;transform:translateX(101%)}
+.mnav.open{visibility:visible;transition:none}
+.mnav.open .cl,.mnav.open .cr{transform:none}
+.mnav .in{position:relative;opacity:0;transition:opacity .4s}
+.mnav.open .in{opacity:1;transition:opacity .5s .5s}
+.mnav a.lk{display:flex;align-items:baseline;gap:18px;font-family:var(--display);font-size:clamp(44px,8.5vw,104px);line-height:1;text-transform:uppercase;transition:padding .5s var(--e)}
+.mnav a.lk small{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--g1)}
+.mnav a.lk:hover{padding-left:24px}
+.mnav .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d);font-family:var(--mono);font-size:13px;color:var(--g1)}
+
+/* ============ HERO / STAGE ============ */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 0 34px;overflow:hidden;background:#000;color:#fff;--sx:50%;--sy:42%}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .bg.dim{opacity:.32}
+.hero .bg.lit{-webkit-mask-image:radial-gradient(circle clamp(150px,22vw,330px) at var(--sx) var(--sy),#000 30%,transparent 72%);mask-image:radial-gradient(circle clamp(150px,22vw,330px) at var(--sx) var(--sy),#000 30%,transparent 72%)}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent 30%,transparent 50%,rgba(0,0,0,.92) 88%)}
+.truss{position:absolute;top:84px;left:0;right:0;height:24px;display:flex;justify-content:space-around;align-items:center;border-block:1.5px solid rgba(255,255,255,.18);background:repeating-linear-gradient(60deg,transparent 0 10px,rgba(255,255,255,.12) 10px 11.5px),repeating-linear-gradient(-60deg,transparent 0 10px,rgba(255,255,255,.12) 10px 11.5px)}
+.truss i{width:12px;height:12px;border-radius:50%;background:#fff;opacity:.25;animation:lamp 2.2s infinite;animation-delay:calc(var(--i) * .14s)}
+@keyframes lamp{0%,100%{opacity:.2;box-shadow:none}45%{opacity:1;box-shadow:0 0 14px 5px rgba(255,255,255,.75),0 26px 40px 6px rgba(255,255,255,.12)}}
+.beam{position:absolute;top:96px;width:44vw;height:120%;margin-left:-22vw;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,.05) 60%,transparent 85%);clip-path:polygon(48.5% 0,51.5% 0,100% 100%,0 100%);transform-origin:50% 0;mix-blend-mode:screen;pointer-events:none;animation:swing 7s ease-in-out infinite alternate}
+.beam:nth-of-type(2){animation-duration:9s;animation-delay:-3s}
+.beam:nth-of-type(3){animation-duration:8s;animation-delay:-5s}
+@keyframes swing{from{transform:rotate(-22deg)}to{transform:rotate(22deg)}}
+.hero .wrap{position:relative;z-index:2}
+.hero .presents{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.rot{display:inline-flex;gap:8px}
+.rot .w{position:relative;display:inline-block;height:1.5em;min-width:130px;overflow:hidden;vertical-align:bottom;color:#fff}
+.rot .w b{position:absolute;left:0;top:0;font-weight:600;transform:translateY(110%);transition:transform .8s var(--e)}
+.rot .w b.on{transform:none}
+.rot .w b.off{transform:translateY(-110%)}
+.mega{margin-top:clamp(10px,1.5vh,20px);font-family:var(--display);font-weight:400;font-size:clamp(84px,22vw,380px);line-height:.8;letter-spacing:.005em;display:flex;justify-content:space-between;text-transform:uppercase;text-shadow:0 0 50px rgba(255,255,255,.18)}
+.mega span{display:inline-block;overflow:hidden;padding-top:.04em}
+.mega span i{display:inline-block;font-style:normal;transform:translateY(105%);transition:transform 1.3s var(--e);transition-delay:calc(.2s + var(--i) * 60ms)}
+.show .mega span i{transform:none}
+.mega span:nth-child(even) i{color:transparent;-webkit-text-stroke:clamp(1.5px,.2vw,3px) #fff}
+.poster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(18px,3vh,32px);border-top:1.5px solid #fff;border-bottom:1px solid rgba(255,255,255,.25)}
+.poster div{padding:14px 16px 14px 0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.poster div+div{padding-left:16px;border-left:1px solid rgba(255,255,255,.25)}
+.poster small{display:block;color:rgba(255,255,255,.55);font-size:10.5px;letter-spacing:.2em;margin-bottom:4px}
+.hero .row2{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:22px}
+.hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(32px,3.8vw,62px);line-height:1}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.onair{display:inline-flex;align-items:center;gap:8px}
+.onair::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.15}}
+
+/* ============ LED / BANDS ============ */
+.bands{position:relative;height:clamp(200px,22vw,300px);overflow:hidden;background:var(--white)}
+.band{position:absolute;left:-5%;right:-5%;top:50%;padding:16px 0;overflow:hidden}
+.band.a{background:#000;transform:translateY(-50%) rotate(-4deg);z-index:2;border-block:6px solid #111}
+.band.b{background:var(--white);color:var(--black);border-block:1.5px solid var(--black);transform:translateY(-50%) rotate(3deg)}
+.band .row{display:flex;width:max-content;animation:mq 40s linear infinite}
+.band.b .row{animation-direction:reverse;animation-duration:48s}
+.band span{display:inline-flex;align-items:center;gap:28px;padding-right:28px;font-family:var(--display);font-size:clamp(30px,3.8vw,60px);text-transform:uppercase;white-space:nowrap;line-height:1.1}
+.band.a span{color:transparent;background:radial-gradient(circle,#fff 52%,transparent 56%) 0 0/5px 5px;-webkit-background-clip:text;background-clip:text;font-size:clamp(40px,5vw,78px)}
+.band.b span em{font-family:var(--serif);text-transform:none}
+.band i{font-style:normal;font-size:.5em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ============ ACT 01 — WHO ============ */
+.who .stmt{margin-top:28px;font-family:var(--text);font-weight:700;font-size:clamp(28px,4vw,64px);line-height:1.1;letter-spacing:-.035em}
+.who .stmt .wd{opacity:.13;transition:opacity .4s}
+.who .stmt .wd.lit{opacity:1}
+.who .stmt .ser{font-weight:400}
+.board{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:clamp(64px,8vw,120px)}
+.board li{background:#000;color:#fff;border-radius:8px;padding:16px 16px 18px;box-shadow:inset 0 0 0 1px #222}
+.digits{display:flex;gap:4px;align-items:center}
+.board .digits{min-height:clamp(60px,6vw,96px)}
+.digits i,.digits u{position:relative;display:grid;place-items:center;font-style:normal;text-decoration:none;font-family:var(--display);font-size:clamp(34px,3.6vw,62px);line-height:1}
+.digits i{min-width:.82em;padding:.12em .06em;background:linear-gradient(180deg,#1d1d1d 50%,#121212 50%);border-radius:5px;overflow:hidden}
+.digits i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:#000}
+.digits u{padding:0 .04em}
+.board span{display:block;margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--g1)}
+.who .pair{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-top:clamp(64px,8vw,110px)}
+.who figure{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/10}
+.who figure img{width:100%;height:118%;object-fit:cover;transform:translateY(var(--py,0))}
+.who figcaption{position:absolute;left:14px;bottom:14px;padding:7px 14px;border-radius:999px;background:var(--white);color:var(--black);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+
+/* ============ ACT 02 — LINE-UP ============ */
+.lineup{text-align:center;border-top:1.5px solid #fff;border-bottom:1.5px solid #fff;padding:clamp(28px,4vw,56px) 0}
+.day{padding:clamp(18px,2.2vw,30px) 0}
+.day+.day{border-top:1px dashed rgba(255,255,255,.25)}
+.day h3{display:flex;justify-content:center;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--g1);margin-bottom:12px}
+.day h3::before,.day h3::after{content:"";width:40px;height:1px;background:currentColor}
+.day ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.3em;row-gap:.06em}
+.day li{display:inline-flex;align-items:baseline;gap:.3em;font-family:var(--display);font-size:clamp(28px,3.8vw,62px);line-height:1.08;text-transform:uppercase}
+.day.head-liner li{font-size:clamp(38px,5.6vw,98px)}
+.day li:not(:last-child)::after{content:"✦";font-size:.36em;color:var(--g1);transform:translateY(-.4em)}
+.day a{transition:color .3s,-webkit-text-stroke-color .3s;-webkit-text-stroke:1.5px transparent}
+.day a:hover{color:transparent;-webkit-text-stroke-color:#fff}
+.lineup .foot{margin-top:clamp(18px,2vw,28px);font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--g1)}
+.peek{position:fixed;left:0;top:0;z-index:150;width:280px;aspect-ratio:4/3;border-radius:8px;overflow:hidden;pointer-events:none;opacity:0;transform:translate(-50%,-115%) rotate(-4deg) scale(.7);transition:opacity .3s,transform .5s var(--e);box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.peek.on{opacity:1;transform:translate(-50%,-115%) rotate(-4deg) scale(1)}
+.peek img{width:100%;height:100%;object-fit:cover}
+.wwd-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,90px);align-items:end;margin:22px 0 clamp(48px,6vw,90px)}
+.wwd-intro p{font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:var(--g1)}
+.wwd-intro p b{color:#fff;font-weight:600}
+
+/* ============ RUN OF SHOW ============ */
+.ros{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-top:44px;--p:0}
+.ros::before,.ros::after{content:"";position:absolute;left:0;right:0;top:14px;height:2px;background:var(--line)}
+.ros::after{background:var(--black);transform:scaleX(var(--p));transform-origin:left}
+.cue{position:relative}
+.cue .dot{position:absolute;top:-44px;left:0;width:30px;height:30px;border-radius:50%;background:var(--white);border:2px solid var(--black);z-index:1;display:grid;place-items:center;transition:background .4s,box-shadow .4s}
+.cue .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--black);transition:background .4s}
+.cue.lit .dot{background:var(--black);box-shadow:0 0 0 8px rgba(0,0,0,.08)}
+.cue.lit .dot::after{background:var(--white)}
+.cue small{display:block;margin-top:6px;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--g1)}
+.cue h3{margin-top:8px;font-family:var(--display);font-weight:400;font-size:clamp(30px,3vw,48px);line-height:.95;text-transform:uppercase;opacity:.25;transition:opacity .6s}
+.cue.lit h3{opacity:1}
+.cue p{margin-top:10px;font-size:15px;color:var(--g2);max-width:290px}
+.cue .ph{margin-top:18px;aspect-ratio:4/3;border-radius:8px;overflow:hidden;opacity:.35;transform:scale(.96);transition:opacity .7s,transform .9s var(--e)}
+.cue.lit .ph{opacity:1;transform:none}
+.cue .ph img{width:100%;height:100%;object-fit:cover}
+
+/* ============ WHY / APART ============ */
+.apart .grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,6vw,120px);align-items:start}
+.apart .side{position:sticky;top:120px}
+.apart .side .big{margin-top:clamp(28px,4vw,56px);font-family:var(--display);font-size:clamp(130px,15vw,260px);line-height:.8}
+.apart .side .big small{font-size:.22em;color:var(--g1)}
+.alist{list-style:none;border-top:1px solid var(--line-d)}
+.alist li{border-bottom:1px solid var(--line-d)}
+.alist button{display:grid;grid-template-columns:64px minmax(0,1fr) 30px;gap:12px;width:100%;text-align:left;padding:clamp(24px,2.8vw,38px) 0;opacity:.35;transition:opacity .5s var(--e)}
+.alist li.on button,.alist button:hover{opacity:1}
+.alist .n{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1}
+.alist h3{font-family:var(--text);font-weight:700;font-size:clamp(22px,2.3vw,36px);line-height:1.12;letter-spacing:-.03em}
+.alist .pm{font-size:26px;line-height:1;transition:transform .6s var(--e)}
+.alist li.on .pm{transform:rotate(45deg)}
+.alist .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s var(--e)}
+.alist li.on .more{grid-template-rows:1fr}
+.alist .more>div{overflow:hidden}
+.alist .more p{padding:14px 0 0;color:var(--g1);font-size:15.5px;max-width:520px}
+
+/* ============ SECTORS ============ */
+.tiles{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1.5px solid var(--black);border-left:1px solid var(--line)}
+.tiles li{position:relative;min-height:180px;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;transition:color .45s var(--e)}
+.tiles li::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),#3a3a3a,#000 60%);clip-path:circle(0% at var(--mx,50%) var(--my,50%));transition:clip-path .7s var(--e)}
+.tiles li:hover{color:var(--white)}
+.tiles li:hover::before{clip-path:circle(150% at var(--mx,50%) var(--my,50%))}
+.tiles small{font-family:var(--mono);font-size:12px;color:var(--g1)}
+.tiles h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.2vw,36px);line-height:1;text-transform:uppercase}
+.focus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(64px,8vw,120px)}
+.fc{border-radius:8px;overflow:hidden;background:var(--black);color:var(--white);display:flex;flex-direction:column}
+.fc .ph{aspect-ratio:16/10;overflow:hidden}
+.fc .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--e)}
+.fc:hover .ph img{transform:scale(1.06)}
+.fc .b{padding:clamp(22px,2.4vw,32px)}
+.fc small{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--g1)}
+.fc h3{margin-top:10px;font-family:var(--display);font-weight:400;font-size:clamp(30px,2.8vw,44px);line-height:.95;text-transform:uppercase}
+.fc ul{list-style:none;margin-top:18px;border-top:1px solid var(--line-d)}
+.fc li{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid var(--line-d);font-size:14.5px}
+.fc li::after{content:"✦";color:var(--g1);font-size:11px}
+
+/* ============ SHOW REEL — TICKETS ============ */
+.work{padding-bottom:0}
+.work .head{margin-bottom:clamp(20px,2.5vw,40px)}
+.hs{position:relative}
+.hs-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.hs-track{display:flex;align-items:center;gap:26px;padding:20px max(32px,calc(50vw - 680px));will-change:transform;width:max-content}
+.ticket{--cut:62%;position:relative;flex:none;width:clamp(290px,25vw,380px);background:var(--white);color:var(--black);border-radius:16px;text-align:left;display:flex;flex-direction:column;transform:rotate(var(--rot,0deg));transition:transform .7s var(--e)}
+.ticket:hover{transform:translateY(-12px) rotate(calc(var(--rot,0deg) * -1))}
+.ticket::before,.ticket::after{content:"";position:absolute;top:var(--cut);width:30px;height:30px;border-radius:50%;background:#000;transform:translateY(-50%);z-index:2}
+.ticket::before{left:-15px}.ticket::after{right:-15px}
+.ticket .tp{position:relative;margin:12px 12px 0;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#111}
+.ticket .tp img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--e)}
+.ticket:hover .tp img{transform:scale(1.07)}
+.ticket .tag{position:absolute;left:10px;top:10px;padding:5px 10px;border-radius:999px;background:#000;color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+.ticket .no{position:absolute;right:10px;top:10px;padding:5px 10px;border-radius:999px;background:#fff;color:#000;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em}
+.ticket .tb{padding:16px 20px 18px;flex:1}
+.ticket h3{font-family:var(--display);font-weight:400;font-size:clamp(28px,2.4vw,38px);line-height:.95;text-transform:uppercase}
+.ticket p{margin-top:8px;font-size:13.5px;color:var(--g2);min-height:3.2em}
+.ticket .stub{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px 18px;border-top:2px dashed rgba(0,0,0,.25);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.ticket .stub b{display:block;font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:.04em}
+.barcode{width:96px;height:38px;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 4px,#000 4px 5px,transparent 5px 8px,#000 8px 11px,transparent 11px 12px,#000 12px 13px,transparent 13px 16px)}
+.ticket.intro{background:transparent;color:#fff;border:1.5px dashed rgba(255,255,255,.4);justify-content:space-between;padding:26px;min-height:min(62vh,540px)}
+.ticket.intro::before,.ticket.intro::after{display:none}
+.ticket.intro .giant{font-family:var(--display);font-size:clamp(110px,10vw,170px);line-height:.85}
+.ticket.intro p{color:var(--g1)}
+.hs-bar{width:var(--wrap);margin:26px auto 0;height:2px;background:var(--line-d);position:relative}
+.hs-bar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--white);transform:scaleX(0);transform-origin:left}
+.hs-meta{width:var(--wrap);margin:12px auto 0;display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--g1)}
+
+/* ============ PHOTO WALL ============ */
+.wall{columns:4;column-gap:12px}
+.wall button{position:relative;display:block;width:100%;margin:0 0 12px;break-inside:avoid;border-radius:8px;overflow:hidden;background:#eee}
+.wall img{width:100%;height:auto;transition:transform 1.2s var(--e)}
+.wall button:hover img{transform:scale(1.05)}
+.wall span{position:absolute;left:8px;bottom:8px;padding:5px 10px;border-radius:999px;background:#000;color:#fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .45s var(--e)}
+.wall button:hover span,.wall button:focus-visible span{opacity:1;transform:none}
+.wall.short button:nth-child(n+25){display:none}
+@media (max-width:1100px){.wall{columns:3}}
+@media (max-width:720px){.wall{columns:2;column-gap:8px}.wall button{margin-bottom:8px}.wall.short button:nth-child(n+13){display:none}.wall span{opacity:1;transform:none}}
+
+/* ============ SCOREBOARD NUMBERS ============ */
+.nums{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.nums li{background:#000;color:#fff;border-radius:8px;padding:18px 18px 22px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;min-height:210px;box-shadow:inset 0 0 0 1px #222}
+.nums .top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--g1)}
+.nums .top i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.nums .top i::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+.nums .digits{flex-wrap:wrap}
+.nums span{font-size:14px;color:rgba(255,255,255,.75);max-width:240px}
+
+/* ============ SCREENING ROOM — FILM STRIP ============ */
+.filmstrip{position:relative;background:#111;padding:34px 0;overflow:hidden;margin-top:8px}
+.filmstrip::before,.filmstrip::after{content:"";position:absolute;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,transparent 0 12px,#e9e9e9 12px 26px,transparent 26px 36px);opacity:.85;-webkit-mask:linear-gradient(#000,#000);border-radius:2px}
+.filmstrip::before{top:10px}.filmstrip::after{bottom:10px}
+.filmstrip .row{display:flex;gap:10px;width:max-content;animation:mq 70s linear infinite}
+.filmstrip:hover .row{animation-play-state:paused}
+.frame{position:relative;flex:none;width:clamp(260px,26vw,380px);aspect-ratio:16/9;overflow:hidden;background:#000}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--e)}
+.frame:hover img{transform:scale(1.08)}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.88))}
+.frame .b{position:absolute;left:14px;right:14px;bottom:12px;z-index:1}
+.frame small{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.frame h3{font-family:var(--text);font-weight:700;font-size:15.5px;line-height:1.2;letter-spacing:-.01em}
+.frame .rec{position:absolute;right:12px;top:10px;z-index:1;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em}
+.cfoot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid var(--line-d)}
+.cfoot p{color:var(--g1);max-width:560px}
+
+/* ============ GUEST LIST — CLIENTS ============ */
+.guest{position:relative;background:var(--paper);border-radius:10px;padding:clamp(26px,3.4vw,48px);box-shadow:0 1px 0 var(--line)}
+.guest .gh{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1.5px solid var(--black);font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.guest .gh b{font-family:var(--display);font-weight:400;font-size:clamp(28px,2.6vw,40px);letter-spacing:.02em}
+.glist{list-style:none;columns:3;column-gap:clamp(24px,3vw,48px);margin-top:10px}
+.glist li{break-inside:avoid;display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dotted rgba(0,0,0,.3);font-weight:600;font-size:clamp(15px,1.2vw,17.5px);transition:padding .4s var(--e)}
+.glist li:hover{padding-left:8px}
+.glist li i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--g1);width:24px;flex:none}
+.glist li::after{content:"✓";margin-left:auto;font-weight:700;opacity:0;transform:scale(.4);transition:opacity .3s,transform .4s var(--e)}
+.glist.ticked li::after{opacity:1;transform:none;transition-delay:calc(var(--i) * 25ms)}
+.glist.short li:nth-child(n+25){display:none}
+.cmore{display:flex;justify-content:center;margin-top:26px}
+.mq{margin-top:clamp(64px,8vw,110px);padding:18px 0;background:#000;overflow:hidden;border-block:6px solid #111}
+.mq .row{display:flex;width:max-content;animation:mq 70s linear infinite}
+.mq span{display:inline-flex;align-items:center;gap:26px;padding-right:26px;white-space:nowrap;font-family:var(--display);font-size:clamp(34px,4vw,62px);text-transform:uppercase;color:transparent;background:radial-gradient(circle,#fff 52%,transparent 56%) 0 0/5px 5px;-webkit-background-clip:text;background-clip:text}
+.mq i{font-style:normal;font-size:.45em}
+.assoc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,96px);margin-top:clamp(80px,10vw,140px)}
+.assoc h3{margin-top:14px;font-family:var(--display);font-weight:400;font-size:clamp(44px,5vw,84px);line-height:.9;text-transform:uppercase}
+.assoc p{margin-top:16px;color:var(--g2);max-width:400px}
+.pills{list-style:none;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.pills li{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 10px;border-radius:999px;border:1.5px solid var(--black);font-size:14.5px;font-weight:600;transition:background .35s,color .35s}
+.pills li::before{content:"CREW";padding:3px 8px;border-radius:999px;background:var(--black);color:var(--white);font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;transition:background .35s,color .35s}
+.pills li:hover{background:var(--black);color:var(--white)}
+.pills li:hover::before{background:var(--white);color:var(--black)}
+
+/* ============ TOUR DATES — NETWORK ============ */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{padding:9px 16px;border-radius:999px;border:1.5px solid var(--line-d);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;transition:all .35s}
+.filters button:hover{border-color:#fff}
+.filters button.on{background:#fff;border-color:#fff;color:#000}
+.tour{list-style:none;border-top:1.5px solid #fff}
+.tour li{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1.3fr) 140px;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid var(--line-d);transition:padding .5s var(--e),background .4s}
+.tour li.hide{display:none}
+.tour li:hover{padding-left:14px;background:rgba(255,255,255,.04)}
+.tour .n{font-family:var(--mono);font-size:12px;color:var(--g1)}
+.tour h3{font-family:var(--display);font-weight:400;font-size:clamp(32px,3.6vw,58px);line-height:1;text-transform:uppercase}
+.tour p{font-size:14px;color:var(--g1)}
+.tour .st{justify-self:end;padding:7px 14px;border-radius:999px;border:1.5px solid #fff;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.tour li.office .st{background:#fff;color:#000}
+
+/* ============ BOOKING — CONTACT ============ */
+.contact .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:start}
+.contact p.lead{margin-top:26px;font-size:18px;color:var(--g2);max-width:520px}
+.lines{list-style:none;margin-top:34px;border-top:1.5px solid var(--black)}
+.lines a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:400;font-size:clamp(22px,2.2vw,34px);letter-spacing:.01em;transition:padding .5s var(--e)}
+.lines a:hover{padding-left:14px}
+.lines small{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--g1)}
+.person{margin-top:26px;font-size:14px;color:var(--g2)}
+.person b{color:var(--black)}
+.form{position:relative;border-radius:16px;background:var(--black);color:var(--white)}
+.form::before,.form::after{content:"";position:absolute;top:118px;width:32px;height:32px;border-radius:50%;background:var(--white);transform:translateY(-50%)}
+.form::before{left:-16px}.form::after{right:-16px}
+.form .fh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;height:118px;padding:0 clamp(24px,3vw,40px) 22px;border-bottom:2px dashed rgba(255,255,255,.3)}
+.form h3{font-family:var(--display);font-weight:400;font-size:clamp(34px,3.2vw,52px);line-height:.9;text-transform:uppercase}
+.form .fh .mono{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--g1);text-align:right}
+.form .fb{padding:6px clamp(24px,3vw,40px) clamp(24px,3vw,40px)}
+.fld{display:grid;gap:8px;margin-top:18px}
+.fld>label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--g1)}
+.fld input,.fld textarea{width:100%;padding:12px 0;border:0;border-bottom:1.5px solid rgba(255,255,255,.3);background:transparent;font:inherit;font-size:16px;color:var(--white);outline:none;border-radius:0;transition:border-color .3s}
+.fld input::placeholder,.fld textarea::placeholder{color:rgba(255,255,255,.35)}
+.fld input:focus,.fld textarea:focus{border-color:var(--white)}
+.fld input.bad{border-color:var(--white);background:repeating-linear-gradient(-45deg,transparent 0 6px,rgba(255,255,255,.1) 6px 12px)}
+.fld textarea{min-height:96px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.chips span{display:inline-block;padding:8px 14px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);font-size:13.5px;font-weight:500;transition:all .3s}
+.chips label:hover span{border-color:var(--white)}
+.chips input:checked+span{background:var(--white);color:var(--black);border-color:var(--white)}
+.chips input:focus-visible+span{outline:2px solid var(--white);outline-offset:2px}
+.form .btn{width:100%;justify-content:center;margin-top:26px}
+.form .fine{margin-top:12px;font-size:12.5px;color:var(--g1)}
+.form .ok{display:none;margin-top:14px;padding:14px 16px;border-radius:8px;border:1.5px solid var(--white);font-size:14px}
+.form.sent .ok{display:block}
+
+/* ============ FINALE ============ */
+.finale{position:relative;overflow:hidden;background:#000;color:#fff;text-align:center;padding:clamp(110px,14vw,200px) 0 clamp(90px,11vw,160px);--cp:0}
+.finale .cw{position:absolute;top:0;bottom:0;width:calc(4% + var(--cp) * 24%);z-index:1;box-shadow:0 0 40px rgba(0,0,0,.8)}
+.finale .big,.finale .so,.finale .bow{z-index:3}
+.finale .cw.l{left:0}.finale .cw.r{right:0}
+.finale .glow{position:absolute;left:50%;top:50%;width:min(90vw,900px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,255,255,.16),transparent 62%)}
+.finale .big{position:relative;font-family:var(--display);font-weight:400;font-size:clamp(90px,21vw,360px);line-height:.85;text-transform:uppercase;display:flex;justify-content:center}
+.finale .big span{display:inline-block;transform:translateY(60%) rotate(6deg);opacity:0;transition:transform 1.2s var(--e),opacity 1s var(--e);transition-delay:calc(var(--i) * 70ms)}
+.finale .big span:nth-child(even){color:transparent;-webkit-text-stroke:clamp(1.5px,.22vw,3.5px) #fff}
+.finale.in .big span{transform:none;opacity:1}
+.finale .so{position:relative;margin-top:16px;font-family:var(--serif);font-style:italic;font-size:clamp(30px,3.4vw,54px)}
+.finale .bow{position:relative;margin-top:30px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--g1)}
+.footer{padding:clamp(60px,8vw,110px) 0 30px;border-top:1px solid #1a1a1a}
+.footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:32px}
+.footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--g1);margin-bottom:14px}
+.footer p,.footer li{font-size:14.5px;color:rgba(255,255,255,.82)}
+.footer ul{list-style:none;display:grid;gap:8px}
+.footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.footer .fl{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.footer .fl img{width:72px;height:auto;padding:8px;border-radius:8px;background:#fff}
+.footer .fl b{font-family:var(--display);font-weight:400;font-size:32px;letter-spacing:.02em}
+.footer .base{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:60px;padding-top:22px;border-top:1px solid var(--line-d);font-family:var(--mono);font-size:12px;color:var(--g1)}
+.totop{position:fixed;right:20px;bottom:20px;z-index:180;width:52px;height:52px;border-radius:50%;background:var(--white);color:var(--black);border:1.5px solid var(--black);display:grid;place-items:center;font-size:18px;transform:scale(0);transition:transform .6s var(--e)}
+.totop.show{transform:scale(1)}
+.totop:hover{background:var(--black);color:var(--white);border-color:var(--white)}
+
+/* ============ LIGHTBOX ============ */
+.lb{position:fixed;inset:0;z-index:320;background:rgba(0,0,0,.97);color:var(--white);display:grid;grid-template-rows:auto 1fr auto;opacity:0;visibility:hidden;transition:opacity .5s var(--e),visibility 0s .5s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .5s var(--e)}
+.lb .top,.lb .bot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px clamp(16px,3vw,36px)}
+.lb .top h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.4vw,36px);text-transform:uppercase;line-height:1}
+.lb .top p{margin-top:4px;font-size:13px;color:var(--g1)}
+.lb .x,.lb .nv{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--white);display:grid;place-items:center;font-size:20px;flex:none;transition:background .3s,color .3s}
+.lb .x:hover,.lb .nv:hover{background:var(--white);color:var(--black)}
+.lb .stage{position:relative;display:flex;align-items:center;justify-content:center;padding:0 clamp(16px,6vw,110px);min-height:0}
+.lb .stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;animation:lbin .6s var(--e)}
+@keyframes lbin{from{opacity:0;transform:scale(.96)}}
+.lb .nv{position:absolute;top:50%;transform:translateY(-50%)}
+.lb .nv.p{left:clamp(8px,2vw,30px)}.lb .nv.n{right:clamp(8px,2vw,30px)}
+.lb .count{font-family:var(--display);font-size:26px}
+.lb .thumbs{display:flex;gap:8px;overflow-x:auto}
+.lb .thumbs button{flex:none;width:72px;height:50px;border-radius:3px;overflow:hidden;opacity:.4;transition:opacity .3s;outline-offset:2px}
+.lb .thumbs button.on,.lb .thumbs button:hover{opacity:1}
+.lb .thumbs img{width:100%;height:100%;object-fit:cover}
+.noscroll{overflow:hidden}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1100px){
+  .nav ul{display:none}
+  .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .board{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .glist{columns:2}
+  .poster{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .poster div:nth-child(3){padding-left:0;border-left:0}
+  .poster div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.25)}
+}
+@media (max-width:960px){
+  .apart .grid,.contact .grid,.assoc,.wwd-intro{grid-template-columns:1fr}
+  .apart .side{position:relative;top:0}
+  .apart .side .big{display:none}
+  .focus{grid-template-columns:1fr 1fr}
+  .ros{grid-template-columns:1fr 1fr;row-gap:64px}
+  .ros::before,.ros::after{display:none}
+  .cue .dot{top:-38px}
+  .footer .cols{grid-template-columns:1fr 1fr}
+  .tour li{grid-template-columns:50px minmax(0,1fr) 120px}
+  .tour p{grid-column:2/3;grid-row:2}
+}
+@media (max-width:860px){
+  .hs-sticky{position:relative;height:auto;padding:10px 0}
+  .hs-track{overflow-x:auto;scroll-snap-type:x mandatory;width:auto;padding:20px 16px 26px;transform:none!important;scrollbar-width:none}
+  .hs-track::-webkit-scrollbar{display:none}
+  .ticket{scroll-snap-align:center;width:min(80vw,340px)}
+  .ticket.intro{min-height:auto}
+  .work{padding-bottom:clamp(64px,10vw,120px)}
+}
+@media (max-width:720px){
+  :root{--wrap:calc(100% - 32px)}
+  .head{flex-direction:column;align-items:flex-start;gap:18px}
+  .nav .bar{height:72px}
+  .menu>span:first-child{display:none}
+  .truss{top:72px}
+  .beam{top:84px;width:80vw;margin-left:-40vw}
+  .beam:nth-of-type(3){display:none}
+  .hero{padding-top:120px}
+  .hero .presents .hint{display:none}
+  .focus,.row2,.who .pair,.ros{grid-template-columns:1fr}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tiles li{min-height:120px;padding:16px}
+  .board{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .board li:last-child{grid-column:1/-1}
+  .nums{grid-template-columns:1fr}
+  .glist{columns:1}
+  .glist.short li:nth-child(n+13){display:none}
+  .tour li{grid-template-columns:34px minmax(0,1fr);gap:4px 12px}
+  .tour .st{grid-column:2;justify-self:start;margin-top:8px}
+  .footer .cols{grid-template-columns:1fr}
+  .alist button{grid-template-columns:44px minmax(0,1fr) 24px}
+  .lb .thumbs{display:none}
+  .form .fh{height:auto;padding-top:24px;flex-direction:column;align-items:flex-start}
+  .form::before,.form::after{display:none}
+  .form .fh .mono{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .rv,.mega span i,.finale .big span{opacity:1!important;transform:none!important}
+  .who .stmt .wd{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<!-- curtain intro -->
+<div class="curtain" id="curtain" aria-hidden="true">
+  <div class="val"></div>
+  <div class="c l fabric"></div><div class="c r fabric"></div>
+  <div class="spot"></div>
+  <div class="mid"><div><small>Felicity presents</small><span class="num" id="cd">3</span><small id="cdT">Lights · Camera · Action</small></div></div>
+</div>
+
+<div class="halo" id="halo" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"><b id="curT">View</b></div>
+<div class="peek" id="peek" aria-hidden="true"><img id="peekImg" alt=""></div>
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="bar">
+    <a href="#top" class="logo" aria-label="Felicity — home"><i>F</i>FELICITY</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#lineup">Line-up</a></li>
+      <li><a href="#show">Run of show</a></li>
+      <li><a href="#work">Show reel</a></li>
+      <li><a href="#clients">Guest list</a></li>
+      <li><a href="#network">Tour</a></li>
+      <li><a href="#contact">Book</a></li>
+    </ul>
+    <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span>Menu</span><span class="ic"><i></i><i></i></span></button>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Main menu">
+  <div class="cl fabric"></div><div class="cr fabric"></div>
+  <div class="in">
+    <a class="lk" href="#about"><small>01</small>About</a>
+    <a class="lk" href="#lineup"><small>02</small>Line-up</a>
+    <a class="lk" href="#show"><small>03</small>Run of show</a>
+    <a class="lk" href="#work"><small>04</small>Show reel</a>
+    <a class="lk" href="#clients"><small>05</small>Guest list</a>
+    <a class="lk" href="#network"><small>06</small>Tour dates</a>
+    <a class="lk" href="#contact"><small>07</small>Book your event</a>
+    <div class="foot"><a href="tel:+919828158918">+91 98281 58918</a><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO: THE STAGE -->
+<section class="hero dk" id="top">
+  <img class="bg dim" src="images/hero-lights.jpg" alt="">
+  <img class="bg lit" src="images/hero-lights.jpg" alt="A packed concert crowd under stage lights">
+  <div class="shade"></div>
+  <div class="truss" id="truss" aria-hidden="true"></div>
+  <span class="beam" style="left:18%" aria-hidden="true"></span>
+  <span class="beam" style="left:50%" aria-hidden="true"></span>
+  <span class="beam" style="left:82%" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="presents">
+      <span>Felicity Integrated Marketing Services presents</span>
+      <span class="rot"><span class="onair">Live</span><span class="w" id="words"><b class="on">events.</b><b>concerts.</b><b>conferences.</b><b>sports.</b><b>activations.</b></span></span>
+      <span class="hint">( Move to aim the spotlight )</span>
+    </div>
+    <h1 class="mega" aria-label="Felicity"><span><i style="--i:0">F</i></span><span><i style="--i:1">E</i></span><span><i style="--i:2">L</i></span><span><i style="--i:3">I</i></span><span><i style="--i:4">C</i></span><span><i style="--i:5">I</i></span><span><i style="--i:6">T</i></span><span><i style="--i:7">Y</i></span></h1>
+    <div class="poster">
+      <div><small>Running since</small>13 years</div>
+      <div><small>Shows delivered</small>2,500+ projects</div>
+      <div><small>Venue</small>India &amp; overseas</div>
+      <div><small>Featuring</small>200+ brands</div>
+    </div>
+    <div class="row2">
+      <p class="tagline">The way towards wonderful.</p>
+      <div class="ctas">
+        <a href="#contact" class="btn b-fill" data-confetti data-cur="link">Book your event <span class="ar">↗</span></a>
+        <a href="#work" class="btn b-line" data-cur="link">Watch the show reel <span class="ar">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bands" aria-hidden="true">
+  <div class="band b"><div class="row" id="bandB"></div></div>
+  <div class="band a"><div class="row" id="bandA"></div></div>
+</div>
+
+<!-- ACT 01 — WHO WE ARE -->
+<section class="sec who" id="about">
+  <div class="wrap">
+    <p class="act rv"><b>Act 01</b> Who we are</p>
+    <p class="stmt" id="stmt">13 years and more than 2,500 projects into our life, we realise that we must be doing <span class="ser">something right.</span> After all, our top clients are also our longest-standing relationships. Making us even prouder is the fact that nearly half our talent pool has been with us on this amazing journey for nearly a decade. All we can promise you is that we give every project <span class="ser">everything we've got.</span></p>
+    <ul class="board rv" id="board"></ul>
+    <div class="pair">
+      <figure class="rv par"><img src="images/au-goa-2.jpg" alt="Performers on stage at the AU Financiers business fest in Goa" loading="lazy"><figcaption>Welcome to Felicity</figcaption></figure>
+      <figure class="rv par" style="--i:1"><img src="images/au-crowd.jpg" alt="A cheering audience at an AU Financiers event" loading="lazy"><figcaption>Long-lasting impressions</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 02 — THE LINE-UP -->
+<section class="sec dk" id="lineup">
+  <div class="wrap">
+    <p class="act rv"><b>Act 02</b> What we do</p>
+    <div class="wwd-intro">
+      <h2 class="h2 rv">The <span class="ser">line-up.</span></h2>
+      <p class="rv">Fresh ideas that create unique experiences. From <b>corporate events, motorsport, community building, conferences, exhibitions, consumer promotions, retail activations</b> to <b>concerts, road shows or sports events</b> — end-to-end solutions with a strong focus on meticulous planning and flawless execution.</p>
+    </div>
+    <div class="lineup rv" id="services"></div>
+  </div>
+</section>
+
+<!-- ACT 03 — RUN OF SHOW -->
+<section class="sec" id="show">
+  <div class="wrap">
+    <p class="act rv"><b>Act 03</b> How a Felicity event runs</p>
+    <div class="head">
+      <h2 class="h2 rv">Run of <span class="ser">show.</span></h2>
+      <p class="lede rv">Every brief follows the same cue sheet — from the first idea to the impression your guests take home.</p>
+    </div>
+    <div class="ros" id="ros"></div>
+  </div>
+</section>
+
+<!-- WHY FELICITY -->
+<section class="sec dk apart" id="apart">
+  <div class="wrap grid">
+    <div class="side">
+      <p class="act"><b>Act 04</b> Why Felicity</p>
+      <h2 class="h2" style="margin-top:22px">What sets us <span class="ser">apart?</span></h2>
+      <p class="big" aria-hidden="true"><span id="apN">01</span><small>/05</small></p>
+    </div>
+    <ol class="alist" id="alist"></ol>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sec" id="sectors">
+  <div class="wrap">
+    <p class="act rv"><b>Act 05</b> Sectors served</p>
+    <div class="head">
+      <h2 class="h2 rv">Every <span class="ser">audience.</span></h2>
+      <p class="lede rv">Strong marketing expertise and an in-depth understanding of Indian consumers — on stage for brands across ten sectors.</p>
+    </div>
+    <ol class="tiles" id="tiles"></ol>
+    <div class="focus" id="focus"></div>
+  </div>
+</section>
+
+<!-- SHOW REEL -->
+<section class="sec dk work" id="work">
+  <div class="wrap">
+    <p class="act rv"><b>Act 06</b> The show reel</p>
+    <div class="head">
+      <h2 class="h2 rv">600+ events. <span class="ser">Pick a ticket.</span></h2>
+      <p class="lede rv">A quick look at the snapshots from a few of our spectacular events. Each ticket opens the photo gallery from that show.</p>
+    </div>
+  </div>
+  <div class="hs" id="hs">
+    <div class="hs-sticky">
+      <div class="hs-track" id="track"></div>
+      <div class="hs-bar"><i id="hsBar"></i></div>
+      <div class="hs-meta"><span id="hsN">01 / 11</span><span>Scroll →</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO WALL -->
+<section class="sec" id="photos">
+  <div class="wrap">
+    <p class="act rv"><b>Backstage</b> The photo wall</p>
+    <div class="head">
+      <h2 class="h2 rv">Straight from <span class="ser">the floor.</span></h2>
+      <p class="lede rv">Real photos from our events — concerts, launches, summits, leagues, rides and activations. Tap any photo to open it full size.</p>
+    </div>
+    <div class="wall" id="wall"></div>
+    <div class="cmore"><button class="btn b-line" id="wmore" data-cur="link">Show all photos <span class="ar">↓</span></button></div>
+  </div>
+</section>
+
+<!-- SCOREBOARD -->
+<section class="sec" id="numbers">
+  <div class="wrap">
+    <p class="act rv"><b>Act 07</b> The scoreboard</p>
+    <div class="head">
+      <h2 class="h2 rv">The crowd <span class="ser">counts.</span></h2>
+      <p class="lede rv">From conference halls to a world record at 15,500 ft in Spiti — every number here is a show we ran on the ground.</p>
+    </div>
+    <ul class="nums rv" id="nums"></ul>
+  </div>
+</section>
+
+<!-- SCREENING ROOM -->
+<section class="sec dk" id="content">
+  <div class="wrap">
+    <p class="act rv"><b>Act 08</b> Content creation</p>
+    <div class="head">
+      <h2 class="h2 rv">Now <span class="ser">screening.</span></h2>
+      <p class="lede rv">We produce stunning content for our customers — ride films, brand stories and event recaps, shot by the crew that runs the event.</p>
+    </div>
+  </div>
+  <div class="filmstrip rv"><div class="row" id="films"></div></div>
+  <div class="wrap">
+    <div class="cfoot rv">
+      <p>From AOG rides across Ladakh and Spiti to Women's Day features for TVS Apache — content that keeps the event alive long after the lights go down.</p>
+      <a href="#contact" class="btn b-fill" data-cur="link">Talk to us about content <span class="ar">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- GUEST LIST -->
+<section class="sec" id="clients">
+  <div class="wrap">
+    <p class="act rv"><b>Act 09</b> Clients</p>
+    <div class="head">
+      <h2 class="h2 rv">The guest <span class="ser">list.</span></h2>
+      <p class="lede rv">We are honoured to have forged connections with illustrious brands from a range of sectors. Customers appreciate our reliable, high-quality service.</p>
+    </div>
+    <div class="guest rv">
+      <div class="gh"><b>VIP guest list</b><span>Felicity · All access</span><span id="gCount"></span></div>
+      <ul class="glist short" id="glist"></ul>
+    </div>
+    <div class="cmore"><button class="btn b-line" id="cmore" data-cur="link">See the full guest list <span class="ar">↓</span></button></div>
+  </div>
+  <div class="mq" aria-hidden="true"><div class="row" id="mq"></div></div>
+  <div class="wrap">
+    <div class="assoc">
+      <div class="rv">
+        <p class="act">Associations</p>
+        <h3>The crew <span class="ser">&amp; partners.</span></h3>
+        <p>Agencies and media partners we have worked alongside across India.</p>
+      </div>
+      <ul class="pills rv" id="pills"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- TOUR DATES -->
+<section class="sec dk" id="network">
+  <div class="wrap">
+    <p class="act rv"><b>Act 10</b> Network</p>
+    <div class="head">
+      <h2 class="h2 rv">Tour <span class="ser">dates.</span></h2>
+      <p class="lede rv">A wide operations network across India and overseas — own offices in Jaipur, New Delhi and Ahmedabad, with associates in 11 more cities.</p>
+    </div>
+    <div class="filters rv" id="filters">
+      <button class="on" data-f="all">All cities · 14</button>
+      <button data-f="office">Home base · 3</button>
+      <button data-f="associate">Associates · 11</button>
+    </div>
+    <ol class="tour rv" id="tour"></ol>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="sec contact" id="contact">
+  <div class="wrap grid">
+    <div>
+      <p class="act rv"><b>Encore</b> Get in touch</p>
+      <h2 class="h2 rv" style="margin-top:22px">Book your <span class="ser">event.</span></h2>
+      <p class="lead rv">If you're looking for super stylish project execution combined with smart marketing acumen, look no further — we've got you covered. We'd love to get you onboard the world of Felicity!</p>
+      <ul class="lines rv">
+        <li><a href="tel:+919828158918" data-cur="link"><span>+91 98281 58918</span><small>Phone</small></a></li>
+        <li><a href="mailto:ruchin@felicity-intg.com" data-cur="link"><span>ruchin@felicity-intg.com</span><small>Email</small></a></li>
+        <li><a href="mailto:Ruchin.v@gmail.com" data-cur="link"><span>Ruchin.v@gmail.com</span><small>Email</small></a></li>
+        <li><a href="tel:+911414086410" data-cur="link"><span>0141-4086410</span><small>Jaipur office</small></a></li>
+      </ul>
+      <p class="person rv"><b>Ruchin Vaid</b> · Felicity Integrated Marketing Services</p>
+    </div>
+    <form class="form rv" id="form" novalidate>
+      <div class="fh"><h3>Booking<br>request</h3><span class="mono">Admit · your brand<br>No. FEL-<span id="bookNo">0001</span></span></div>
+      <div class="fb">
+        <div class="fld"><label>What's the show?</label><div class="chips" id="chips"></div></div>
+        <div class="row2">
+          <div class="fld"><label for="f-city">Venue / city</label><input id="f-city" name="city" placeholder="e.g. Jaipur"></div>
+          <div class="fld"><label for="f-guests">Guests</label><input id="f-guests" name="guests" placeholder="e.g. 450 pax"></div>
+        </div>
+        <div class="fld"><label for="f-brief">Your brief</label><textarea id="f-brief" name="brief" placeholder="A dealer meet in Jaipur for 300 people with a theme gala dinner…"></textarea></div>
+        <div class="row2">
+          <div class="fld"><label for="f-name">Name *</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="fld"><label for="f-contact">Phone or email *</label><input id="f-contact" name="contact" autocomplete="email" required></div>
+        </div>
+        <button class="btn b-white" type="submit" data-cur="link">Send booking request <span class="ar">↗</span></button>
+        <p class="fine">Sending opens your email app with the brief filled in, addressed to ruchin@felicity-intg.com.</p>
+        <p class="ok" role="status">Thank you — your email app should now be open with your brief. If it didn't open, write to ruchin@felicity-intg.com or call +91 98281 58918.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FINALE -->
+<section class="finale" id="finale">
+  <div class="cw l fabric" aria-hidden="true"></div><div class="cw r fabric" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <h2 class="big" aria-label="Thanks"><span style="--i:0">T</span><span style="--i:1">h</span><span style="--i:2">a</span><span style="--i:3">n</span><span style="--i:4">k</span><span style="--i:5">s</span></h2>
+  <p class="so">See you next time!</p>
+  <p class="bow">— Curtain call —</p>
+</section>
+
+</main>
+
+<footer class="footer dk">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="fl"><img src="images/logo.jpg" alt=""><b>FELICITY</b></div>
+        <p>Felicity Integrated Marketing Services — Marketing · Promotion · Events · Activation. The way towards wonderful.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#lineup">Line-up</a></li><li><a href="#work">Show reel</a></li><li><a href="#clients">Guest list</a></li><li><a href="#contact">Book</a></li></ul></div>
+      <div><h4>Home base</h4><ul><li>Jaipur (HQ)</li><li>New Delhi</li><li>Ahmedabad</li></ul></div>
+      <div><h4>Contact</h4><ul><li>Ruchin Vaid</li><li><a href="tel:+919828158918">+91-98281-58918</a></li><li><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></li><li><a href="tel:+911414086410">0141-4086410</a></li></ul></div>
+    </div>
+    <div class="base"><span>© <span id="yr"></span> Felicity Integrated Marketing Services. All rights reserved.</span><span>The way towards wonderful</span></div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbT">
+  <div class="top"><div><h3 id="lbT"></h3><p id="lbD"></p></div><button class="x" id="lbX" aria-label="Close gallery">✕</button></div>
+  <div class="stage"><button class="nv p" id="lbP" aria-label="Previous photo">←</button><img id="lbI" alt=""><button class="nv n" id="lbN" aria-label="Next photo">→</button></div>
+  <div class="bot"><span class="count" id="lbC"></span><div class="thumbs" id="lbTh"></div></div>
+</div>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const FINE = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const pad = (n, l = 2) => String(n).padStart(l, '0');
+  const I = n => `images/${n}.jpg`;
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const S = (k, n) => Array.from({ length: n }, (_, i) => `${k}-${i + 1}`); // photo series, e.g. sm-1…sm-7
+
+  /* ================= DATA (from the Felicity deck) ================= */
+  const BAND_A = ['Now showing', 'Events', 'Concerts', 'Conferences', 'Sports', 'Activations', 'Launches'];
+  const BAND_B = ['13 years', '2,500+ projects', '200+ brands', '600+ events', '14 cities'];
+
+  const LINEUP = [
+    ['Day 01 · Marketing', ['Audit', 'Rural Marketing', 'Experiential Marketing', 'Consumer Promotions'], ['meeting', 'scp-3', 'berger-7', 'scp-6']],
+    ['Day 02 · Promotion', ['Road Shows', 'SCP & CCP', 'Mall Activation', 'Retail Activations'], ['aog-7', 'scp-4', 'stunt-2', 'kwc-9']],
+    ['Headliners · Events', ['Events & Concerts', 'Award Ceremonies', 'Sports Events', 'Motorsport', 'Conferences & Seminars', 'Corporate Offsites'], ['sm-1', 'au-th-12', 'pk-1', 'stunt-1', 'berger-2', 'au-th-6']],
+    ['Day 04 · Activation', ['BTL Activation', 'Institutional / Campus Activation', 'Corporate Activations'], ['kwc-6', 'scp-1', 'au-goa-5']],
+  ];
+
+  const CUES = [
+    ['Fresh ideas', 'Fresh ideas that create unique experiences — every brief starts with a concept built for your audience.', 'masks'],
+    ['Meticulous planning', 'Well-equipped offices and ample resources for data management and creative designing.', 'berger-5'],
+    ['Flawless execution', 'A wide operations network across India and overseas puts our crew on the ground, show after show.', 'sm-1'],
+    ['Long-lasting impression', 'Turning your ideas into actions that leave a long-lasting impression.', 'au-goa-1'],
+  ];
+
+  const APART = [
+    ['Worked with over 200 brands on more than 2,500 events', 'Our top clients are also our longest-standing relationships.'],
+    ['Wide operations network across India and overseas', 'Own offices in Jaipur, New Delhi and Ahmedabad, with associates in 11 more cities.'],
+    ['Well-equipped offices and ample resources for data management and creative designing', 'Everything a project needs, from the first plan to the final design.'],
+    ['Strong marketing expertise with a decade of experience', 'And an in-depth understanding of Indian consumers.'],
+    ['Top-notch customer service and satisfaction', 'Nearly half our talent pool has been with us for almost a decade.'],
+  ];
+
+  const SECTORS = ['Sports', 'FMCG', 'Pharma', 'IT', 'Real Estate', 'Consumer Electronics', 'Liquor & Tobacco', 'Telecom', 'Banking & Finance', 'Automobiles'];
+  const FOCUS = [
+    ['Automobile', 'stunt-3', ['Community building', 'Motorsport', 'BTL activations', 'Mall activities', 'Product launch', 'Media buying (hoarding, demo van etc.)']],
+    ['Sports management', 'kabaddi-team', ['IPL', 'Cricket (RSWS)', 'Pro Kabaddi League', 'Kabaddi World Cup', 'Motorsport — off-road & on-road racing', 'Stunt riding shows']],
+    ['Banking & finance', 'au-league', ['Rewards & recognitions (R&R)', 'Lead generation', 'MICE', 'Employee meet']],
+  ];
+
+  // [title, detail, category, venue, photos[]]
+  const EVENTS = [
+    ['Shankar Mahadevan', 'Live concert at Udaipur', 'Concert', 'Udaipur', S('sm', 7)],
+    ['Nokia MICE', 'More than 125 conferences · conference & theme gala dinner', 'Corporate', 'Pan India', ['nokia-2', 'nokia-1', 'nokia-3', 'nokia-4', 'nokia-5', 'nokia-6']],
+    ['Berger Paints', 'Product launch', 'Launch', 'India', ['berger-5', ...S('berger', 10).filter(x => x !== 'berger-5')]],
+    ['AU Superheroes Summit', 'AU Bond & 10th AU Superheroes Summit', 'MICE', 'Thailand 2018', ['au-th-6', ...S('au-th', 12).filter(x => x !== 'au-th-6')]],
+    ['AU Financiers', 'MICE · employee meet for 450 pax', 'MICE', 'Goa', [...S('au-goa', 5), 'au-crowd', 'au-league']],
+    ['Star Pro Kabaddi', 'All seasons — Jaipur, Delhi, Ahmedabad, Sonipat & Greater Noida', 'Sports', '5 cities', [...S('pk', 5), 'kabaddi-team']],
+    ['Kabaddi World Cup', 'KWC 2016', 'Sports', 'Ahmedabad', ['kwc-9', ...S('kwc', 8)]],
+    ['Cricket', 'IPL · RSWS · Star Sports Paytm IND v/s South Africa series', 'Sports', 'India', ['cricket-ground']],
+    ['TVS AOG Rides', 'Leh-Ladakh ride, August 2018 · Spiti · Bhutan · North Chapter ride to Mandawa', 'Motorsport', 'Leh-Ladakh', ['aog-5', ...S('aog', 9).filter(x => x !== 'aog-5'), 'offroad']],
+    ['TVS Apache Stunt Shows', '100+ shows pan-India · world record at 15,500 ft', 'Motorsport', 'Komic, Spiti', [...S('stunt', 10), 'moto-podium', 'moto-rally']],
+    ['SCP & CCP', 'More than 200 programmes', 'Activation', 'Pan India', ['scp-6', ...S('scp', 8).filter(x => x !== 'scp-6')]],
+    ['Event highlights', 'Snapshots from a few of our 600+ events', 'Highlights', 'Across India', S('ev', 9)],
+  ];
+
+  const BOARD = [['13', '', 'Years'], ['2500', '+', 'Projects'], ['200', '+', 'Brands'], ['600', '+', 'Events organised'], ['14', '', 'Cities']];
+  const NUMS = [
+    ['125', '+', 'Conferences for Nokia, with theme gala dinners', 'Corporate'],
+    ['250', '+', 'TVS AOG breakfast rides', 'Rides'],
+    ['25', '+', 'TVS AOG overnight rides', 'Rides'],
+    ['6', '', 'TVS AOG marquee rides — Leh-Ladakh, Spiti, Bhutan', 'Rides'],
+    ['100', '+', 'TVS Apache stunt shows, pan-India', 'Stunts'],
+    ['15500', ' ft', 'World-record stunt show at Komic village, Spiti', 'Record'],
+    ['200', '+', 'SCP & CCP programmes', 'Activation'],
+    ['450', '', 'Guests at the AU Financiers employee meet in Goa', 'MICE'],
+  ];
+
+  const FILMS = [
+    ['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley — ride with the champions', 'Ride film'],
+    ["AOG North Chapter's exhilarating ride to Mandawa", 'Ride film'], ['Apache Pro Performance — Nagpur', 'Stunt show'], ['Petronas TVS Racing team', 'Motorsport'],
+    ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021 — Coorg', 'Ride film'],
+  ];
+
+  const CLIENTS = ['TVS Motor Company', 'Nokia', 'Pepsi', 'Coca-Cola', 'Asian Paints', 'Maruti Suzuki', 'Bajaj', 'Suzuki', 'Mahindra', 'Harley-Davidson', 'ICICI Bank', 'HDFC Ergo', 'IDBI Bank', 'Bharti AXA Life', 'Max Bupa', 'Apollo Munich', 'Exide Life', 'ICICI Prudential', 'Airtel', 'Vi', 'Tata Docomo', 'Tata Indicom', 'Tata Sky', 'Dish TV', 'Intel', 'HP', 'UltraTech Cement', 'DLF', 'Britannia', 'Dabur', 'ITC', 'Godfrey Phillips', 'Bacardi', 'Budweiser', "Kwality Wall's", 'Big Bazaar', 'Central', 'Bharat Petroleum', 'The Times of India', 'Ultraviolette Automotive', 'Piramal', 'Jubilant Organosys', 'Tupperware', 'Sunsilk', 'Lux', 'Lifebuoy', 'Snickers', '7UP', 'Movies Now', 'Futures First', 'Rockwoods High School'];
+  const ASSOC = ['Wizcraft', 'GroupM', 'DDB Mudramax', 'Encompass', 'Fountainhead', 'Hansa Vision', 'DNA Networks', 'Rajasthan Patrika', 'Candid', 'ZeeCo', 'Beep', 'Acme Events India', 'Impresario', 'Allias Integrated', 'Impact Marketing Services', 'MOMS Outdoor Media Solutions'];
+
+  const CITIES = [
+    ['Jaipur', 'office', 'Head office · B-207 A, Rajender Marg, Bapu Nagar, Jaipur, Rajasthan 302015 · Tel 0141-4086410', 'Home base · HQ'],
+    ['New Delhi', 'office', 'B-363, C.R. Park, New Delhi 110019', 'Home base'],
+    ['Ahmedabad', 'office', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054', 'Home base'],
+    ...['Chandigarh', 'Lucknow', 'Kolkata', 'Kanpur', 'Hyderabad', 'Bangalore', 'Chennai', 'Jodhpur', 'Indore', 'Mumbai', 'Pune'].map(c => [c, 'associate', 'Associate city in the Felicity operations network', 'Associate']),
+  ];
+
+  const FORM_SERVICES = ['Corporate event & MICE', 'Concert & live show', 'Conference & seminar', 'Sports & motorsport', 'Product launch', 'Award ceremony', 'BTL / mall / retail activation', 'Road show & rural marketing', 'Content creation', 'Other'];
+
+  /* ================= BUILD ================= */
+  const band = (list, sep) => { const s = list.map((t, i) => `<span>${i % 2 ? `<em>${t}</em>` : t}<i>${sep}</i></span>`).join(''); return s + s + s + s; };
+  $('#bandA').innerHTML = band(BAND_A, '●');
+  $('#bandB').innerHTML = band(BAND_B, '✦');
+  $('#truss').innerHTML = Array.from({ length: 18 }, (_, i) => `<i style="--i:${i}"></i>`).join('');
+
+  // scoreboard digits
+  const digits = (str) => [...str].map(ch => /\d/.test(ch) ? `<i>${ch}</i>` : `<u>${ch}</u>`).join('');
+  const fmt = (n, suf) => (+n).toLocaleString('en-IN') + suf;
+  $('#board').innerHTML = BOARD.map(([n, s, t]) => `<li><div class="digits" data-count="${n}" data-suffix="${s}" aria-label="${fmt(n, s)}">${digits(fmt(n, s))}</div><span>${t}</span></li>`).join('');
+  $('#nums').innerHTML = NUMS.map(([n, s, t, k], i) => `<li><div class="top"><span>${k}</span><i>Live ${pad(i + 1)}</i></div><div class="digits" data-count="${n}" data-suffix="${s}" aria-label="${fmt(n, s)}">${digits(fmt(n, s))}</div><span>${t}</span></li>`).join('');
+
+  // statement words
+  const stmt = $('#stmt');
+  const wrapWords = node => [...node.childNodes].forEach(n => {
+    if (n.nodeType === 3) {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(w => { if (!w) return; if (/^\s+$/.test(w)) frag.append(w); else { const s = document.createElement('span'); s.className = 'wd'; s.textContent = w; frag.append(s); } });
+      n.replaceWith(frag);
+    } else wrapWords(n);
+  });
+  wrapWords(stmt);
+  const words = $$('.wd', stmt);
+
+  // line-up
+  let svcCount = 0;
+  $('#services').innerHTML = LINEUP.map(([day, items, imgs]) => `
+    <div class="day${day.startsWith('Headliners') ? ' head-liner' : ''}"><h3>${day}</h3>
+    <ul>${items.map((s, j) => (svcCount++, `<li><a href="#contact" data-service="${s}" data-img="${I(imgs[j % imgs.length])}" data-cur="link">${s}</a></li>`)).join('')}</ul></div>`).join('') +
+    `<p class="foot">${svcCount} services · end-to-end · across India &amp; overseas</p>`;
+
+  const peek = $('#peek'), peekImg = $('#peekImg');
+  if (FINE) {
+    const lu = $('#services');
+    lu.addEventListener('mouseover', e => { const a = e.target.closest('a[data-img]'); if (!a) { peek.classList.remove('on'); return; } if (peekImg.getAttribute('src') !== a.dataset.img) peekImg.src = a.dataset.img; peek.classList.add('on'); });
+    lu.addEventListener('mouseleave', () => peek.classList.remove('on'));
+  }
+
+  // run of show
+  const ros = $('#ros');
+  ros.innerHTML = CUES.map(([t, d, p], i) => `<div class="cue"><span class="dot"></span><small>Cue ${pad(i + 1)}</small><h3>${t}</h3><p>${d}</p><div class="ph"><img src="${I(p)}" alt="" loading="lazy"></div></div>`).join('');
+  const cues = $$('.cue', ros);
+
+  // apart
+  const alist = $('#alist');
+  alist.innerHTML = APART.map(([t, m], i) => `<li class="${i ? '' : 'on'}"><button type="button" aria-expanded="${!i}" data-i="${i}"><span class="n">${pad(i + 1)}</span><span><h3>${t}</h3><span class="more"><div><p>${m}</p></div></span></span><span class="pm">+</span></button></li>`).join('');
+  const setApart = i => {
+    $$('li', alist).forEach((li, j) => { li.classList.toggle('on', j === i); li.firstElementChild.setAttribute('aria-expanded', j === i); });
+    $('#apN').textContent = pad(i + 1);
+  };
+  alist.addEventListener('click', e => { const b = e.target.closest('button'); if (b) setApart(+b.dataset.i); });
+  if (FINE) alist.addEventListener('mouseover', e => { const b = e.target.closest('button'); if (b) setApart(+b.dataset.i); });
+
+  // sectors
+  const tiles = $('#tiles');
+  tiles.innerHTML = SECTORS.map((s, i) => `<li class="rv" style="--i:${i % 5}"><small>${pad(i + 1)}</small><h3>${s}</h3></li>`).join('');
+  tiles.addEventListener('pointermove', e => { const li = e.target.closest('li'); if (!li) return; const r = li.getBoundingClientRect(); li.style.setProperty('--mx', (e.clientX - r.left) + 'px'); li.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+  $('#focus').innerHTML = FOCUS.map(([t, p, items], i) => `
+    <article class="fc rv" style="--i:${i}"><div class="ph"><img src="${I(p)}" alt="" loading="lazy"></div>
+    <div class="b"><small>Sector focus · ${pad(i + 1)}</small><h3>${t}</h3><ul>${items.map(x => `<li>${x}</li>`).join('')}</ul></div></article>`).join('');
+
+  // tickets
+  const track = $('#track');
+  track.innerHTML = `<div class="ticket intro"><span class="giant">600+</span><div><p class="mono" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase">Box office open</p><h3 style="margin-top:10px">Events &amp; counting</h3><p>Concerts, conferences, launches, leagues and rides — pick a ticket to see the show.</p></div></div>` +
+    EVENTS.map(([t, d, c, v, ph], i) => `
+    <button type="button" class="ticket" data-ev="${i}" data-cur="view" style="--rot:${(i % 2 ? 1.5 : -1.5)}deg" aria-label="Open ${t} gallery">
+      <div class="tp"><img src="${I(ph[0])}" alt="" loading="lazy"><span class="tag">${c}</span><span class="no">No. ${pad(i + 1, 3)}</span></div>
+      <div class="tb"><h3>${t}</h3><p>${d}</p></div>
+      <div class="stub"><div>Venue<b>${v}</b></div><div class="barcode" aria-hidden="true"></div><div style="text-align:right">${ph.length} photo${ph.length > 1 ? 's' : ''}<b>View ↗</b></div></div>
+    </button>`).join('');
+  $('#hsN').textContent = `01 / ${pad(EVENTS.length)}`;
+
+  // photo wall: every event photo, interleaved so neighbouring tiles come from different shows
+  const byEvent = EVENTS.map((e, i) => e[4].map((p, j) => [i, j, p]));
+  const wallItems = [];
+  for (let r = 0; byEvent.some(l => l[r]); r++) byEvent.forEach(l => l[r] && wallItems.push(l[r]));
+  const wall = $('#wall');
+  wall.className = 'wall short';
+  wall.innerHTML = wallItems.map(([i, j, p]) => `<button type="button" data-ev="${i}" data-j="${j}" data-cur="view" aria-label="Open ${EVENTS[i][0]} photo ${j + 1}"><img src="${I(p)}" alt="${EVENTS[i][0]}" loading="lazy"><span>${EVENTS[i][0]}</span></button>`).join('');
+  $('#wmore').innerHTML = `Show all ${wallItems.length} photos <span class="ar">↓</span>`;
+  $('#wmore').addEventListener('click', e => {
+    const short = wall.classList.toggle('short');
+    e.currentTarget.innerHTML = short ? `Show all ${wallItems.length} photos <span class="ar">↓</span>` : `Show fewer <span class="ar">↑</span>`;
+    if (short) wall.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  // films (two copies for a seamless loop; the copy is hidden from screen readers)
+  const film = (hidden) => FILMS.map(([t, c], i) => `<div class="frame"${hidden ? ' aria-hidden="true"' : ''}><img src="${I('film-' + (i + 1))}" alt="" loading="lazy"><span class="rec">● ${pad(i + 1)}</span><div class="b"><small>${c}</small><h3>${t}</h3></div></div>`).join('');
+  $('#films').innerHTML = film(false) + film(true);
+
+  // guest list
+  const glist = $('#glist');
+  glist.innerHTML = CLIENTS.map((c, i) => `<li style="--i:${i % 24}"><i>${pad(i + 1, 3)}</i>${c}</li>`).join('');
+  $('#gCount').textContent = `${CLIENTS.length} names`;
+  $('#cmore').addEventListener('click', e => {
+    const short = glist.classList.toggle('short');
+    e.currentTarget.innerHTML = short ? `See the full guest list <span class="ar">↓</span>` : `Show fewer <span class="ar">↑</span>`;
+    if (short) glist.closest('.guest').scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
+  });
+  const mqs = CLIENTS.map(c => `<span>${c}<i>●</i></span>`).join('');
+  $('#mq').innerHTML = mqs + mqs;
+  $('#pills').innerHTML = ASSOC.map(a => `<li>${a}</li>`).join('');
+
+  // tour
+  const tour = $('#tour');
+  tour.innerHTML = CITIES.map(([c, type, addr, st], i) => `<li class="${type}" data-type="${type}"><span class="n">${pad(i + 1)}</span><h3>${c}</h3><p>${addr}</p><span class="st">${st}</span></li>`).join('');
+  $('#filters').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $$('button', $('#filters')).forEach(x => x.classList.toggle('on', x === b));
+    $$('li', tour).forEach(li => li.classList.toggle('hide', b.dataset.f !== 'all' && li.dataset.type !== b.dataset.f));
+  });
+
+  // booking form
+  $('#bookNo').textContent = pad(Math.floor(Math.random() * 9000) + 1000, 4);
+  const chips = $('#chips');
+  chips.innerHTML = FORM_SERVICES.map((s, i) => `<label><input type="radio" name="service" value="${s}" ${i ? '' : 'checked'}><span>${s}</span></label>`).join('');
+  const pick = name => {
+    const lc = name.toLowerCase();
+    const best = FORM_SERVICES.find(s => s.toLowerCase() === lc) || FORM_SERVICES.find(s => lc.split(/[^a-z]+/).some(w => w.length > 3 && s.toLowerCase().includes(w)));
+    if (best) chips.querySelector(`input[value="${CSS.escape(best)}"]`).checked = true;
+  };
+  document.addEventListener('click', e => { const a = e.target.closest('[data-service]'); if (a) pick(a.dataset.service); });
+  const form = $('#form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const missing = ['name', 'contact'].filter(f => !String(d.get(f) || '').trim());
+    ['name', 'contact'].forEach(f => $('#f-' + f).classList.toggle('bad', missing.includes(f)));
+    if (missing.length) { $('#f-' + missing[0]).focus(); return; }
+    const body = [`Booking request No. FEL-${$('#bookNo').textContent}`, '', `Show: ${d.get('service')}`, `Venue / city: ${d.get('city') || '—'}`, `Guests: ${d.get('guests') || '—'}`, '', 'Brief:', d.get('brief') || '—', '', `Name: ${d.get('name')}`, `Contact: ${d.get('contact')}`].join('\n');
+    const r = form.querySelector('button[type=submit]').getBoundingClientRect();
+    burst(r.left + r.width / 2, r.top);
+    form.classList.add('sent');
+    setTimeout(() => { location.href = `mailto:ruchin@felicity-intg.com?subject=${encodeURIComponent('Booking request — ' + d.get('service'))}&body=${encodeURIComponent(body)}`; }, 700);
+  });
+  form.addEventListener('input', e => e.target.classList.remove('bad'));
+  $('#yr').textContent = new Date().getFullYear();
+
+  /* ================= CONFETTI (black & white) ================= */
+  const cv = $('#confetti'), cx = cv.getContext('2d');
+  let parts = [], raf = 0;
+  const size = () => { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; };
+  size(); addEventListener('resize', size);
+  const burst = (x, y) => {
+    if (RM) return;
+    for (let i = 0; i < 140; i++) parts.push({ x, y, vx: (Math.random() - .5) * 16, vy: -Math.random() * 15 - 4, r: Math.random() * 6.28, vr: (Math.random() - .5) * .4, w: 6 + Math.random() * 7, h: 4 + Math.random() * 10, c: ['#000', '#fff', '#777', '#bbb'][i % 4], life: 0 });
+    if (!raf) raf = requestAnimationFrame(drawConfetti);
+  };
+  const drawConfetti = () => {
+    const d = devicePixelRatio;
+    cx.clearRect(0, 0, cv.width, cv.height);
+    parts = parts.filter(p => p.life < 160 && p.y < innerHeight + 40);
+    parts.forEach(p => {
+      p.life++; p.vy += .42; p.vx *= .985; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      cx.save(); cx.translate(p.x * d, p.y * d); cx.rotate(p.r); cx.scale(d, d * Math.cos(p.life * .15));
+      cx.fillStyle = p.c; cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      cx.strokeStyle = p.c === '#fff' ? '#000' : '#fff'; cx.lineWidth = .8; cx.strokeRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      cx.restore();
+    });
+    raf = parts.length ? requestAnimationFrame(drawConfetti) : 0;
+  };
+  document.addEventListener('click', e => { const b = e.target.closest('[data-confetti]'); if (b) { const r = b.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height / 2); } });
+
+  /* ================= LIGHTBOX ================= */
+  const lb = $('#lb'), lbI = $('#lbI'), lbTh = $('#lbTh');
+  let cur = null, ci = 0, lastFocus = null;
+  const show = i => {
+    const list = cur[4];
+    ci = (i + list.length) % list.length;
+    lbI.src = I(list[ci]); lbI.alt = `${cur[0]} — photo ${ci + 1}`;
+    lbI.style.animation = 'none'; lbI.offsetHeight; lbI.style.animation = '';
+    $('#lbC').textContent = `${pad(ci + 1)} / ${pad(list.length)}`;
+    $$('button', lbTh).forEach((b, j) => b.classList.toggle('on', j === ci));
+    $('#lbP').hidden = $('#lbN').hidden = list.length < 2;
+  };
+  const openLb = (i, start = 0) => {
+    cur = EVENTS[i]; lastFocus = document.activeElement;
+    $('#lbT').textContent = cur[0]; $('#lbD').textContent = `${cur[1]} · ${cur[3]}`;
+    lbTh.innerHTML = cur[4].map((p, j) => `<button type="button" data-j="${j}" aria-label="Photo ${j + 1}"><img src="${I(p)}" alt=""></button>`).join('');
+    show(start);
+    lb.classList.add('open'); document.documentElement.classList.add('noscroll');
+    $('#lbX').focus();
+  };
+  const closeLb = () => { lb.classList.remove('open'); document.documentElement.classList.remove('noscroll'); lastFocus && lastFocus.focus({ preventScroll: true }); };
+  track.addEventListener('click', e => { const b = e.target.closest('[data-ev]'); if (b) openLb(+b.dataset.ev); });
+  wall.addEventListener('click', e => { const b = e.target.closest('[data-ev]'); if (b) openLb(+b.dataset.ev, +b.dataset.j); });
+  $('#lbX').addEventListener('click', closeLb);
+  $('#lbP').addEventListener('click', () => show(ci - 1));
+  $('#lbN').addEventListener('click', () => show(ci + 1));
+  lbTh.addEventListener('click', e => { const b = e.target.closest('button'); if (b) show(+b.dataset.j); });
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('stage')) closeLb(); });
+  let tx = null;
+  lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(ci + (dx < 0 ? 1 : -1)); tx = null; });
+
+  /* ================= MENU ================= */
+  const menu = $('#menu'), mnav = $('#mnav');
+  const setMenu = open => {
+    menu.classList.toggle('open', open); mnav.classList.toggle('open', open);
+    menu.setAttribute('aria-expanded', open); menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.firstElementChild.textContent = open ? 'Close' : 'Menu';
+    document.documentElement.classList.toggle('noscroll', open);
+  };
+  menu.addEventListener('click', () => setMenu(!mnav.classList.contains('open')));
+  mnav.addEventListener('click', e => { if (e.target.closest('a[href^="#"]')) setMenu(false); });
+  addEventListener('keydown', e => {
+    if (lb.classList.contains('open')) {
+      if (e.key === 'Escape') closeLb();
+      else if (e.key === 'ArrowLeft') show(ci - 1);
+      else if (e.key === 'ArrowRight') show(ci + 1);
+      else if (e.key === 'Tab') { const f = $$('button:not([hidden])', lb); const a = f.indexOf(document.activeElement); if (e.shiftKey && a <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && a === f.length - 1) { e.preventDefault(); f[0].focus(); } }
+    } else if (e.key === 'Escape') setMenu(false);
+  });
+
+  // smooth anchors
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]'); if (!a) return;
+    const t = document.querySelector(a.getAttribute('href')); if (!t) return;
+    e.preventDefault();
+    scrollTo({ top: t.getBoundingClientRect().top + scrollY, behavior: RM ? 'auto' : 'smooth' });
+  });
+
+  /* ================= CURTAIN COUNTDOWN ================= */
+  const curtain = $('#curtain'), cd = $('#cd'), cdT = $('#cdT');
+  const raise = () => {
+    curtain.classList.add('open'); document.documentElement.classList.add('show');
+    setTimeout(() => curtain.remove(), 1900);
+  };
+  if (RM) { curtain.remove(); document.documentElement.classList.add('show'); }
+  else {
+    const seq = ['3', '2', '1'];
+    let k = 0;
+    const step = () => {
+      if (k < seq.length) { cd.textContent = seq[k++]; cd.classList.remove('pop'); cd.offsetWidth; cd.classList.add('pop'); setTimeout(step, 520); }
+      else { cd.textContent = 'Showtime'; cd.style.fontSize = 'clamp(64px,13vw,170px)'; cdT.textContent = 'The way towards wonderful'; setTimeout(raise, 520); }
+    };
+    setTimeout(step, 150);
+  }
+
+  /* ================= ROTATING WORDS ================= */
+  const rw = [...$('#words').children];
+  let wi = 0;
+  if (!RM) setInterval(() => {
+    const prev = rw[wi]; wi = (wi + 1) % rw.length;
+    prev.className = 'off'; rw[wi].className = 'on';
+    setTimeout(() => { if (prev !== rw[wi]) prev.className = ''; }, 900);
+  }, 2000);
+
+  /* ================= SPOTLIGHT (hero) ================= */
+  const hero = $('#top');
+  let heroVis = true, sx = .5, sy = .42, tX = .5, tY = .42, lastMove = -1e9;
+  new IntersectionObserver(([e]) => heroVis = e.isIntersecting).observe(hero);
+  hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); tX = (e.clientX - r.left) / r.width; tY = (e.clientY - r.top) / r.height; lastMove = performance.now(); });
+  if (!RM) {
+    const spot = t => {
+      if (heroVis) {
+        if (t - lastMove > 2200) { tX = .5 + .34 * Math.sin(t / 1900); tY = .42 + .16 * Math.sin(t / 1300); }
+        sx += (tX - sx) * .07; sy += (tY - sy) * .07;
+        hero.style.setProperty('--sx', (sx * 100).toFixed(2) + '%');
+        hero.style.setProperty('--sy', (sy * 100).toFixed(2) + '%');
+      }
+      requestAnimationFrame(spot);
+    };
+    requestAnimationFrame(spot);
+  }
+
+  /* ================= CURSOR ================= */
+  if (FINE && !RM) {
+    const c = $('#cur'), ct = $('#curT'), halo = $('#halo');
+    let mx = innerWidth / 2, my = innerHeight / 2, x = mx, y = my, hx = mx, hy = my;
+    c.style.opacity = 0; halo.style.opacity = 0;
+    document.addEventListener('pointerleave', () => { c.style.opacity = 0; halo.style.opacity = 0; });
+    addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; c.style.opacity = 1; halo.style.opacity = 1; peek.style.left = mx + 'px'; peek.style.top = my + 'px'; });
+    const loop = () => {
+      x += (mx - x) * .25; y += (my - y) * .25; hx += (mx - hx) * .08; hy += (my - hy) * .08;
+      c.style.transform = `translate(${x}px,${y}px)`; halo.style.transform = `translate(${hx}px,${hy}px)`;
+      requestAnimationFrame(loop);
+    };
+    loop();
+    document.addEventListener('pointerover', e => {
+      const v = e.target.closest('[data-cur="view"]'), l = e.target.closest('a,button,label,[data-cur="link"]');
+      c.classList.toggle('big', !!v); c.classList.toggle('link', !v && !!l);
+      ct.textContent = v ? (v.classList.contains('ticket') ? 'Admit one' : 'View') : '';
+    });
+  }
+
+  /* ================= REVEALS + COUNTERS ================= */
+  const countUp = el => {
+    const target = +el.dataset.count, suf = el.dataset.suffix || '';
+    if (RM) { el.innerHTML = digits(fmt(target, suf)); return; }
+    const t0 = performance.now(), final = fmt(target, suf);
+    const tick = t => {
+      const p = Math.min(1, (t - t0) / 1700);
+      let s = fmt(Math.round(target * (1 - Math.pow(1 - p, 3))), suf);
+      s = s.padStart(final.length, '0');
+      el.innerHTML = digits(p < 1 ? s : final);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    $$('[data-count]', e.target).forEach(countUp);
+    if (e.target.classList.contains('guest')) glist.classList.add('ticked');
+    io.unobserve(e.target);
+  }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  $$('.rv, .finale').forEach(el => io.observe(el));
+
+  /* ================= SCROLL-DRIVEN ================= */
+  const hs = $('#hs'), hsBar = $('#hsBar'), hsN = $('#hsN'), totop = $('#totop'), finale = $('#finale');
+  const pars = $$('.par img');
+  const navLinks = $$('.nav ul a'), navSecs = navLinks.map(a => $(a.getAttribute('href')));
+  let dist = 0, pinned = false;
+  const layout = () => {
+    pinned = innerWidth > 860 && !RM;
+    if (pinned) { dist = Math.max(0, track.scrollWidth - innerWidth); hs.style.height = (innerHeight + dist) + 'px'; }
+    else { hs.style.height = ''; track.style.transform = ''; }
+    onScroll();
+  };
+  const onScroll = () => {
+    const H = innerHeight;
+    totop.classList.toggle('show', scrollY > H * 1.2);
+    // statement fill
+    const sr = stmt.getBoundingClientRect();
+    const lit = Math.round(clamp((H * .85 - sr.top) / (sr.height + H * .25)) * words.length);
+    words.forEach((w, i) => w.classList.toggle('lit', RM || i < lit));
+    // run of show cue line
+    const rr = ros.getBoundingClientRect();
+    const rp = RM ? 1 : clamp((H * .75 - rr.top) / (rr.height * .7));
+    ros.style.setProperty('--p', rp.toFixed(3));
+    const stacked = innerWidth <= 960;
+    cues.forEach((c, i) => c.classList.toggle('lit', stacked ? RM || c.getBoundingClientRect().top < H * .7 : rp >= i / (cues.length - 1) - .02));
+    // tickets
+    let p;
+    if (pinned) {
+      const r = hs.getBoundingClientRect();
+      p = clamp(-r.top / (hs.offsetHeight - H || 1));
+      track.style.transform = `translate3d(${-p * dist}px,0,0)`;
+    } else {
+      const max = track.scrollWidth - track.clientWidth;
+      p = max > 0 ? track.scrollLeft / max : 0;
+    }
+    hsBar.style.transform = `scaleX(${p})`;
+    hsN.textContent = `${pad(Math.round(p * (EVENTS.length - 1)) + 1)} / ${pad(EVENTS.length)}`;
+    // finale curtains close as you arrive
+    const fr = finale.getBoundingClientRect();
+    finale.style.setProperty('--cp', (RM ? .5 : clamp((H - fr.top) / (H + fr.height * .4))).toFixed(3));
+    // parallax
+    if (!RM) pars.forEach(img => { const r = img.parentElement.getBoundingClientRect(); if (r.bottom > 0 && r.top < H) img.style.setProperty('--py', (-((H - r.top) / (H + r.height)) * 15).toFixed(2) + '%'); });
+    // nav
+    let on = -1; navSecs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < H * .45) on = i; });
+    navLinks.forEach((a, i) => a.classList.toggle('on', i === on));
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  track.addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', layout);
+  addEventListener('load', layout);
+  layout();
+  totop.addEventListener('click', () => scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' }));
+})();
+</script>
+</body>
+</html>
