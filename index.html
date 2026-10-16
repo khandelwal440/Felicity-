@@ -297,8 +297,12 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .lb .x,.lb .nv{flex:none;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;transition:background .2s}
 .lb .x:hover,.lb .nv:hover{background:rgba(255,255,255,.22)}
 .lb svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.lb .st{position:relative;display:flex;align-items:center;justify-content:center;padding:0 84px;min-height:0}
-.lb .st img{max-height:100%;width:auto;border-radius:6px;object-fit:contain}
+.lb{overflow:hidden}
+.lb .blur{position:absolute;inset:-80px;background:center/cover no-repeat;filter:blur(50px) brightness(.3) saturate(1.1);pointer-events:none;z-index:0}
+.lb .t,.lb .b{position:relative;z-index:1}
+.lb .st{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:8px 84px;min-height:0}
+.lb .st img{position:relative;z-index:1;width:100%;height:100%;max-width:1200px;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
+.lb .nv{z-index:2}
 .lb .nv{position:absolute;top:50%;transform:translateY(-50%)}
 .lb .nv.p{left:20px}.lb .nv.n{right:20px}
 .lb .c{font-size:14px;font-weight:700;color:var(--muted-d)}
@@ -605,6 +609,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 <button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 13V3M4 7l4-4 4 4"/></svg></button>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbT">
+  <div class="blur" id="lbB" aria-hidden="true"></div>
   <div class="t"><div><h3 id="lbT"></h3><p id="lbD"></p></div><button class="x" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="st"><button class="nv p" id="lbP" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><img id="lbI" alt=""><button class="nv n" id="lbN" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button></div>
   <div class="b"><span class="c" id="lbC"></span><div class="th" id="lbTh"></div></div>
@@ -773,10 +778,10 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
   const lb = $('#lb'), lbI = $('#lbI'), lbTh = $('#lbTh');
   let cur = null, ci = 0, back = null;
   // never enlarge a photo more than 1.6× its real size, so it stays sharp
-  lbI.addEventListener('load', () => { lbI.style.maxWidth = Math.round(lbI.naturalWidth * 1.6) + 'px'; });
+  const lbB = $('#lbB');
   const show = i => {
     const list = cur[5]; ci = (i + list.length) % list.length;
-    lbI.src = I(list[ci]); lbI.alt = `${cur[0]} — photo ${ci + 1} of ${list.length}`;
+    lbI.src = I(list[ci]); lbB.style.backgroundImage = `url(${I(list[ci])})`; lbI.alt = `${cur[0]} — photo ${ci + 1} of ${list.length}`;
     $('#lbC').textContent = `${ci + 1} / ${list.length}`;
     $$('button', lbTh).forEach((b, j) => b.classList.toggle('on', j === ci));
     $('#lbP').hidden = $('#lbN').hidden = list.length < 2;
