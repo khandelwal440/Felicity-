@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Felicity — Events, from Jaipur to everywhere</title>
 <meta name="description" content="Felicity Integrated Marketing Services. An event company from Jaipur — 13 years, 2,500+ projects, 200+ brands. Conferences, MICE, launches, concerts, sports and activations across India and overseas.">
+<link rel="icon" type="image/png" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
@@ -40,7 +41,7 @@ button{background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .inv{background:var(--bk);color:var(--pa)}
 .px{padding-inline:var(--pad)}
-.sec{position:relative;padding:clamp(90px,12vw,170px) 0}
+.sec{position:relative;padding-block:clamp(100px,12vw,170px)}
 .tag{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .tag i{font-style:normal;color:var(--gr)}
 .inv .tag i{color:var(--gr2)}
@@ -85,21 +86,24 @@ button{background:none;border:0;cursor:pointer}
 .loader .stack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;visibility:hidden}
 .loader .stack img.on{visibility:visible}
 .loader .cnt{position:absolute;right:var(--pad);bottom:16px;font-stretch:68%;font-weight:800;font-size:clamp(80px,16vw,240px);line-height:.8}
-.loader .who{position:absolute;left:var(--pad);top:22px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.loader .who{position:absolute;left:50%;top:clamp(20px,5vh,44px);height:clamp(56px,9vh,84px);width:auto;transform:translateX(-50%)}
 .loader .note{position:absolute;left:var(--pad);bottom:28px;font-family:var(--hand);font-size:clamp(24px,2.6vw,34px)}
 .no-js .loader,.no-gsap .loader{display:none}
 
 /* ---------- header ---------- */
-.hdr{position:fixed;inset:0 0 auto;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:20px var(--pad);mix-blend-mode:difference;color:#fff;pointer-events:none}
-.hdr>*{pointer-events:auto}
-.wm{font-stretch:68%;font-weight:800;font-size:26px;letter-spacing:.02em;line-height:1}
-.wm sup{font-size:.4em;font-weight:600;margin-left:2px;vertical-align:super}
-.hdr nav{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:600}
-.hdr nav a{position:relative}
-.hdr nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.hdr nav a:hover::after{transform:scaleX(1);transform-origin:left}
-.hdr .clock{font-variant-numeric:tabular-nums;opacity:.7}
-.mbtn{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.hdr{position:fixed;top:12px;left:var(--pad);right:var(--pad);z-index:500;height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 8px 0 14px;border-radius:999px;background:rgba(243,242,238,.86);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--ln);box-shadow:0 10px 30px -18px rgba(0,0,0,.35);color:var(--bk);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hdr.hide{transform:translateY(-140%)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:46px;width:auto}
+.logo span{font-size:10.5px;font-weight:600;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;color:var(--gr);padding-left:12px;border-left:1px solid var(--ln)}
+.hdr nav{display:flex;align-items:center;gap:22px;font-size:13.5px;font-weight:600}
+.hdr nav a.opt{position:relative}
+.hdr nav a.opt::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.hdr nav a.opt:hover::after{transform:scaleX(1);transform-origin:left}
+.hdr .clock{font-variant-numeric:tabular-nums;color:var(--gr)}
+.hdr .talk{height:46px;display:inline-flex;align-items:center;padding:0 20px;border-radius:999px;background:var(--bk);color:var(--pa);font-weight:700;transition:transform .3s}
+.hdr .talk:hover{transform:scale(1.04)}
+.mbtn{display:flex;align-items:center;gap:10px;height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--ln);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 .mbtn i{position:relative;width:26px;height:10px}
 .mbtn i::before,.mbtn i::after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor;transition:transform .4s,top .4s}
 .mbtn i::before{top:0}.mbtn i::after{top:8px}
@@ -107,13 +111,15 @@ button{background:none;border:0;cursor:pointer}
 .mbtn.open i::after{top:4px;transform:rotate(-45deg)}
 
 /* ---------- menu ---------- */
-.menu{position:fixed;inset:0;z-index:450;background:var(--bk);color:var(--pa);display:grid;grid-template-columns:1.1fr 1fr;visibility:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .8s cubic-bezier(.76,0,.24,1),visibility 0s .8s}
-.menu.open{visibility:visible;clip-path:inset(0 0 0 0);transition:clip-path .8s cubic-bezier(.76,0,.24,1)}
+.menu{position:fixed;inset:0;z-index:450;background:var(--bk);color:var(--pa);display:grid;grid-template-columns:1.1fr 1fr;visibility:hidden}
+.menu.open{visibility:visible}
 .menu .links{display:flex;flex-direction:column;justify-content:center;padding:80px var(--pad) 30px;overflow-y:auto}
 .menu .links a{display:flex;align-items:baseline;gap:14px;font-stretch:68%;font-weight:800;text-transform:uppercase;font-size:clamp(34px,min(6.4vw,8.4vh),92px);line-height:.98;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
 .menu .links a small{font-stretch:100%;font-size:12px;font-weight:600;color:var(--gr2)}
 .menu .links:hover a{opacity:.3}
 .menu .links a:hover{opacity:1;transform:translateX(14px)}
+.menu .links .mfoot{display:none}
+@media (max-width:860px){.menu .links .mfoot{display:flex;flex-direction:column;gap:6px;margin-top:28px;padding-top:18px;border-top:1px solid var(--lnd)}.menu .links .mfoot a{font-stretch:100%;font-size:15px;font-weight:600;text-transform:none;opacity:1!important;transform:none!important}}
 .menu .side{position:relative;border-left:1px solid var(--lnd);display:flex;flex-direction:column;justify-content:flex-end;padding:80px var(--pad) 30px;gap:18px;overflow:hidden}
 .menu .side .ph{position:absolute;inset:0;opacity:.35}
 .menu .side .ph img{width:100%;height:100%;object-fit:cover}
@@ -123,9 +129,9 @@ button{background:none;border:0;cursor:pointer}
 .menu .hand{font-size:30px}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:max(620px,100svh);padding:96px var(--pad) 28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.hero{position:relative;min-height:max(620px,100svh);padding:100px var(--pad) 28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .hp{position:absolute;inset:0;pointer-events:none}
-.hp figure{position:absolute;width:var(--w);aspect-ratio:3/4;overflow:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
+.hp figure{position:absolute;width:min(var(--w),22vh);aspect-ratio:3/4;overflow:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
 .hp img{width:100%;height:100%;object-fit:cover}
 .h-meta{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .h-meta span:nth-child(2){text-align:center}
@@ -136,7 +142,7 @@ button{background:none;border:0;cursor:pointer}
 .h-foot{position:relative;display:grid;grid-template-columns:1fr 1fr auto;gap:24px;align-items:end;margin-top:22px;padding-top:18px;border-top:1px solid var(--bk)}
 .h-foot .ser{font-size:clamp(30px,3.4vw,56px);line-height:.95}
 .h-foot p{max-width:430px;font-size:15px}
-.h-note{position:absolute;right:calc(var(--pad) + 4vw);top:clamp(100px,16vh,200px);font-size:clamp(24px,2.3vw,34px);line-height:1;transform:rotate(-6deg);color:var(--bk)}
+.h-note{position:absolute;right:calc(var(--pad) + 3vw);top:24%;font-size:clamp(24px,2.3vw,34px);line-height:1;transform:rotate(-6deg);color:var(--bk)}
 .h-note svg{display:block;width:90px;height:70px;margin:6px 0 0 40px;overflow:visible}
 .draw path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 
@@ -166,7 +172,8 @@ button{background:none;border:0;cursor:pointer}
 
 /* ---------- 02 pillars ---------- */
 .pillars{position:relative;overflow:hidden;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,70px);align-items:center;padding:110px var(--pad) 60px}
-.pillars .tag{position:absolute;left:var(--pad);top:40px}
+.pillars .tag{position:absolute;left:var(--pad);top:100px}
+@media (min-width:861px){.pillars{padding-top:140px;padding-bottom:40px}}
 .pw{list-style:none}
 .pw li{padding:6px 0;border-bottom:1px solid var(--lnd)}
 .pw h3{display:flex;align-items:baseline;gap:14px;font-stretch:66%;font-weight:800;text-transform:uppercase;font-size:clamp(54px,8.6vw,140px);line-height:.9;opacity:.18;transition:opacity .5s}
@@ -219,6 +226,14 @@ button{background:none;border:0;cursor:pointer}
 .card.intro .big{font-size:clamp(90px,11vw,190px)}
 .card.intro p{font-size:16px;max-width:340px;color:var(--gr2)}
 .card.intro .hand{display:block;margin-top:18px;font-size:30px;color:var(--pa);transform:rotate(-3deg)}
+@media (min-width:861px){
+  .work{height:100vh;min-height:600px;display:flex;flex-direction:column;padding:100px 0 28px}
+  .work .h2{font-size:clamp(46px,6.2vw,104px)}
+  .hz{flex:1;height:auto;min-height:0}
+  .card .ph{max-height:44vh}
+  .card.up{margin-top:0}
+  .card.dn{margin-bottom:0}
+}
 .prog{position:relative;height:2px;margin:30px var(--pad) 0;background:var(--lnd)}
 .prog i{position:absolute;inset:0;background:var(--pa);transform:scaleX(0);transform-origin:left}
 
@@ -360,7 +375,7 @@ button{background:none;border:0;cursor:pointer}
   .call{columns:3}
 }
 @media (max-width:860px){
-  .hdr nav a:not(.keep),.hdr .clock{display:none}
+  .hdr .clock{display:none}
   .menu{grid-template-columns:1fr}
   .menu .side{display:none}
   .who .grid,.assoc{grid-template-columns:1fr}
@@ -395,8 +410,19 @@ button{background:none;border:0;cursor:pointer}
   .films{grid-template-columns:1fr}
 }
 @media (max-width:600px){
+  .hdr{height:58px;top:8px;padding:0 6px 0 10px}
+  .logo img{height:40px}
+  .logo span{display:none}
+  .hdr nav{gap:8px}
+  .hdr .talk,.mbtn{height:42px;padding:0 14px}
+  .mbtn span{display:none}
   .h-meta{grid-template-columns:1fr 1fr}
-  .h-meta span:nth-child(2){display:none}
+  .h-meta span:nth-child(1){display:none}
+  .h-meta span:nth-child(2){text-align:left}
+  .hp figure{width:27vw!important}
+  .hp figure:nth-child(1){left:4%!important;top:21%!important}
+  .hp figure:nth-child(2){left:37%!important;top:26%!important}
+  .hp figure:nth-child(3){left:68%!important;top:20%!important}
   .h-foot{grid-template-columns:1fr}
   .h-note{display:none}
   .hp figure:nth-child(n+4){display:none}
@@ -415,7 +441,7 @@ button{background:none;border:0;cursor:pointer}
 <script>document.documentElement.classList.add('js')</script>
 
 <div class="loader" id="loader" aria-hidden="true">
-  <span class="who">Felicity Integrated Marketing Services</span>
+  <img class="who" src="images/logo-white.png" alt="">
   <div class="stack" id="lstack"></div>
   <span class="note">getting the stage ready…</span>
   <span class="cnt" id="lcnt">0</span>
@@ -425,12 +451,13 @@ button{background:none;border:0;cursor:pointer}
 <div class="peek" id="peek" aria-hidden="true"><div class="pi"><img id="peekI" alt=""></div></div>
 
 <header class="hdr">
-  <a href="#top" class="wm" aria-label="Felicity, back to top">FELICITY<sup>®</sup></a>
+  <a href="#top" class="logo" aria-label="Felicity, back to top"><img src="images/logo.png" alt="Felicity"><span>Integrated<br>Marketing Services</span></a>
   <nav aria-label="Primary">
     <span class="clock" id="clock" title="Time in Jaipur"></span>
     <a href="#work" class="opt">Work</a>
     <a href="#services" class="opt">Services</a>
-    <a href="#contact" class="keep">Let's talk</a>
+    <a href="#clients" class="opt">Clients</a>
+    <a href="#contact" class="talk">Let's talk</a>
     <button class="mbtn" id="mbtn" aria-expanded="false" aria-controls="menu"><span>Menu</span><i></i></button>
   </nav>
 </header>
@@ -439,6 +466,7 @@ button{background:none;border:0;cursor:pointer}
   <div class="links" id="mlinks"></div>
   <div class="side">
     <div class="ph"><img src="images/sm-1.jpg" alt=""></div>
+    <img src="images/logo-white.png" alt="" style="height:70px;width:auto;margin-bottom:auto;align-self:flex-start">
     <span class="hand">say hello ↓</span>
     <p>B-207 A, Rajender Marg, Bapu Nagar, Jaipur 302015</p>
     <a href="tel:+919828158918">+91 98281 58918</a>
@@ -451,7 +479,7 @@ button{background:none;border:0;cursor:pointer}
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hp" id="hp"></div>
-  <div class="h-meta"><span>Integrated Marketing Services</span><span>Jaipur · New Delhi · Ahmedabad</span><span>Est. 13 years ago</span></div>
+  <div class="h-meta"><span>Events · Marketing · Promotion · Activation</span><span>Jaipur · New Delhi · Ahmedabad</span><span>Est. 13 years ago</span></div>
   <p class="h-note hand" aria-hidden="true">2,500+ projects<br>&amp; still counting
     <svg class="draw" viewBox="0 0 90 70"><path d="M8 6 C 30 10, 52 26, 58 56"/><path d="M44 46 L 58 58 L 66 40"/></svg>
   </p>
@@ -600,7 +628,7 @@ button{background:none;border:0;cursor:pointer}
 
 <footer class="foot inv">
   <div class="cols">
-    <div><h4>Felicity</h4><p>Integrated Marketing Services.<br>Marketing · Promotion · Events · Activation.</p></div>
+    <div><img src="images/logo-white.png" alt="Felicity" style="height:64px;width:auto;margin-bottom:14px"><p>Integrated Marketing Services.<br>Marketing · Promotion · Events · Activation.</p></div>
     <div><h4>Offices</h4><ul><li>Jaipur (HQ)</li><li>New Delhi</li><li>Ahmedabad</li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="tel:+919828158918">+91 98281 58918</a></li><li><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></li></ul></div>
     <div><h4>Jump to</h4><ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#top">Back to top ↑</a></li></ul></div>
@@ -633,7 +661,8 @@ button{background:none;border:0;cursor:pointer}
 
   /* ---------------- content (from the Felicity deck) ---------------- */
   const MENU = [['#top', 'Home'], ['#about', 'About'], ['#what', 'What we do'], ['#work', 'Work'], ['#desk-sec', 'Photo pile'], ['#clients', 'Clients'], ['#network', 'Offices'], ['#contact', 'Contact']];
-  const HERO_PH = [['au-th-6', '4%', '14%', 'clamp(110px,14vw,230px)', -6, .5], ['sm-1', '23%', '7%', 'clamp(80px,10vw,170px)', 4, 1.1], ['berger-5', '43%', '15%', 'clamp(110px,15vw,250px)', -2, .7], ['stunt-1', '67%', '7%', 'clamp(80px,11vw,180px)', 7, 1.3], ['au-goa-1', '82%', '20%', 'clamp(100px,13vw,210px)', -5, .9]];
+  // [photo, left, top, width, tilt, parallax speed] — kept between the top line and the big title
+  const HERO_PH = [['au-th-6', '3%', '23%', 'clamp(100px,13vw,220px)', -6, .5], ['sm-1', '21%', '26%', 'clamp(80px,10vw,170px)', 4, 1.1], ['berger-5', '37%', '21%', 'clamp(100px,14vw,240px)', -2, .7], ['stunt-1', '57%', '25%', 'clamp(80px,11vw,180px)', 6, 1.3]];
   const MQ = ['Conferences', 'Product launches', 'MICE', 'Award nights', 'Concerts', 'Kabaddi leagues', 'Stunt shows', 'Mall activations', 'Road shows', 'Gala dinners'];
 
   const PILLARS = [
@@ -679,7 +708,8 @@ button{background:none;border:0;cursor:pointer}
   const TYPES = ['Conference / seminar', 'MICE / employee meet', 'Award night / R&R', 'Product launch', 'Corporate offsite', 'Gala dinner', 'Concert / live show', 'Sports event', 'Activation (BTL / mall / retail)', 'Road show', 'Content / film', 'Something else'];
 
   /* ---------------- build ---------------- */
-  $('#mlinks').innerHTML = MENU.map(([h, t], i) => `<a href="${h}"><small>${pad(i + 1)}</small>${t}</a>`).join('');
+  $('#mlinks').innerHTML = MENU.map(([h, t], i) => `<a href="${h}"><small>${pad(i + 1)}</small>${t}</a>`).join('') +
+    `<div class="mfoot"><a href="tel:+919828158918">+91 98281 58918</a><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></div>`;
   $('#hp').innerHTML = HERO_PH.map(([p, x, y, w, r, sp]) => `<figure style="left:${x};top:${y};--w:${w};transform:rotate(${r}deg)" data-speed="${sp}" data-rot="${r}"><img src="${I(p)}" alt=""></figure>`).join('');
   const star = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0l1.2 3.8L10 5 6.2 6.2 5 10 3.8 6.2 0 5l3.8-1.2z"/></svg>';
   const mqHtml = MQ.map((t, i) => `<span>${i % 3 === 1 ? `<em>${t}</em>` : t}${star}</span>`).join('');
@@ -763,14 +793,33 @@ button{background:none;border:0;cursor:pointer}
 
   /* ---------------- menu ---------------- */
   const menu = $('#menu'), mbtn = $('#mbtn');
+  let menuOpen = false;
   function setMenu(open) {
-    if (menu.classList.contains('open') === open) return;
-    menu.classList.toggle('open', open); mbtn.classList.toggle('open', open);
+    if (menuOpen === open) return;
+    menuOpen = open;
+    mbtn.classList.toggle('open', open);
     mbtn.setAttribute('aria-expanded', open); mbtn.firstElementChild.textContent = open ? 'Close' : 'Menu';
     lock(open);
-    if (open && G && !RM) G.fromTo($$('.links a', menu), { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, stagger: .05, duration: .8, ease: 'expo.out', delay: .25 });
+    if (!G || RM) { menu.classList.toggle('open', open); return; }
+    G.killTweensOf(menu);
+    if (open) {
+      menu.classList.add('open');
+      G.fromTo(menu, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .8, ease: 'expo.inOut' });
+      G.fromTo($$('.links a', menu), { yPercent: 100, opacity: 0 }, { yPercent: 0, opacity: 1, stagger: .05, duration: .8, ease: 'expo.out', delay: .3 });
+    } else {
+      G.to(menu, { clipPath: 'inset(100% 0% 0% 0%)', duration: .7, ease: 'expo.inOut', onComplete: () => menu.classList.remove('open') });
+    }
   }
-  mbtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  mbtn.addEventListener('click', () => setMenu(!menuOpen));
+
+  // header tucks away while scrolling down, comes back as soon as you scroll up
+  const hdr = $('.hdr');
+  let lastY = scrollY;
+  addEventListener('scroll', () => {
+    const y = scrollY;
+    hdr.classList.toggle('hide', y > lastY && y > 160 && !menuOpen);
+    lastY = y;
+  }, { passive: true });
 
   /* ---------------- lightbox ---------------- */
   const lb = $('#lb'), lbI = $('#lbI'), lbTh = $('#lbTh');
@@ -804,7 +853,7 @@ button{background:none;border:0;cursor:pointer}
     if (lb.classList.contains('open')) {
       if (e.key === 'Escape') closeLb(); else if (e.key === 'ArrowLeft') show(ci - 1); else if (e.key === 'ArrowRight') show(ci + 1);
       else if (e.key === 'Tab') { const f = $$('button:not([hidden])', lb); const a = f.indexOf(document.activeElement); if (e.shiftKey && a <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && a === f.length - 1) { e.preventDefault(); f[0].focus(); } }
-    } else if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); mbtn.focus(); }
+    } else if (e.key === 'Escape' && menuOpen) { setMenu(false); mbtn.focus(); }
   });
   // desk photos open on click / Enter (Draggable only fires onClick when the photo wasn't moved)
   $$('.pol', desk).forEach(p => p.addEventListener('keydown', e => { if (e.key === 'Enter') openLb(+p.dataset.ev, +p.dataset.j); }));
@@ -870,10 +919,12 @@ button{background:none;border:0;cursor:pointer}
       .add(() => { loader.remove(); lock(false); ST.refresh(); }, '-=.1')
       .add(() => intro.play(), '-=.55');
   };
-  const skipLoader = () => { clearInterval(flip); if (loader.isConnected) loader.remove(); lock(false); intro.progress(1); ST.refresh(); };
+  const lcnt = $('#lcnt');
+  let cntTween = null;
+  const skipLoader = () => { clearInterval(flip); if (cntTween) cntTween.kill(); if (loader.isConnected) loader.remove(); lock(false); intro.progress(1); ST.refresh(); };
   if (RM) skipLoader();
   else {
-    G.to(cnt, { v: 100, duration: 2, ease: 'power2.inOut', onUpdate: () => $('#lcnt').textContent = Math.round(cnt.v), onComplete: finishLoader });
+    cntTween = G.to(cnt, { v: 100, duration: 2, ease: 'power2.inOut', onUpdate: () => { lcnt.textContent = Math.round(cnt.v); }, onComplete: finishLoader });
     // safety net: if animation frames are paused (background tab, power saving), never leave visitors stuck behind the loader
     setTimeout(() => { if (loader.isConnected) skipLoader(); }, 5000);
   }
@@ -931,7 +982,7 @@ button{background:none;border:0;cursor:pointer}
     const track = $('#track');
     if (isDesk) {
       const dist = () => track.scrollWidth - innerWidth;
-      hTween = G.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '#hz', start: 'center center', end: () => '+=' + dist(), pin: '#work', pinSpacing: true, scrub: 1, invalidateOnRefresh: true, onUpdate: self => G.set('#prog', { scaleX: self.progress }) } });
+      hTween = G.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '#work', start: 'top top', end: () => '+=' + dist(), pin: true, pinSpacing: true, scrub: 1, invalidateOnRefresh: true, onUpdate: self => G.set('#prog', { scaleX: self.progress }) } });
       if (motion) $$('.card .ph img').forEach(img => G.fromTo(img, { xPercent: -7 }, { xPercent: 7, ease: 'none', scrollTrigger: { trigger: img.closest('.card'), containerAnimation: hTween, start: 'left right', end: 'right left', scrub: true } }));
     }
 
