@@ -114,7 +114,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 
 /* ============ STATS ============ */
 .stats{border-bottom:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
 .stat{padding:32px 24px 30px 0}
 .stat+.stat{padding-left:24px;border-left:1px solid var(--line)}
 .stat b{display:block;font-size:clamp(34px,3.6vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1}
@@ -333,11 +333,10 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
   .hero .wrap{padding-top:clamp(40px,10vh,80px);padding-bottom:clamp(40px,8vh,70px)}
   .hero .ctas .btn{flex:1}
   .slide-nav{left:16px;right:auto;bottom:24px}
-  .stats .wrap{grid-template-columns:1fr 1fr}
-  .stat,.stat+.stat{padding:22px 0}
-  .stat:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
-  .stat:nth-child(odd){border-left:0}
-  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .stat{padding:20px 8px 20px 0}
+  .stat+.stat{padding-left:12px}
+  .stat b{font-size:clamp(24px,7.2vw,34px)}
+  .stat span{font-size:12.5px}
   .svc,.steps,.cases,.films,.cgrid,.fgrid,.direct{grid-template-columns:1fr}
   .why{grid-template-columns:1fr}
   .why div:nth-child(even){padding-left:0;border-left:0}
