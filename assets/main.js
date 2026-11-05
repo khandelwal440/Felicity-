@@ -28,7 +28,7 @@
     $('#bars').innerHTML = D.SLIDES.map((s, i) => `<button type="button" aria-label="Show slide ${i + 1}: ${s[1]}"><i></i></button>`).join('');
   }
   const svc = $('#svc');
-  if (svc) svc.innerHTML = D.SERVICES.map(([ic, t, items]) => `<article data-a><span class="ic">${svg(ic)}</span><h3>${t}</h3><ul>${items.map(s => `<li><a href="#contact" data-type="${s}">${s}</a></li>`).join('')}</ul></article>`).join('');
+  if (svc) svc.innerHTML = D.SERVICES.map(([ic, t, items]) => `<article data-a><span class="ic">${svg(ic)}</span><h3>${t}</h3><ul>${items.map(s => `<li>${s}</li>`).join('')}</ul></article>`).join('');
   const cgrid = $('#cgrid');
   if (cgrid) cgrid.innerHTML = [0, 1, 2, 3].map(i => { const c = CASES[i]; return `<button type="button" class="ccard" data-case="${i}" data-a aria-label="Open ${c.title} photos"><div class="im"><img src="${I(c.photos[0])}" alt="${c.title}" loading="lazy"></div><div class="t"><b>${c.title}</b><small>${c.place}</small></div></button>`; }).join('');
 

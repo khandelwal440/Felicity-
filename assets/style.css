@@ -136,17 +136,13 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 
 /* ============ SERVICES ============ */
 .svc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.svc article{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
-.svc article:hover{transform:translateY(-6px);box-shadow:0 24px 50px -30px rgba(0,0,0,.35);border-color:#CFCFCB}
+.svc article{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 24px}
 .svc .ic{width:48px;height:48px;border-radius:12px;background:var(--black);display:grid;place-items:center}
 .svc .ic svg{width:24px;height:24px;stroke:var(--white);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .svc h3{margin-top:20px;font-size:22px}
 .svc ul{list-style:none;margin-top:14px;display:grid;gap:2px}
-.svc li a{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--off);font-size:15px;color:#3A3A37;transition:color .2s,padding .3s var(--ease)}
-.svc li:last-child a{border-bottom:0}
-.svc li a::after{content:"→";opacity:0;transition:opacity .2s}
-.svc li a:hover{color:var(--black);padding-left:4px}
-.svc li a:hover::after{opacity:1}
+.svc li{padding:7px 0;border-bottom:1px solid var(--off);font-size:15px;color:#3A3A37}
+.svc li:last-child{border-bottom:0}
 
 /* ============ CORPORATE ============ */
 .corp .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:center}
