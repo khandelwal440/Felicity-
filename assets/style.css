@@ -94,7 +94,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .slides img.on{opacity:1}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.25) 100%),linear-gradient(0deg,rgba(0,0,0,.6),transparent 40%)}
 /* headline at the top of the photo, buttons along the bottom */
-.hero .wrap{position:relative;z-index:2;align-self:stretch;display:flex;flex-direction:column;padding:clamp(40px,12vh,110px) 0 28px}
+.hero .wrap{position:relative;z-index:2;align-self:stretch;display:flex;flex-direction:column;padding:clamp(40px,12vh,110px) 0 clamp(70px,13vh,120px)}
 .hero .wrap .ctas{margin-top:auto;padding-top:32px}
 .hero .label{color:rgba(255,255,255,.75)}
 .hero h1{margin-top:16px;max-width:760px;font-size:clamp(38px,min(5.6vw,9vh),76px);line-height:1.18}
@@ -330,7 +330,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
   .brand span{display:none}
   .head{flex-direction:column;align-items:flex-start;gap:14px}
   .hero{height:auto;min-height:calc(100svh - var(--hh));padding:0 0 90px;align-items:flex-start}
-  .hero .wrap{padding-top:clamp(40px,10vh,80px)}
+  .hero .wrap{padding-top:clamp(40px,10vh,80px);padding-bottom:clamp(40px,8vh,70px)}
   .hero .ctas .btn{flex:1}
   .slide-nav{left:16px;right:auto;bottom:24px}
   .stats .wrap{grid-template-columns:1fr 1fr}
