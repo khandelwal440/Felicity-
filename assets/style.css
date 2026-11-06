@@ -201,7 +201,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .boards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .board{border:1px solid var(--line);border-radius:var(--r);background:var(--white);padding:clamp(12px,2vw,24px);transition:box-shadow .35s}
 .board:hover{box-shadow:0 24px 50px -32px rgba(0,0,0,.3)}
-.partners{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:center;margin-top:clamp(56px,7vw,88px)}
+.partners{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:start;margin-top:clamp(56px,7vw,88px)}
 .partners .board{max-width:640px;justify-self:end;width:100%}
 .sectors{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .sectors span{padding:8px 16px;border-radius:999px;background:var(--off);font-size:14px;font-weight:600}
@@ -349,12 +349,15 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
   .lb .th{display:none}
 }
 /* ============ CLIENT LOGOS ============ */
-.logos{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-.logos li{display:grid;place-items:center;height:112px;padding:18px 20px;background:var(--white);border:1px solid var(--line);border-radius:12px;transition:border-color .3s,box-shadow .3s}
+.logos{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.logos li{display:grid;place-items:center;height:136px;padding:14px 18px;background:var(--white);border:1px solid var(--line);border-radius:12px;transition:border-color .3s,box-shadow .3s}
 .logos li:hover{border-color:#CFCFCB;box-shadow:0 14px 30px -22px rgba(0,0,0,.35)}
-.logos img{max-width:100%;max-height:60px;width:auto;height:auto;object-fit:contain}
+.logos img{width:100%;height:100%;max-height:84px;object-fit:contain}
+.logos.compact{grid-template-columns:repeat(3,1fr)}
+.logos.compact li{height:120px}
+.logos.compact img{max-height:72px}
 @media (max-width:1080px){.logos{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:640px){.logos{grid-template-columns:repeat(3,1fr);gap:8px}.logos li{height:76px;padding:10px}.logos img{max-height:40px}}
+@media (max-width:640px){.logos,.logos.compact{grid-template-columns:repeat(2,1fr);gap:10px}.logos li,.logos.compact li{height:96px;padding:10px 12px}.logos img,.logos.compact img{max-height:58px}}
 
 /* ============ HOME: link to the work page ============ */
 .more-work{display:flex;justify-content:center;margin-top:40px}

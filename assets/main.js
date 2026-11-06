@@ -48,6 +48,8 @@
   if (why) why.innerHTML = D.WHY.map(([t, d]) => `<div data-a><b>${t}</b><span>${d}</span></div>`).join('');
   const logos = $('#logos');
   if (logos) logos.innerHTML = D.CLIENTS.map(([n, f]) => `<li title="${n}"><img src="images/clients/${f}" alt="${n}" loading="lazy"></li>`).join('');
+  const partnerLogos = $('#partnerLogos');
+  if (partnerLogos) partnerLogos.innerHTML = D.PARTNERS.map(([n, f]) => `<li title="${n}"><img src="images/partners/${f}" alt="${n}" loading="lazy"></li>`).join('');
   const sectors = $('#sectors');
   if (sectors) sectors.innerHTML = D.SECTORS.map(s => `<span>${s}</span>`).join('');
 
