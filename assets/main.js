@@ -46,6 +46,8 @@
   if (steps) steps.innerHTML = D.STEPS.map(([t, d], i) => `<div class="step" data-a><span class="n">${pad(i + 1)}</span><h3>${t}</h3><p>${d}</p></div>`).join('');
   const why = $('#why');
   if (why) why.innerHTML = D.WHY.map(([t, d]) => `<div data-a><b>${t}</b><span>${d}</span></div>`).join('');
+  const logos = $('#logos');
+  if (logos) logos.innerHTML = D.CLIENTS.map(([n, f]) => `<li title="${n}"><img src="images/clients/${f}" alt="${n}" loading="lazy"></li>`).join('');
   const sectors = $('#sectors');
   if (sectors) sectors.innerHTML = D.SECTORS.map(s => `<span>${s}</span>`).join('');
 
