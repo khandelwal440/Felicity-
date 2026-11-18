@@ -246,7 +246,6 @@
     const [p, t, d] = D.SERVICES[si2], n = D.SERVICES.length;
     $('#svmI').src = I(p); $('#svmT').textContent = t; $('#svmD').textContent = d;
     $('#svmNo').textContent = `${pad(si2 + 1)} / ${pad(n)}`;
-    $('#svmW').href = `https://wa.me/919828158918?text=${encodeURIComponent(`Hi Felicity, I'd like to know more about ${t}.`)}`;
     $('#svmP span').textContent = D.SERVICES[(si2 - 1 + n) % n][1];
     $('#svmN span').textContent = D.SERVICES[(si2 + 1) % n][1];
     if (G && !RM) G.fromTo('#svm .svm-im img, #svm .svm-body > *', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .45, stagger: .05, ease: 'power2.out' });
