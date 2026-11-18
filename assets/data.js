@@ -10,15 +10,15 @@
 
     SERVICES: [
       // [photo, service, description shown in the service popup]
-      ['dinner', 'Wedding Planning & Execution', 'From the first idea to the last dance, we plan and run every part of the wedding — venue, décor, guest hospitality, entertainment and on-ground coordination — so the family can simply enjoy the celebration.'],
+      ['au-goa-1', 'Conferences', 'Dealer meets, annual conferences and award nights with strong content, stage design and show flow — built to celebrate your people and keep the audience engaged.'],
+      ['kabaddi-team', 'Sports Events', 'League launches, match-day experiences, fan zones and team events. We have delivered seasons of professional kabaddi and sporting leagues in multiple cities.'],
       ['sm-1', 'Live Concerts', 'We produce live concerts and shows end to end: artist coordination, stage, sound and light design, ticketing support and crowd management. Our crew has run shows with leading artists across India.'],
-      ['berger-5', 'Exhibitions', 'We design, build and manage exhibition spaces and brand pavilions — from layout and fabrication to visitor flow and on-site staffing — so your brand stands out on the floor.'],
       ['au-th-6', 'MICE & Corporate Offsites', 'Meetings, incentive trips, conferences and offsites in India and overseas. We handle travel, stay, venues, themed evenings and every detail in between, for groups of 20 to 2,000.'],
-      ['kabaddi-team', 'Sports Entertainment', 'League launches, match-day experiences, fan zones and team events. We have delivered seasons of professional kabaddi and sporting leagues in multiple cities.'],
       ['stunt-1', 'Rides & Stunt Shows', 'Bike rides, rallies and stunt shows planned for safety and spectacle — routes, permissions, support vehicles and show production — including TVS Apache Owners Group rides across India.'],
-      ['au-goa-1', 'Branding & Merchandising', 'Stage and venue branding, signage, printed collateral and branded merchandise, produced in-house by our creative team so every touchpoint carries your brand the right way.'],
-      ['kwc-9', 'Retail Fitment', 'In-store branding, displays, kiosks and shop-in-shop fitments, designed, fabricated and installed across retail outlets with consistent quality and on-time rollout.'],
-      ['moto-podium', 'Conferences & Award Ceremonies', 'Dealer meets, annual conferences and award nights with strong content, stage design and show flow — built to celebrate your people and keep the audience engaged.'],
+      ['dinner', 'Wedding Planning & Execution', 'From the first idea to the last dance, we plan and run every part of the wedding — venue, décor, guest hospitality, entertainment and on-ground coordination — so the family can simply enjoy the celebration.'],
+      ['kwc-9', 'Retail Fit-Out', 'In-store branding, displays, kiosks and shop-in-shop fit-outs, designed, fabricated and installed across retail outlets with consistent quality and on-time rollout.'],
+      ['berger-5', 'Exhibitions', 'We design, build and manage exhibition spaces and brand pavilions — from layout and fabrication to visitor flow and on-site staffing — so your brand stands out on the floor.'],
+      ['hero-crowd', 'Experiential Marketing (Rural, SCP & CCP)', 'On-ground brand experiences that put your product in people’s hands — rural marketing, SCP and CCP programmes, roadshows and activations, planned, staffed and tracked end to end.'],
       ['hero-screen', 'Seminars & Workshops', 'Seminars, training programmes and workshops of every size, with venue, AV, registrations and speaker management handled smoothly from start to finish.'],
     ],
 
@@ -81,14 +81,18 @@
     ],
     // agency & media partner logos (images/partners/)
     PARTNERS: [
-      ['Wizcraft', 'wizcraft.png'], ['GroupM', 'groupm.png'], ['Fountainhead', 'fountainhead.png'], ['DNA Networks', 'dna-networks.svg'],
-      ['Hansa Vision', 'hansa-vision.svg'], ['Rajasthan Patrika', 'rajasthan-patrika.svg'], ['Encompass', 'encompass.svg'], ['DDB Mudramax', 'ddb-mudramax.png'],
-      ['ZeeCo', 'zeeco.png'], ['Candid', 'candid.svg'], ['Beep', 'beep.png'], ['Acme Events India', 'acme.png'],
-      ['Impresario', 'impresario.png'], ['Impact Marketing Services', 'impact.png'], ['MOMS Outdoor Media Solutions', 'moms.svg'],
+      // in the order Felicity asked for
+      ['DNA Networks', 'dna-networks.svg'], ['Hyperlink Brand Solutions', 'hyperlink.png'], ['GroupM', 'groupm.png'],
+      ['Rajasthan Patrika', 'rajasthan-patrika.svg'], ['Dainik Bhaskar', 'dainik-bhaskar.svg'], ['Wizcraft', 'wizcraft.png'],
+      ['Encompass', 'encompass.svg'], ['Hansa Vision', 'hansa-vision.svg'], ['Fountainhead', 'fountainhead.png'],
+      ['DDB Mudramax', 'ddb-mudramax.png'], ['Candid', 'candid.svg'], ['MOMS Outdoor Media Solutions', 'moms.svg'],
+      ['Impact Marketing Services', 'impact.png'], ['Impresario', 'impresario.png'], ['Inextis Events', 'inextis.png'],
+      ['Beep', 'beep.png'], ['Acme Events India', 'acme.png'],
     ],
     SECTORS: ['Banking & Finance', 'Automobiles', 'Consumer Electronics', 'Retail', 'Telecom', 'FMCG', 'Insurance', 'Liquor & Tobacco', 'Real Estate', 'Sports'],
     FILMS: [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']],
     OFFICES: [['Jaipur', 'Head office', 'F-2145 (A), RIICO Industrial Area, Ramchandrapura, Jaipur, Rajasthan 302022'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']],
-    TYPES: ['Wedding planning & execution', 'Live concert', 'Exhibition', 'MICE / corporate offsite', 'Sports entertainment', 'Ride / stunt show', 'Branding & merchandising', 'Retail fitment', 'Conference / award ceremony', 'Seminar / workshop', 'Other'],
+    // same order as SERVICES, so "Enquire about this" picks the matching type
+    TYPES: ['Conference', 'Sports event', 'Live concert', 'MICE / corporate offsite', 'Ride / stunt show', 'Wedding planning & execution', 'Retail fit-out', 'Exhibition', 'Experiential marketing (rural, SCP, CCP)', 'Seminar / workshop', 'Other'],
   };
 })();
