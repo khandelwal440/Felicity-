@@ -46,8 +46,12 @@
   if (steps) steps.innerHTML = D.STEPS.map(([t, d], i) => `<div class="step" data-a><span class="n">${pad(i + 1)}</span><h3>${t}</h3><p>${d}</p></div>`).join('');
   const why = $('#why');
   if (why) why.innerHTML = D.WHY.map(([t, d]) => `<div data-a><b>${t}</b><span>${d}</span></div>`).join('');
-  const logos = $('#logos');
-  if (logos) logos.innerHTML = D.CLIENTS.map(([n, f]) => `<li title="${n}"><img src="images/clients/${f}" alt="${n}" loading="lazy"></li>`).join('');
+  const clientGroups = $('#clientGroups');
+  if (clientGroups) clientGroups.innerHTML = D.CLIENT_GROUPS.map(([sector, list]) => `
+    <div class="cgroup" data-a>
+      <h3 class="cgroup-h">${sector}</h3>
+      <ul class="logos">${list.map(([n, f]) => `<li title="${n}"><img src="images/clients/${f}" alt="${n}" loading="lazy"></li>`).join('')}</ul>
+    </div>`).join('');
   const partnerLogos = $('#partnerLogos');
   if (partnerLogos) partnerLogos.innerHTML = D.PARTNERS.map(([n, f]) => `<li title="${n}"><img src="images/partners/${f}" alt="${n}" loading="lazy"></li>`).join('');
   const sectors = $('#sectors');

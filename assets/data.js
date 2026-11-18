@@ -59,21 +59,10 @@
     NUMS: [['125', '+', 'Conferences delivered for Nokia'], ['450', '', 'Guests at the AU Financiers meet in Goa'], ['250', '+', 'TVS AOG breakfast rides'], ['100', '+', 'TVS Apache stunt shows across India'], ['15500', ' ft', 'World-record stunt show at Komic, Spiti'], ['200', '+', 'School & college contact programmes']],
     STEPS: [['Fresh ideas', 'Every brief starts with a concept built around your audience and goals.'], ['Meticulous planning', 'In-house teams for data management, creative design and logistics.'], ['Flawless execution', 'Our own crew on the ground, across India and overseas.'], ['Lasting impression', 'Events your guests remember long after the lights go down.']],
     WHY: [['250+ brands, 4,000+ projects', 'Our top clients are our longest-standing relationships.'], ['India & overseas', 'Three offices and 11 associate cities.'], ['Design & data in-house', 'Well-equipped offices and ample resources.'], ['A decade of marketing', 'In-depth understanding of Indian consumers.'], ['Top-notch service', 'Half our team has been here almost a decade.']],
-    // client logos (images/clients/): official logo files where available, the rest cut from the company deck
-    CLIENTS: [
-      ['TVS Motor Company', 'tvs.svg'], ['Nokia', 'nokia.svg'], ['Asian Paints', 'asian-paints.svg'], ['Maruti Suzuki', 'maruti-suzuki.svg'],
-      ['ICICI Bank', 'icici-bank.svg'], ['HDFC Ergo', 'hdfc-ergo.png'], ['Coca-Cola', 'coca-cola.svg'], ['Pepsi', 'pepsi.svg'],
-      ['Airtel', 'airtel.svg'], ['Intel', 'intel.svg'], ['HP', 'hp.svg'], ['Mahindra', 'mahindra.png'],
-      ['Bajaj', 'bajaj.svg'], ['Suzuki', 'suzuki.svg'], ['Harley-Davidson', 'harley-davidson.svg'], ['IDBI Bank', 'idbi-bank.svg'],
-      ['Bharti AXA Life', 'bharti-axa.png'], ['Max Bupa', 'max-bupa.png'], ['Apollo Munich', 'apollo-munich.png'], ['Exide Life', 'exide-life.svg'],
-      ['ICICI Prudential', 'icici-prudential.png'], ['Vi', 'vi.svg'], ['Tata Docomo', 'tata-docomo.png'], ['Tata Indicom', 'tata-indicom.png'],
-      ['Tata Sky', 'tata-sky.png'], ['Dish TV', 'dish-tv.svg'], ['UltraTech Cement', 'ultratech.svg'], ['DLF', 'dlf.svg'],
-      ['Britannia', 'britannia.svg'], ['Dabur', 'dabur.svg'], ['ITC', 'itc.svg'], ['Godfrey Phillips', 'godfrey-phillips.png'],
-      ['Bacardi', 'bacardi.svg'], ['Budweiser', 'budweiser.svg'], ["Kwality Wall's", 'kwality-walls.svg'], ['Big Bazaar', 'big-bazaar.svg'],
-      ['Central', 'central.png'], ['Bharat Petroleum', 'bpcl.svg'], ['The Times of India', 'times-of-india.svg'], ['Ultraviolette Automotive', 'ultraviolette.svg'],
-      ['Piramal', 'piramal.svg'], ['Jubilant Organosys', 'jubilant.png'], ['Tupperware', 'tupperware.svg'], ['Sunsilk', 'sunsilk.png'],
-      ['Lux', 'lux.png'], ['Lifebuoy', 'lifebuoy.png'], ['Snickers', 'snickers.svg'], ['7UP', '7up.svg'],
-      ['Movies Now', 'movies-now.png'], ['Futures First', 'futures-first.png'], ['Rockwoods High School', 'rockwoods.png'],
+    // client logos by sector (images/clients/) — official logo files
+    CLIENT_GROUPS: [
+      ['Banking & Finance', [['HDFC Bank', 'hdfc-bank.svg'], ['IDFC First Bank', 'idfc-first-bank.svg'], ['ICICI Bank', 'icici-bank.svg'], ['Axis Bank', 'axis-bank.svg'], ['AU Small Finance Bank', 'au-bank.svg']]],
+      ['Automobiles', [['TVS Motor Company', 'tvs.svg']]],
     ],
     // agency & media partner logos (images/partners/)
     PARTNERS: [
