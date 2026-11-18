@@ -10,10 +10,16 @@
   const D = window.FELICITY;
   const CASES = D.CASES;
   const ICON = {
-    events: '<path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/>',
-    marketing: '<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>',
-    promotion: '<path d="M3 3h18v6H3z"/><path d="M5 9v12h14V9M9 13h6"/>',
-    activation: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>',
+    wedding: '<circle cx="9" cy="14" r="6"/><circle cx="15" cy="14" r="6"/><path d="M9 4l1.5-2h3L15 4l-3 3z"/>',
+    concert: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+    exhibition: '<path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/>',
+    mice: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+    sports: '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
+    ride: '<circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M15 6h3l2 4M5.5 17 9 10h6l3.5 7M9 10l-1-3H6"/>',
+    branding: '<path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
+    retail: '<path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M5 12v9h14v-9M10 21v-5h4v5"/>',
+    award: '<circle cx="12" cy="9" r="6"/><path d="M8.2 13.6 7 22l5-3 5 3-1.2-8.4"/>',
+    seminar: '<rect x="3" y="4" width="18" height="12" rx="1"/><path d="M12 16v5M8 21h8M7 9h6M7 12h10"/>',
     pin: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
   };
   const svg = k => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg>`;
@@ -28,7 +34,7 @@
     $('#bars').innerHTML = D.SLIDES.map((s, i) => `<button type="button" aria-label="Show slide ${i + 1}: ${s[1]}"><i></i></button>`).join('');
   }
   const svc = $('#svc');
-  if (svc) svc.innerHTML = D.SERVICES.map(([ic, t, items]) => `<article data-a><span class="ic">${svg(ic)}</span><h3>${t}</h3><ul>${items.map(s => `<li>${s}</li>`).join('')}</ul></article>`).join('');
+  if (svc) svc.innerHTML = D.SERVICES.map(([p, t], i) => `<button type="button" class="tile" data-svc="${i}" data-a aria-label="${t} — read more"><img src="${I(p)}" alt="" loading="lazy"><span class="no">${pad(i + 1)}</span><h3>${t}</h3></button>`).join('');
   const cgrid = $('#cgrid');
   if (cgrid) cgrid.innerHTML = [0, 1, 2, 3].map(i => { const c = CASES[i]; return `<button type="button" class="ccard" data-case="${i}" data-a aria-label="Open ${c.title} photos"><div class="im"><img src="${I(c.photos[0])}" alt="${c.title}" loading="lazy"></div><div class="t"><b>${c.title}</b><small>${c.place}</small></div></button>`; }).join('');
 
@@ -47,11 +53,12 @@
   const why = $('#why');
   if (why) why.innerHTML = D.WHY.map(([t, d]) => `<div data-a><b>${t}</b><span>${d}</span></div>`).join('');
   const clientGroups = $('#clientGroups');
-  if (clientGroups) clientGroups.innerHTML = D.CLIENT_GROUPS.map(([sector, list]) => `
-    <div class="cgroup" data-a>
-      <h3 class="cgroup-h">${sector}</h3>
-      <ul class="logos">${list.map(([n, f]) => `<li title="${n}"><img src="images/clients/${f}" alt="${n}" loading="lazy"></li>`).join('')}</ul>
-    </div>`).join('');
+  // one continuous grid, sector by sector, each logo shown once
+  if (clientGroups) {
+    const seen = new Set();
+    const all = D.CLIENT_GROUPS.flatMap(g => g[1]).filter(([, f]) => !seen.has(f) && seen.add(f));
+    clientGroups.innerHTML = `<ul class="cgrid-logos">${all.map(([n, f]) => `<li title="${n}" data-a><img src="images/clients/${f}" alt="${n}" loading="lazy"></li>`).join('')}</ul>`;
+  }
   const partnerLogos = $('#partnerLogos');
   if (partnerLogos) partnerLogos.innerHTML = D.PARTNERS.map(([n, f]) => `<li title="${n}"><img src="images/partners/${f}" alt="${n}" loading="lazy"></li>`).join('');
   const sectors = $('#sectors');
@@ -231,7 +238,42 @@
   let tx = null;
   lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
   lb.addEventListener('touchend', e => { if (tx == null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(ci + (dx < 0 ? 1 : -1)); tx = null; });
+  // service popup (home): photo, description, enquire / WhatsApp, previous and next service
+  const svm = $('#svm');
+  let si2 = 0, svBack = null;
+  const showSvc = i => {
+    si2 = (i + D.SERVICES.length) % D.SERVICES.length;
+    const [p, t, d] = D.SERVICES[si2], n = D.SERVICES.length;
+    $('#svmI').src = I(p); $('#svmT').textContent = t; $('#svmD').textContent = d;
+    $('#svmNo').textContent = `${pad(si2 + 1)} / ${pad(n)}`;
+    $('#svmW').href = `https://wa.me/919828158918?text=${encodeURIComponent(`Hi Felicity, I'd like to know more about ${t}.`)}`;
+    $('#svmP span').textContent = D.SERVICES[(si2 - 1 + n) % n][1];
+    $('#svmN span').textContent = D.SERVICES[(si2 + 1) % n][1];
+    if (G && !RM) G.fromTo('#svm .svm-im img, #svm .svm-body > *', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .45, stagger: .05, ease: 'power2.out' });
+  };
+  const closeSvc = refocus => { svm.classList.remove('open'); lockScroll(false); if (refocus && svBack) svBack.focus({ preventScroll: true }); };
+  if (svm) {
+    document.addEventListener('click', e => {
+      const b = e.target.closest('[data-svc]'); if (!b) return;
+      svBack = b; showSvc(+b.dataset.svc); svm.classList.add('open'); lockScroll(true); $('#svmX').focus();
+    });
+    $('#svmX').addEventListener('click', () => closeSvc(true));
+    $('#svmP').addEventListener('click', () => showSvc(si2 - 1));
+    $('#svmN').addEventListener('click', () => showSvc(si2 + 1));
+    svm.addEventListener('click', e => { if (e.target === svm) closeSvc(true); });
+    // enquire: close, pick the matching event type in the form, then scroll to the form once scrolling is unlocked
+    $('#svmE').addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      closeSvc(false); const t = $('#f-type'); if (t && D.TYPES[si2]) t.value = D.TYPES[si2];
+      requestAnimationFrame(() => setTimeout(() => goTo('#contact'), 30));
+    });
+  }
   addEventListener('keydown', e => {
+    if (svm && svm.classList.contains('open')) {
+      if (e.key === 'Escape') closeSvc(true); else if (e.key === 'ArrowLeft') showSvc(si2 - 1); else if (e.key === 'ArrowRight') showSvc(si2 + 1);
+      else if (e.key === 'Tab') { const f = $$('button, a', svm); const a = f.indexOf(document.activeElement); if (e.shiftKey && a <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && a === f.length - 1) { e.preventDefault(); f[0].focus(); } }
+      return;
+    }
     if (lb.classList.contains('open')) {
       if (e.key === 'Escape') closeLb(); else if (e.key === 'ArrowLeft') show(ci - 1); else if (e.key === 'ArrowRight') show(ci + 1);
       else if (e.key === 'Tab') { const f = $$('button:not([hidden])', lb); const a = f.indexOf(document.activeElement); if (e.shiftKey && a <= 0) { e.preventDefault(); f[f.length - 1].focus(); } else if (!e.shiftKey && a === f.length - 1) { e.preventDefault(); f[0].focus(); } }
@@ -240,13 +282,12 @@
 
   // hero slideshow (home)
   if (slides) {
-    const imgs = $$('img', slides), bars = $$('button', $('#bars')), cap = $('#cap');
+    const imgs = $$('img', slides), bars = $$('button', $('#bars'));
     let si = -1, timer = null;
     const DUR = 6;
     const go = i => {
       si = (i + D.SLIDES.length) % D.SLIDES.length;
       imgs.forEach((im, j) => im.classList.toggle('on', j === si));
-      cap.textContent = D.SLIDES[si][1];
       bars.forEach((b, j) => { b.classList.toggle('done', j < si); const bar = b.firstElementChild; if (G) G.killTweensOf(bar); bar.style.transform = j < si ? 'scaleX(1)' : 'scaleX(0)'; });
       if (G && !RM) {
         G.fromTo(imgs[si], { scale: 1.08 }, { scale: 1, duration: DUR + 1.2, ease: 'none' });

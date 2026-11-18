@@ -15,7 +15,7 @@
 
 <header class="hdr" id="hdr">
   <div class="wrap">
-    <a href="#top" class="brand" aria-label="Felicity — home"><img src="images/logo.png" alt="Felicity" width="614" height="493"><span>Integrated<br>Marketing Services</span></a>
+    <a href="#top" class="brand" aria-label="Felicity — home"><img class="mark" src="images/logo-mark.png" alt="" width="219" height="293"><img class="word" src="images/logo-word.png" alt="Felicity Integrated Marketing Services" width="900" height="369"></a>
     <ul class="nav" id="nav">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -34,7 +34,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="work.html">Our Work</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="work.html#gallery">Gallery</a></li>
       <li><a href="#clients">Clients</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -58,7 +58,7 @@
       <a href="work.html" class="btn btn-outline">See our work</a>
     </div>
   </div>
-  <div class="slide-nav" id="slideNav"><span class="cap" id="cap"></span><div class="bars" id="bars"></div></div>
+  <div class="slide-nav" id="slideNav"><div class="bars" id="bars"></div></div>
 </section>
 
 <div class="stats">
@@ -79,6 +79,13 @@
       <p class="body" data-a>Many of our earliest clients continue to be our most valued partners, while nearly half of our team has been part of our journey for close to a decade. That's a testament to the trust, consistency and passion that define who we are.</p>
       <p class="body" data-a>We don't believe in making big promises. We believe in showing up, giving our best and putting our heart into every project. Because, at the end of the day,</p>
       <blockquote data-a>“WE GIVE EVERY PROJECT EVERYTHING WE'VE GOT.”</blockquote>
+    </div>
+    <div class="about-side">
+    <div class="collage">
+      <div class="a" data-img><img src="images/au-goa-1.jpg" alt="Stage at the AU Financiers business fest, Goa" width="480" height="317" loading="lazy"></div>
+      <div class="b" data-img><img src="images/berger-5.jpg" alt="Berger Paints product launch venue" width="423" height="312" loading="lazy"></div>
+      <div class="tag" data-a><b>250+</b>brands trust us</div>
+    </div>
       <h3 class="ticks-h" data-a>The Strength behind Consistency</h3>
       <ul class="ticks" data-a>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><b>A Strong Pan-India Presence:</b> With our own offices in Jaipur and Ahmedabad, and a network of associates in pan India, we bring local understanding with a wider reach.</span></li>
@@ -86,11 +93,6 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span><b>Deep Market Understanding:</b> A decade of marketing expertise, backed by an in-depth understanding of Indian consumers, helps us create strategies that connect with people and deliver meaningful results.</span></li>
       </ul>
       <p class="ticks-end" data-a>The right people, the right resources and the right understanding — all working together to make every project count.</p>
-    </div>
-    <div class="collage">
-      <div class="a" data-img><img src="images/au-goa-1.jpg" alt="Stage at the AU Financiers business fest, Goa" width="480" height="317" loading="lazy"></div>
-      <div class="b" data-img><img src="images/berger-5.jpg" alt="Berger Paints product launch venue" width="423" height="312" loading="lazy"></div>
-      <div class="tag" data-a><b>250+</b>brands trust us</div>
     </div>
   </div>
 </section>
@@ -113,7 +115,7 @@
       <div><span class="label" data-a>Our work</span><h2 class="h2" data-a>Experiences We've Created. <em>Moments We've Captured.</em></h2></div>
       <p class="lead" data-a>From grand celebrations to remarkable gatherings, every project has a story worth revisiting. Step inside our projects to explore the moments we've captured.</p>
     </div>
-    <div class="cases" id="cases" data-limit="6"></div>
+    <div class="cases" id="cases" data-limit="10"></div>
     <div class="more-work" data-a><a href="work.html" class="btn btn-dark">View all our work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
   </div>
 </section>
@@ -155,23 +157,12 @@
       <div>
         <span class="label" data-a>Associations</span>
         <h2 class="h2" data-a>Agencies &amp; <em>media partners.</em></h2>
-        <p class="lead" data-a style="margin-top:14px">We have worked alongside leading agencies and media houses across India.</p>      </div>
+        <p class="lead" data-a style="margin-top:14px">Proud to partner with trusted brands across diverse sectors, delivering exceptional quality, dependable service, and customer satisfaction every step of the way.</p>      </div>
       <ul class="logos compact" id="partnerLogos" aria-label="Agencies and media partners"></ul>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="off pad" id="gallery">
-  <div class="wrap">
-    <div class="head">
-      <div><span class="label" data-a>Gallery</span><h2 class="h2" data-a>Moments from <em>our events.</em></h2></div>
-      <p class="lead" data-a>Click any photo to view it larger.</p>
-    </div>
-    <div class="gal short" id="gal"></div>
-    <div class="center"><button class="btn btn-outline" id="galMore"></button></div>
-  </div>
-</section>
 
 <!-- FILMS -->
 <section class="dark pad" id="films">
@@ -196,7 +187,6 @@
         <a href="mailto:ruchin@felicity-intg.com"><small>Email</small><b>ruchin@felicity-intg.com</b></a>
       </div>
       <div class="offices" id="offices"></div>
-      <p class="assoc-cities" data-a><b>Associate cities:</b> Chandigarh, Lucknow, Kolkata, Kanpur, Hyderabad, Bangalore, Chennai, Jodhpur, Indore, Mumbai, Pune</p>
     </div>
     <form class="form" id="form" novalidate data-a>
       <h3>Request a proposal</h3>
@@ -223,9 +213,9 @@
   <div class="wrap">
     <div class="top">
       <div><img src="images/logo-white.png" alt="Felicity" width="614" height="493"><p>Felicity Integrated Marketing Services — Marketing · Promotion · Events · Activation. The way towards wonderful.</p></div>
-      <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="work.html">Our Work</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#clients">Clients</a></li></ul></div>
-      <div><h4>Offices</h4><ul><li>Jaipur (Head office)</li><li>New Delhi</li><li>Ahmedabad</li></ul></div>
-      <div><h4>Contact</h4><ul><li>Ruchin Vaid</li><li><a href="tel:+919828158918">+91 98281 58918</a></li><li><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></li><li><a href="tel:+911414086410">0141-4086410</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="work.html">Our Work</a></li><li><a href="work.html#gallery">Gallery</a></li><li><a href="#clients">Clients</a></li></ul></div>
+      <div><h4>Offices</h4><ul><li>Jaipur (Head office)</li><li>Ahmedabad</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+919828158918">+91 98281 58918</a></li><li><a href="mailto:ruchin@felicity-intg.com">ruchin@felicity-intg.com</a></li><li><a href="tel:+911414086410">0141-4086410</a></li></ul></div>
     </div>
     <div class="base"><span>© <span id="yr"></span> Felicity Integrated Marketing Services. All rights reserved.</span><span>Thanks — see you next time!</span></div>
   </div>
@@ -238,6 +228,26 @@
   <div class="t"><div><h3 id="lbT"></h3><p id="lbD"></p></div><button class="x" id="lbX" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="st"><button class="nv p" id="lbP" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button><img id="lbI" alt=""><button class="nv n" id="lbN" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button></div>
   <div class="b"><span class="c" id="lbC"></span><div class="th" id="lbTh"></div></div>
+</div>
+
+<div class="svm" id="svm" role="dialog" aria-modal="true" aria-labelledby="svmT">
+  <div class="svm-box">
+    <button class="svm-x" id="svmX" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="svm-im"><img id="svmI" alt=""></div>
+    <div class="svm-body">
+      <span class="svm-no" id="svmNo"></span>
+      <h3 id="svmT"></h3>
+      <p id="svmD"></p>
+      <div class="svm-ctas">
+        <a href="#contact" class="btn btn-dark" id="svmE">Enquire about this <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-outline" id="svmW" target="_blank" rel="noopener"><svg class="wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>Chat with us</a>
+      </div>
+    </div>
+    <div class="svm-nav">
+      <button type="button" id="svmP"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg><span></span></button>
+      <button type="button" id="svmN"><span></span><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

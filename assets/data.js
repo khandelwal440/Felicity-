@@ -9,10 +9,17 @@
     SLIDES: [['hero-lights', 'Concerts & live shows'], ['dinner', 'Theme gala dinners'], ['au-crowd', 'AU Financiers employee meet'], ['au-league', 'AU Champions League'], ['hero-stage', 'Award nights & conferences']],
 
     SERVICES: [
-      ['events', 'Events', ['Events & Concerts', 'Award Ceremonies', 'Conferences & Seminars', 'Corporate Offsites', 'Sports Events', 'Motorsport']],
-      ['marketing', 'Marketing', ['Audit', 'Rural Marketing', 'Experiential Marketing', 'Consumer Promotions']],
-      ['promotion', 'Promotion', ['Road Shows', 'SCP & CCP', 'Mall Activation', 'Retail Activations']],
-      ['activation', 'Activation', ['BTL Activation', 'Institutional / Campus Activation', 'Corporate Activations']],
+      // [photo, service, description shown in the service popup]
+      ['dinner', 'Wedding Planning & Execution', 'From the first idea to the last dance, we plan and run every part of the wedding — venue, décor, guest hospitality, entertainment and on-ground coordination — so the family can simply enjoy the celebration.'],
+      ['sm-1', 'Live Concerts', 'We produce live concerts and shows end to end: artist coordination, stage, sound and light design, ticketing support and crowd management. Our crew has run shows with leading artists across India.'],
+      ['berger-5', 'Exhibitions', 'We design, build and manage exhibition spaces and brand pavilions — from layout and fabrication to visitor flow and on-site staffing — so your brand stands out on the floor.'],
+      ['au-th-6', 'MICE & Corporate Offsites', 'Meetings, incentive trips, conferences and offsites in India and overseas. We handle travel, stay, venues, themed evenings and every detail in between, for groups of 20 to 2,000.'],
+      ['kabaddi-team', 'Sports Entertainment', 'League launches, match-day experiences, fan zones and team events. We have delivered seasons of professional kabaddi and sporting leagues in multiple cities.'],
+      ['stunt-1', 'Rides & Stunt Shows', 'Bike rides, rallies and stunt shows planned for safety and spectacle — routes, permissions, support vehicles and show production — including TVS Apache Owners Group rides across India.'],
+      ['au-goa-1', 'Branding & Merchandising', 'Stage and venue branding, signage, printed collateral and branded merchandise, produced in-house by our creative team so every touchpoint carries your brand the right way.'],
+      ['kwc-9', 'Retail Fitment', 'In-store branding, displays, kiosks and shop-in-shop fitments, designed, fabricated and installed across retail outlets with consistent quality and on-time rollout.'],
+      ['moto-podium', 'Conferences & Award Ceremonies', 'Dealer meets, annual conferences and award nights with strong content, stage design and show flow — built to celebrate your people and keep the audience engaged.'],
+      ['hero-screen', 'Seminars & Workshops', 'Seminars, training programmes and workshops of every size, with venue, AV, registrations and speaker management handled smoothly from start to finish.'],
     ],
 
     // slug, title, short line, filter, label, place, longer description, key facts, photos
@@ -59,22 +66,30 @@
     NUMS: [['125', '+', 'Conferences delivered for Nokia'], ['450', '', 'Guests at the AU Financiers meet in Goa'], ['250', '+', 'TVS AOG breakfast rides'], ['100', '+', 'TVS Apache stunt shows across India'], ['15500', ' ft', 'World-record stunt show at Komic, Spiti'], ['200', '+', 'School & college contact programmes']],
     STEPS: [['Fresh ideas', 'Every brief starts with a concept built around your audience and goals.'], ['Meticulous planning', 'In-house teams for data management, creative design and logistics.'], ['Flawless execution', 'Our own crew on the ground, across India and overseas.'], ['Lasting impression', 'Events your guests remember long after the lights go down.']],
     WHY: [['250+ brands, 4,000+ projects', 'Our top clients are our longest-standing relationships.'], ['India & overseas', 'Three offices and 11 associate cities.'], ['Design & data in-house', 'Well-equipped offices and ample resources.'], ['A decade of marketing', 'In-depth understanding of Indian consumers.'], ['Top-notch service', 'Half our team has been here almost a decade.']],
-    // client logos by sector (images/clients/) — official logo files
+    // client logos, one row per sector (images/clients/)
     CLIENT_GROUPS: [
       ['Banking & Finance', [['HDFC Bank', 'hdfc-bank.svg'], ['IDFC First Bank', 'idfc-first-bank.svg'], ['ICICI Bank', 'icici-bank.svg'], ['Axis Bank', 'axis-bank.svg'], ['AU Small Finance Bank', 'au-bank.svg']]],
-      ['Automobiles', [['TVS Motor Company', 'tvs.svg']]],
+      ['Automobiles', [['TVS Motor Company', 'tvs.svg'], ['Bajaj', 'bajaj.svg'], ['Maruti Suzuki', 'maruti-suzuki.svg'], ['Mahindra', 'mahindra.svg'], ['Suzuki', 'suzuki.svg'], ['Harley-Davidson', 'harley-davidson.svg'], ['Ultraviolette', 'ultraviolette.svg']]],
+      ['Consumer Electronics', [['HP', 'hp.svg'], ['Nokia', 'nokia.svg'], ['Samsung', 'samsung.png'], ['Intel', 'intel.svg'], ['Dish TV', 'dish-tv.svg'], ['Tata Sky', 'tata-sky.png']]],
+      ['Retail', [['Big Bazaar', 'big-bazaar.svg'], ['Central', 'central.png']]],
+      ['Telecom', [['Tata Indicom', 'tata-indicom.svg'], ['Tata Docomo', 'tata-docomo.png'], ['Vi', 'vi.svg'], ['Idea', 'idea.svg'], ['Airtel', 'airtel.svg'], ['Jio', 'jio.svg'], ['Samsung', 'samsung.png']]],
+      ['FMCG', [['Lifebuoy', 'lifebuoy.png'], ['Snickers', 'snickers.svg'], ['7UP', '7up.svg'], ['Dabur', 'dabur.svg'], ['Britannia', 'britannia.svg'], ['Lux', 'lux.png'], ['Pepsi', 'pepsi.svg'], ['Coca-Cola', 'coca-cola.svg'], ["Kwality Wall's", 'kwality-walls.svg'], ['Sunsilk', 'sunsilk.png']]],
+      ['Insurance', [['HDFC Ergo', 'hdfc-ergo.svg'], ['Max Bupa', 'max-bupa.svg'], ['Exide Life', 'exide-life.svg'], ['Apollo Munich', 'apollo-munich.png'], ['Bharti AXA', 'bharti-axa.svg'], ['Futures First', 'futures-first.svg']]],
+      ['Liquor & Tobacco', [['Godfrey Phillips India', 'godfrey-phillips.svg'], ['ITC', 'itc.svg'], ['Bacardi', 'bacardi.svg'], ['Budweiser', 'budweiser.svg'], ['Pernod Ricard', 'pernod-ricard.svg']]],
+      ['Real Estate', [['DLF', 'dlf.svg'], ['UltraTech Cement', 'ultratech.svg'], ['Nuvoco', 'nuvoco.png']]],
+      ['Sports', [['Indian Premier League', 'ipl.svg'], ['Pro Kabaddi League', 'pkl.svg']]],
     ],
     // agency & media partner logos (images/partners/)
     PARTNERS: [
-      ['Wizcraft', 'wizcraft.png'], ['GroupM', 'groupm.png'], ['Fountainhead', 'fountainhead.png'], ['DNA Networks', 'dna-networks.png'],
-      ['Hansa Vision', 'hansa-vision.png'], ['Rajasthan Patrika', 'rajasthan-patrika.svg'], ['Encompass', 'encompass.png'], ['DDB Mudramax', 'ddb-mudramax.png'],
-      ['ZeeCo', 'zeeco.png'], ['Candid', 'candid.png'], ['Beep', 'beep.png'], ['Acme Events India', 'acme.png'],
-      ['Impresario', 'impresario.png'], ['Impact Marketing Services', 'impact.png'], ['MOMS Outdoor Media Solutions', 'moms.png'], ['Allias Integrated', 'allias.png'],
-      ['Agency partner', 'at-sign.png'],
+      ['Wizcraft', 'wizcraft.png'], ['GroupM', 'groupm.png'], ['Fountainhead', 'fountainhead.png'], ['DNA Networks', 'dna-networks.svg'],
+      ['Hansa Vision', 'hansa-vision.svg'], ['Rajasthan Patrika', 'rajasthan-patrika.svg'], ['Encompass', 'encompass.svg'], ['DDB Mudramax', 'ddb-mudramax.png'],
+      ['ZeeCo', 'zeeco.png'], ['Candid', 'candid.svg'], ['Beep', 'beep.png'], ['Acme Events India', 'acme.png'],
+      ['Impresario', 'impresario.png'], ['Impact Marketing Services', 'impact.png'], ['MOMS Outdoor Media Solutions', 'moms.svg'], ['Allias Integrated', 'allias.png'],
+      ['Agency partner', 'at-sign.svg'],
     ],
-    SECTORS: ['Banking & Finance', 'Automobiles', 'Telecom', 'IT', 'FMCG', 'Pharma', 'Real Estate', 'Consumer Electronics', 'Sports', 'Liquor & Tobacco'],
+    SECTORS: ['Banking & Finance', 'Automobiles', 'Consumer Electronics', 'Retail', 'Telecom', 'FMCG', 'Insurance', 'Liquor & Tobacco', 'Real Estate', 'Sports'],
     FILMS: [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']],
-    OFFICES: [['Jaipur', 'Head office', 'B-207 A, Rajender Marg, Bapu Nagar, Jaipur, Rajasthan 302015 · 0141-4086410'], ['New Delhi', '', 'B-363, C.R. Park, New Delhi 110019'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']],
-    TYPES: ['Conference / seminar', 'MICE / employee meet', 'Award ceremony / R&R', 'Product launch', 'Corporate offsite', 'Concert / live show', 'Sports event', 'Motorsport / ride', 'BTL / mall / retail activation', 'Road show', 'Rural marketing', 'Content creation', 'Other'],
+    OFFICES: [['Jaipur', 'Head office', 'B-207 A, Rajender Marg, Bapu Nagar, Jaipur, Rajasthan 302015 · 0141-4086410'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']],
+    TYPES: ['Wedding planning & execution', 'Live concert', 'Exhibition', 'MICE / corporate offsite', 'Sports entertainment', 'Ride / stunt show', 'Branding & merchandising', 'Retail fitment', 'Conference / award ceremony', 'Seminar / workshop', 'Other'],
   };
 })();
