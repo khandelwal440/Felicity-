@@ -89,7 +89,7 @@
     ],
     SECTORS: ['Banking & Finance', 'Automobiles', 'Consumer Electronics', 'Retail', 'Telecom', 'FMCG', 'Insurance', 'Liquor & Tobacco', 'Real Estate', 'Sports'],
     FILMS: [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']],
-    OFFICES: [['Jaipur', 'Head office', 'B-207 A, Rajender Marg, Bapu Nagar, Jaipur, Rajasthan 302015 · 0141-4086410'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']],
+    OFFICES: [['Jaipur', 'Head office', 'F-2415 (A), RIICO Industrial Area, Ramchandrapura, Jaipur, Rajasthan 302022'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']],
     TYPES: ['Wedding planning & execution', 'Live concert', 'Exhibition', 'MICE / corporate offsite', 'Sports entertainment', 'Ride / stunt show', 'Branding & merchandising', 'Retail fitment', 'Conference / award ceremony', 'Seminar / workshop', 'Other'],
   };
 })();

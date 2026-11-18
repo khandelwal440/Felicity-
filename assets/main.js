@@ -155,7 +155,7 @@
       ['name', 'contact'].forEach(f => { const el = $('#f-' + f), bad = !String(d.get(f) || '').trim(); el.parentElement.classList.toggle('err', bad); if (bad && !first) first = el; });
       if (first) { first.focus(); return; }
       const body = [`Name: ${d.get('name')}`, `Company: ${d.get('company') || '—'}`, `Contact: ${d.get('contact')}`, `Event type: ${d.get('type')}`, `City: ${d.get('city') || '—'}`, `Guests: ${d.get('guests') || '—'}`, '', 'About the event:', d.get('brief') || '—'].join('\n');
-      location.href = `mailto:ruchin@felicity-intg.com?subject=${encodeURIComponent('Event enquiry — ' + d.get('type'))}&body=${encodeURIComponent(body)}`;
+      location.href = `mailto:info@felicity-intg.com?subject=${encodeURIComponent('Event enquiry — ' + d.get('type'))}&body=${encodeURIComponent(body)}`;
       form.classList.add('sent');
     });
     form.addEventListener('input', e => e.target.parentElement.classList.remove('err'));
