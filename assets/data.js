@@ -16,9 +16,9 @@
       ['au-th-6', 'MICE & Corporate Offsites', 'Meetings, incentive trips, conferences and offsites in India and overseas. We handle travel, stay, venues, themed evenings and every detail in between, for groups of 20 to 2,000.'],
       ['stunt-1', 'Rides & Stunt Shows', 'Bike rides, rallies and stunt shows planned for safety and spectacle — routes, permissions, support vehicles and show production — including TVS Apache Owners Group rides across India.'],
       ['dinner', 'Wedding Planning & Execution', 'From the first idea to the last dance, we plan and run every part of the wedding — venue, décor, guest hospitality, entertainment and on-ground coordination — so the family can simply enjoy the celebration.'],
-      ['kwc-9', 'Retail Fit-Out', 'In-store branding, displays, kiosks and shop-in-shop fit-outs, designed, fabricated and installed across retail outlets with consistent quality and on-time rollout.'],
+      ['kwc-9', 'Retail Fit-Out, Branding & Merchandising', 'In-store fit-outs, displays and kiosks, plus stage and venue branding, signage, printed collateral and branded merchandise — designed, produced and installed in-house with consistent quality and on-time rollout.'],
       ['berger-5', 'Exhibitions', 'We design, build and manage exhibition spaces and brand pavilions — from layout and fabrication to visitor flow and on-site staffing — so your brand stands out on the floor.'],
-      ['hero-crowd', 'Experiential Marketing (Rural, SCP & CCP)', 'On-ground brand experiences that put your product in people’s hands — rural marketing, SCP and CCP programmes, roadshows and activations, planned, staffed and tracked end to end.'],
+      ['hero-crowd', 'Experiential Marketing (Road Show, SCP & CCP)', 'On-ground brand experiences that put your product in people’s hands — multi-city road shows, SCP and CCP programmes and activations, planned, staffed and tracked end to end.'],
       ['hero-screen', 'Seminars & Workshops', 'Seminars, training programmes and workshops of every size, with venue, AV, registrations and speaker management handled smoothly from start to finish.'],
     ],
 
@@ -93,6 +93,6 @@
     FILMS: [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']],
     OFFICES: [['Jaipur', 'Head office', 'F-2145 (A), RIICO Industrial Area, Ramchandrapura, Jaipur, Rajasthan 302022'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']],
     // same order as SERVICES, so "Enquire about this" picks the matching type
-    TYPES: ['Conference', 'Sports event', 'Live concert', 'MICE / corporate offsite', 'Ride / stunt show', 'Wedding planning & execution', 'Retail fit-out', 'Exhibition', 'Experiential marketing (rural, SCP, CCP)', 'Seminar / workshop', 'Other'],
+    TYPES: ['Conference', 'Sports event', 'Live concert', 'MICE / corporate offsite', 'Ride / stunt show', 'Wedding planning & execution', 'Retail fit-out, branding & merchandising', 'Exhibition', 'Experiential marketing (road show, SCP & CCP)', 'Seminar / workshop', 'Other'],
   };
 })();
