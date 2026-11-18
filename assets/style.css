@@ -141,7 +141,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 /* laptop and up: the whole About section fits in one screen below the header */
 @media (min-width:901px){
   .about.pad{min-height:calc(100svh - var(--hh));display:flex;align-items:center;padding:clamp(20px,4vh,44px) 0}
-  .about .wrap{align-items:center;gap:clamp(36px,5vw,72px)}
+  .about .wrap{align-items:start;gap:clamp(36px,5vw,72px)}
   .about .h2{font-size:clamp(30px,min(3.4vw,5.6vh),48px)}
   .about p.body{margin-top:clamp(10px,1.8vh,18px);font-size:clamp(14px,min(1.15vw,2vh),16px);line-height:1.6}
   .about p.body+p.body{margin-top:clamp(6px,1.2vh,12px)}
@@ -332,6 +332,9 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .foot{background:var(--black);color:#D6D6D3;padding:64px 0 28px}
 .foot .top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
 .foot img{height:64px;width:auto}
+/* full colour logo sits on a white card so its navy and red read well on the dark footer */
+.foot-logo{display:inline-block;padding:14px 16px;background:var(--white);border-radius:12px}
+.foot-logo img{display:block;height:104px}
 .foot p{margin-top:16px;font-size:14.5px;color:var(--muted-d);max-width:300px}
 .foot h4{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);margin-bottom:14px}
 .foot ul{list-style:none;display:grid;gap:8px;font-size:14.5px}
