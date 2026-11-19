@@ -83,11 +83,11 @@
     PARTNERS: [
       // in the order Felicity asked for
       ['DNA Networks', 'dna-networks.svg'], ['Hyperlink Brand Solutions', 'hyperlink.png'], ['GroupM', 'groupm.png'],
-      ['Rajasthan Patrika', 'rajasthan-patrika.svg'], ['Dainik Bhaskar', 'dainik-bhaskar.svg'], ['Wizcraft', 'wizcraft.png'],
-      ['Encompass', 'encompass.svg'], ['Hansa Vision', 'hansa-vision.svg'], ['Fountainhead', 'fountainhead.png'],
-      ['DDB Mudramax', 'ddb-mudramax.png'], ['Candid', 'candid.svg'], ['MOMS Outdoor Media Solutions', 'moms.svg'],
-      ['Impact Marketing Services', 'impact.png'], ['Impresario', 'impresario.png'], ['Inextis Events', 'inextis.png'],
-      ['Beep', 'beep.png'], ['Acme Events India', 'acme.png'],
+      ['Rajasthan Patrika', 'rajasthan-patrika.svg'], ['Dainik Bhaskar', 'dainik-bhaskar.svg'], ['Wizcraft', 'wizcraft-sharp.png'],
+      ['Encompass', 'encompass.svg'], ['Hansa Vision', 'hansa-vision.svg'], ['Fountainhead', 'fountainhead-sharp.png'],
+      ['DDB Mudramax', 'ddb-mudramax-sharp.png'], ['Candid', 'candid.svg'], ['MOMS Outdoor Media Solutions', 'moms.svg'],
+      ['Impact Marketing Services', 'impact-sharp.png'], ['Impresario', 'impresario.png'], ['Inextis Events', 'inextis.png'],
+      ['Beep', 'beep-sharp.png'], ['Acme Events India', 'acme-sharp.png'],
     ],
     SECTORS: ['Banking & Finance', 'Automobiles', 'Consumer Electronics', 'Retail', 'Telecom', 'FMCG', 'Insurance', 'Liquor & Tobacco', 'Real Estate', 'Sports'],
     FILMS: [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']],
