@@ -10,15 +10,15 @@
 
     SERVICES: [
       // [photo, service, description shown in the service popup]
-      ['au-goa-1', 'Conferences', 'Dealer meets, annual conferences and award nights with strong content, stage design and show flow — built to celebrate your people and keep the audience engaged.'],
+      ['au-goa-1', 'Conferences & Award Ceremony', 'Dealer meets, annual conferences and award nights with strong content, stage design and show flow — built to celebrate your people and keep the audience engaged.'],
       ['kabaddi-team', 'Sports Events', 'League launches, match-day experiences, fan zones and team events. We have delivered seasons of professional kabaddi and sporting leagues in multiple cities.'],
       ['sm-1', 'Live Concerts', 'We produce live concerts and shows end to end: artist coordination, stage, sound and light design, ticketing support and crowd management. Our crew has run shows with leading artists across India.'],
       ['au-th-6', 'MICE & Corporate Offsites', 'Meetings, incentive trips, conferences and offsites in India and overseas. We handle travel, stay, venues, themed evenings and every detail in between, for groups of 20 to 2,000.'],
       ['stunt-1', 'Rides & Stunt Shows', 'Bike rides, rallies and stunt shows planned for safety and spectacle — routes, permissions, support vehicles and show production — including TVS Apache Owners Group rides across India.'],
       ['dinner', 'Wedding Planning & Execution', 'From the first idea to the last dance, we plan and run every part of the wedding — venue, décor, guest hospitality, entertainment and on-ground coordination — so the family can simply enjoy the celebration.'],
       ['kwc-9', 'Retail Fit-Out, Branding & Merchandising', 'In-store fit-outs, displays and kiosks, plus stage and venue branding, signage, printed collateral and branded merchandise — designed, produced and installed in-house with consistent quality and on-time rollout.'],
-      ['berger-5', 'Exhibitions', 'We design, build and manage exhibition spaces and brand pavilions — from layout and fabrication to visitor flow and on-site staffing — so your brand stands out on the floor.'],
-      ['hero-crowd', 'Experiential Marketing (Road Show, SCP & CCP)', 'On-ground brand experiences that put your product in people’s hands — multi-city road shows, SCP and CCP programmes and activations, planned, staffed and tracked end to end.'],
+      ['berger-5', 'Exhibition & Stall Fabrication', 'We design, build and manage exhibition spaces and brand pavilions — from layout and fabrication to visitor flow and on-site staffing — so your brand stands out on the floor.'],
+      ['hero-crowd', 'Road Show', 'On-ground brand experiences that put your product in people’s hands — multi-city road shows, SCP and CCP programmes and activations, planned, staffed and tracked end to end.'],
       ['hero-screen', 'Seminars & Workshops', 'Seminars, training programmes and workshops of every size, with venue, AV, registrations and speaker management handled smoothly from start to finish.'],
     ],
 
