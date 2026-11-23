@@ -363,7 +363,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .lb .nv{position:absolute;top:50%;transform:translateY(-50%)}
 .lb .nv.p{left:20px}.lb .nv.n{right:20px}
 .lb .c{font-size:14px;font-weight:700;color:var(--muted-d)}
-.lb .th{display:flex;gap:6px;overflow-x:auto;max-width:72vw}
+.lb .th{display:flex;gap:6px;overflow-x:auto;max-width:72vw;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.lb .th::-webkit-scrollbar{display:none}
 .lb .th button{flex:none;width:64px;height:46px;border-radius:5px;overflow:hidden;opacity:.4;outline-offset:2px;transition:opacity .2s}
 .lb .th button.on,.lb .th button:hover{opacity:1}
 .lb .th img{width:100%;height:100%;object-fit:cover}
@@ -477,7 +478,9 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .wcat-h .count{margin-left:auto;font-size:14px;color:var(--muted);white-space:nowrap}
 .wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .wgrid button{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--off)}
-.wgrid img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.wgrid img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease,transform .7s var(--ease)}
+#cases .im img{opacity:0;transition:opacity .5s ease,transform .8s var(--ease)}
+.wgrid img.ok,#cases .im img.ok{opacity:1}
 .wgrid button:hover img{transform:scale(1.05)}
 .wgrid.short button:nth-child(n+9){display:none}
 .wcat .center{margin-top:20px}

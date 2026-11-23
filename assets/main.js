@@ -92,6 +92,11 @@
   if (offices) offices.innerHTML = D.OFFICES.map(([c, k, a]) => `<div class="office" data-a><span class="pin">${svg('pin')}</span><b>${c}${k ? `<small>${k}</small>` : ''}</b><span>${a}</span></div>`).join('');
 
   /* ================= WORK PAGE ================= */
+  // photos in the category grids and cards fade in once downloaded instead of popping in
+  const markLoaded = img => img.classList.add('ok');
+  document.addEventListener('load', e => { if (e.target.matches && e.target.matches('.wgrid img, #cases img')) markLoaded(e.target); }, true);
+  const markCached = root => $$('.wgrid img, #cases img', root).forEach(img => { if (img.complete && img.naturalWidth) markLoaded(img); });
+
   const wcats = $('#wcats');
   if (wcats && wcatList.length) {
     const total = wcatList.reduce((s, c) => s + c.photos.length, 0);
@@ -99,7 +104,8 @@
     $('#statPhotos').textContent = total;
     $('#statFilms').textContent = D.FILMS.length;
     // slow photo reel under the page title: a few photos from every category (two copies for a seamless loop)
-    const reel = wcatList.flatMap(c => c.photos.slice(0, 2).map(([n]) => `<img src="${wurl(c, n, 1)}" alt="" loading="lazy">`)).join('');
+    // reel photos load straight away (not lazily) so the moving strip never shows gaps
+    const reel = wcatList.flatMap(c => c.photos.slice(0, 2).map(([n]) => `<img src="${wurl(c, n, 1)}" alt="" decoding="async">`)).join('');
     $('#reel').innerHTML = reel + reel;
 
     wcats.innerHTML = wcatList.map((c, k) => `<article class="wcat" id="cat-${c.slug}">
@@ -135,6 +141,8 @@
     const hashCat = location.hash.startsWith('#cat-') && wcatList.find(c => 'cat-' + c.slug === location.hash.slice(1));
     pick(hashCat ? hashCat.slug : 'all', false);
   }
+
+  markCached(document);
 
   const projects = $('#projects');
   if (projects) {
@@ -267,15 +275,26 @@
   const lb = $('#lb'), lbI = $('#lbI'), lbTh = $('#lbTh'), lbB = $('#lbB');
   // cur = { title, desc, full: [urls], thumb: [urls] } — built from a featured project or a work-page category
   let cur = null, ci = 0, back = null;
+  // smooth switching: show the (already loaded) small photo at once, swap in the full one when it has downloaded,
+  // and preload the photos on either side so next / previous are instant
+  const loaded = new Set();
+  const preload = url => { if (loaded.has(url)) return Promise.resolve(); return new Promise(res => { const im = new Image(); im.onload = im.onerror = () => { loaded.add(url); res(); }; im.src = url; }); };
+  let showToken = 0;
   const show = i => {
     const n = cur.full.length; ci = (i + n) % n;
-    lbI.src = cur.full[ci]; lbB.style.backgroundImage = `url(${cur.thumb[ci]})`;
+    const token = ++showToken, full = cur.full[ci];
+    lbI.src = loaded.has(full) ? full : cur.thumb[ci];
+    if (!loaded.has(full)) preload(full).then(() => { if (token === showToken) lbI.src = full; });
+    [1, -1, 2].forEach(d => preload(cur.full[(ci + d + n) % n]));
+    lbB.style.backgroundImage = `url(${cur.thumb[ci]})`;
     lbI.alt = `${cur.title} — photo ${ci + 1} of ${n}`;
     $('#lbC').textContent = `${ci + 1} / ${n}`;
     $$('button', lbTh).forEach((b, j) => b.classList.toggle('on', j === ci));
-    const on = lbTh.children[ci]; if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+    // centre the current thumbnail by scrolling only the strip (scrollIntoView would also shift the whole viewer)
+    const on = lbTh.children[ci];
+    if (on) lbTh.scrollTo({ left: on.offsetLeft - (lbTh.clientWidth - on.offsetWidth) / 2, behavior: RM ? 'auto' : 'smooth' });
     $('#lbP').hidden = $('#lbN').hidden = n < 2;
-    if (G && !RM) G.fromTo(lbI, { opacity: 0 }, { opacity: 1, duration: .35 });
+    if (G && !RM) G.fromTo(lbI, { opacity: .35 }, { opacity: 1, duration: .3, ease: 'power1.out' });
   };
   const openLb = (set, j = 0) => {
     cur = set; back = document.activeElement;
@@ -410,4 +429,8 @@
 
   ST.refresh();
   addEventListener('load', () => ST.refresh());
+  // safety net: anything already scrolled into or past view that is still hidden gets shown (e.g. after a fast jump)
+  const reveal = () => $$('[data-a]').forEach(el => { if (+getComputedStyle(el).opacity < .05 && el.getBoundingClientRect().top < innerHeight) G.to(el, { opacity: 1, y: 0, duration: .5, overwrite: true, clearProps: 'transform' }); });
+  addEventListener('scroll', () => { clearTimeout(reveal.t); reveal.t = setTimeout(reveal, 600); }, { passive: true });
+  setTimeout(reveal, 2500);
 })();
