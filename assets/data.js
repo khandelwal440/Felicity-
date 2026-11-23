@@ -6,7 +6,7 @@
 
   window.FELICITY = {
     // only the high-resolution photos are used full-screen
-    SLIDES: [['hero-lights', 'Concerts & live shows'], ['hero-wedding', 'Weddings & celebrations'], ['au-crowd', 'AU Financiers employee meet'], ['au-league', 'AU Champions League'], ['hero-stage', 'Award nights & conferences']],
+    SLIDES: [['hero-lights', 'Concerts & live shows'], ['dinner', 'Theme gala dinners'], ['hero-wedding', 'Weddings & celebrations'], ['au-league', 'AU Champions League'], ['hero-stage', 'Award nights & conferences']],
 
     SERVICES: [
       // [photo, service, description shown in the service popup]
