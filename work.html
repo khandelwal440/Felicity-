@@ -55,7 +55,7 @@
     <p class="intro" data-hero>We have organised more than 600 events across India and overseas. Here are some of the projects we're proud of — conferences, incentive trips, launches, concerts, leagues and rides.</p>
     <div class="page-stats" data-hero>
       <div><b>600+</b><span>Events organised</span></div>
-      <div><b id="statProjects">12</b><span>Featured projects</span></div>
+      <div><b id="statProjects">12</b><span>Categories</span></div>
       <div><b id="statPhotos">97</b><span>Photos</span></div>
       <div><b id="statFilms">9</b><span>Event films</span></div>
     </div>
@@ -63,26 +63,17 @@
   <div class="reel" aria-hidden="true"><div class="row" id="reel"></div></div>
 </section>
 
-<section id="projects-wrap">
+<section id="work-cats">
   <div class="fbar">
     <div class="wrap">
-      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
-      <span class="shown" id="shown" aria-live="polite"></span>
+      <div class="filters" id="wfilters" role="group" aria-label="Filter photos by category"></div>
+      <span class="shown" id="wshown" aria-live="polite"></span>
     </div>
   </div>
-  <div class="wrap" id="projects"></div>
+  <div class="wrap" id="wcats"></div>
 </section>
-
-<section class="off pad" id="gallery">
-  <div class="wrap">
-    <div class="head">
-      <div><span class="label" data-a>Gallery</span><h2 class="h2" data-a>Moments from <em>our events.</em></h2></div>
-      <p class="lead" data-a>Click any photo to view it larger.</p>
-    </div>
-    <div class="gal short" id="gal"></div>
-    <div class="center"><button class="btn btn-outline" id="galMore"></button></div>
-  </div>
-</section>
+<!-- old links to #gallery land on the photo categories -->
+<span id="gallery" aria-hidden="true"></span>
 
 <section class="dark pad" id="films">
   <div class="wrap">
@@ -134,6 +125,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="assets/data.js"></script>
+<script src="assets/work-photos.js"></script>
 <script src="assets/main.js"></script>
 </body>
 </html>

@@ -40,8 +40,17 @@
 
   // project cards (home shows the first six, each opens its photos)
   const cover = c => c.mosaic ? `<div class="mosaic">${c.photos.slice(0, 4).map(p => `<img src="${I(p)}" alt="" loading="lazy">`).join('')}</div>` : `<img src="${I(c.photos[0])}" alt="${c.title}" loading="lazy">`;
+  // event photos by service category (window.WORK comes from assets/work-photos.js; images are watermarked)
+  const WORK = window.WORK;
+  const wcatList = WORK ? WORK.categories.filter(c => c.photos.length) : [];
+  const wurl = (c, n, thumb) => `images/work/${c.slug}/${n}${thumb ? '-t' : ''}.jpg`;
+  const wcover = c => (c.photos.find(([, w, h]) => w > h) || c.photos[0])[0];   // first landscape photo makes the card cover
+
   const cases = $('#cases');
-  if (cases) {
+  if (cases && wcatList.length) {
+    // home: one card per photo category; each opens that category's photos
+    cases.innerHTML = wcatList.map((c, k) => `<button type="button" class="case" data-wcat="${k}" data-j="${c.photos.findIndex(p => p[0] === wcover(c))}" data-a aria-label="Open ${c.title} photos"><div class="im"><img src="${wurl(c, wcover(c), 1)}" alt="${c.title}" loading="lazy"><span class="count">${photoCount(c.photos.length)}</span></div><div class="meta"><span>${pad(k + 1)}</span><span>Felicity events</span></div><h3>${c.title}</h3></button>`).join('');
+  } else if (cases) {
     const n = +(cases.dataset.limit || CASES.length);
     cases.innerHTML = CASES.slice(0, n).map((c, i) => `<button type="button" class="case" data-f="${c.f}" data-case="${i}" data-a aria-label="Open ${c.title} photos"><div class="im">${cover(c)}<span class="count">${photoCount(c.photos.length)}</span></div><div class="meta"><span>${c.label}</span><span>${c.place}</span></div><h3>${c.title}</h3><p>${c.line}</p></button>`).join('');
   }
@@ -83,6 +92,50 @@
   if (offices) offices.innerHTML = D.OFFICES.map(([c, k, a]) => `<div class="office" data-a><span class="pin">${svg('pin')}</span><b>${c}${k ? `<small>${k}</small>` : ''}</b><span>${a}</span></div>`).join('');
 
   /* ================= WORK PAGE ================= */
+  const wcats = $('#wcats');
+  if (wcats && wcatList.length) {
+    const total = wcatList.reduce((s, c) => s + c.photos.length, 0);
+    $('#statProjects').textContent = wcatList.length;
+    $('#statPhotos').textContent = total;
+    $('#statFilms').textContent = D.FILMS.length;
+    // slow photo reel under the page title: a few photos from every category (two copies for a seamless loop)
+    const reel = wcatList.flatMap(c => c.photos.slice(0, 2).map(([n]) => `<img src="${wurl(c, n, 1)}" alt="" loading="lazy">`)).join('');
+    $('#reel').innerHTML = reel + reel;
+
+    wcats.innerHTML = wcatList.map((c, k) => `<article class="wcat" id="cat-${c.slug}">
+      <header class="wcat-h" data-a><span class="no">${pad(k + 1)}</span><h2>${c.title}</h2><span class="count">${c.photos.length} photo${c.photos.length > 1 ? 's' : ''}</span></header>
+      <div class="wgrid${c.photos.length > 8 ? ' short' : ''}" data-a>${c.photos.map(([n, w, h], j) => `<button type="button" data-wcat="${k}" data-j="${j}" aria-label="View ${c.title} photo ${j + 1} of ${c.photos.length}"><img src="${wurl(c, n, 1)}" alt="${c.title}" width="${w}" height="${h}" loading="lazy"></button>`).join('')}</div>
+      ${c.photos.length > 8 ? `<div class="center"><button type="button" class="btn btn-outline wmore">View all ${c.photos.length} photos</button></div>` : ''}
+    </article>`).join('');
+    wcats.addEventListener('click', e => {
+      const b = e.target.closest('.wmore'); if (!b) return;
+      const g = b.closest('.wcat').querySelector('.wgrid'), short = g.classList.toggle('short');
+      b.textContent = short ? `View all ${g.children.length} photos` : 'Show fewer photos';
+      if (ST) ST.refresh();
+      if (short) goTo('#' + b.closest('.wcat').id, true);
+    });
+
+    // category chips: show one category at a time, or all
+    const wf = $('#wfilters'), wshown = $('#wshown');
+    wf.innerHTML = [['all', 'All categories'], ...wcatList.map(c => [c.slug, c.title])].map(([k, t], i) => `<button type="button" class="${i ? '' : 'on'}" aria-pressed="${!i}" data-k="${k}">${t}</button>`).join('');
+    const pick = (k, scroll) => {
+      $$('button', wf).forEach(x => { const on = x.dataset.k === k; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+      $$('.wcat', wcats).forEach(el => {
+        const show = k === 'all' || el.id === 'cat-' + k;
+        el.classList.toggle('hide', !show);
+        if (show) $$('[data-a]', el).forEach(x => x.style.opacity = 1);
+      });
+      const n = k === 'all' ? total : wcatList.find(c => c.slug === k).photos.length;
+      wshown.textContent = `${n} photos`;
+      if (ST) ST.refresh();
+      if (scroll) goTo('#work-cats', true);
+    };
+    wf.addEventListener('click', e => { const b = e.target.closest('button'); if (b) pick(b.dataset.k, true); });
+    // arriving from a service popup with #cat-<slug>: open just that category
+    const hashCat = location.hash.startsWith('#cat-') && wcatList.find(c => 'cat-' + c.slug === location.hash.slice(1));
+    pick(hashCat ? hashCat.slug : 'all', false);
+  }
+
   const projects = $('#projects');
   if (projects) {
     $('#statProjects').textContent = CASES.length;
@@ -212,24 +265,32 @@
 
   // photo viewer
   const lb = $('#lb'), lbI = $('#lbI'), lbTh = $('#lbTh'), lbB = $('#lbB');
+  // cur = { title, desc, full: [urls], thumb: [urls] } — built from a featured project or a work-page category
   let cur = null, ci = 0, back = null;
   const show = i => {
-    const list = cur.photos; ci = (i + list.length) % list.length;
-    lbI.src = I(list[ci]); lbB.style.backgroundImage = `url(${I(list[ci])})`;
-    lbI.alt = `${cur.title} — photo ${ci + 1} of ${list.length}`;
-    $('#lbC').textContent = `${ci + 1} / ${list.length}`;
+    const n = cur.full.length; ci = (i + n) % n;
+    lbI.src = cur.full[ci]; lbB.style.backgroundImage = `url(${cur.thumb[ci]})`;
+    lbI.alt = `${cur.title} — photo ${ci + 1} of ${n}`;
+    $('#lbC').textContent = `${ci + 1} / ${n}`;
     $$('button', lbTh).forEach((b, j) => b.classList.toggle('on', j === ci));
-    $('#lbP').hidden = $('#lbN').hidden = list.length < 2;
+    const on = lbTh.children[ci]; if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+    $('#lbP').hidden = $('#lbN').hidden = n < 2;
     if (G && !RM) G.fromTo(lbI, { opacity: 0 }, { opacity: 1, duration: .35 });
   };
-  const openLb = (i, j = 0) => {
-    cur = CASES[i]; back = document.activeElement;
-    $('#lbT').textContent = cur.title; $('#lbD').textContent = `${cur.line} · ${cur.place}`;
-    lbTh.innerHTML = cur.photos.map((p, k) => `<button type="button" data-k="${k}" aria-label="Photo ${k + 1}"><img src="${I(p)}" alt=""></button>`).join('');
+  const openLb = (set, j = 0) => {
+    cur = set; back = document.activeElement;
+    $('#lbT').textContent = cur.title; $('#lbD').textContent = cur.desc;
+    lbTh.innerHTML = cur.thumb.map((p, k) => `<button type="button" data-k="${k}" aria-label="Photo ${k + 1}"><img src="${p}" alt="" loading="lazy"></button>`).join('');
     show(j); lb.classList.add('open'); lockScroll(true); $('#lbX').focus();
   };
+  const caseSet = c => ({ title: c.title, desc: `${c.line} · ${c.place}`, full: c.photos.map(I), thumb: c.photos.map(I) });
+  const catSet = c => ({ title: c.title, desc: `${c.photos.length} photos · Felicity Integrated Marketing Services`, full: c.photos.map(([n]) => wurl(c, n)), thumb: c.photos.map(([n]) => wurl(c, n, 1)) });
   const closeLb = () => { lb.classList.remove('open'); lockScroll(false); if (back) back.focus({ preventScroll: true }); };
-  document.addEventListener('click', e => { const b = e.target.closest('[data-case]'); if (b && !lb.contains(b)) openLb(+b.dataset.case, +(b.dataset.j || 0)); });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-case], [data-wcat]'); if (!b || lb.contains(b)) return;
+    const set = b.dataset.wcat != null ? catSet(wcatList[+b.dataset.wcat]) : caseSet(CASES[+b.dataset.case]);
+    openLb(set, +(b.dataset.j || 0));
+  });
   $('#lbX').addEventListener('click', closeLb);
   $('#lbP').addEventListener('click', () => show(ci - 1));
   $('#lbN').addEventListener('click', () => show(ci + 1));
@@ -246,6 +307,9 @@
     const [p, t, d] = D.SERVICES[si2], n = D.SERVICES.length;
     $('#svmI').src = I(p); $('#svmT').textContent = t; $('#svmD').textContent = d;
     $('#svmNo').textContent = `${pad(si2 + 1)} / ${pad(n)}`;
+    // "View photos" opens this service's photo category on the Our Work page (Seminars & Workshops has none yet)
+    const cat = ['conferences', 'sports-events', 'live-concerts', 'mice', 'rides-stunts', 'weddings', 'retail-branding', 'exhibitions', 'experiential', null][si2];
+    const vp = $('#svmV'); if (vp) { vp.hidden = !cat; vp.href = cat ? `work.html#cat-${cat}` : 'work.html'; }
     $('#svmP span').textContent = D.SERVICES[(si2 - 1 + n) % n][1];
     $('#svmN span').textContent = D.SERVICES[(si2 + 1) % n][1];
     if (G && !RM) G.fromTo('#svm .svm-im img, #svm .svm-body > *', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .45, stagger: .05, ease: 'power2.out' });
