@@ -287,6 +287,25 @@
       if (lenis) lenis.scrollTo(top, { immediate: true }); else scrollTo(0, top);
     }, 60));
   }
+  // About quote (laptops): pick the largest text size that still ends level with the right-hand column,
+  // so it fills the empty space under the paragraphs on any screen size
+  const quote = $('.about blockquote'), sideEnd = $('.about-side .ticks-end');
+  if (quote && sideEnd) {
+    const fitQuote = () => {
+      quote.style.fontSize = '';
+      if (innerWidth < 901) return;
+      const limit = sideEnd.getBoundingClientRect().bottom;
+      let lo = 26, hi = 84;
+      for (let i = 0; i < 9; i++) {
+        const mid = (lo + hi) / 2; quote.style.fontSize = mid + 'px';
+        if (quote.getBoundingClientRect().bottom <= limit) lo = mid; else hi = mid;
+      }
+      quote.style.fontSize = Math.floor(lo) + 'px';
+    };
+    let fq; addEventListener('resize', () => { clearTimeout(fq); fq = setTimeout(fitQuote, 120); });
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(fitQuote);
+    addEventListener('load', fitQuote);
+  }
   const lockScroll = on => { document.documentElement.style.overflow = on ? 'hidden' : ''; if (lenis) on ? lenis.stop() : lenis.start(); };
 
   // video player: clicking a video in "From Vision to Reality" opens it big over a dark screen
