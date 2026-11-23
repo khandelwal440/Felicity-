@@ -252,6 +252,18 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 /* ============ NUMBERS ============ */
 .reels{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 60px)/4);gap:20px;overflow-x:auto;scrollbar-width:none}
 .reels::-webkit-scrollbar{display:none}
+/* clear layer over each video: one click opens it big */
+.reel-open{position:absolute;inset:0;z-index:1;display:grid;place-items:center;border:0;background:transparent;cursor:pointer}
+.reel-open span{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;opacity:0;transform:scale(.85);transition:opacity .25s,transform .25s var(--ease)}
+.reel-open:hover span,.reel-open:focus-visible span{opacity:1;transform:none}
+.reel-open svg{width:26px;height:26px;margin-left:3px}
+/* big video player */
+.vm{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:rgba(0,0,0,.92);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.vm.open{opacity:1;visibility:visible}
+.vm-box{position:relative;height:min(88vh,calc(92vw * 1.25));aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:#111}
+.vm-box iframe{position:absolute;left:0;top:-54px;width:100%;height:calc(100% + 300px);border:0}
+.vm-x{position:absolute;top:18px;right:18px;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#000;cursor:pointer}
+.vm-x svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
 /* show only the video: hide Instagram's top bar (54px) and everything under the video by cropping the embed */
 .reel{scroll-snap-align:start;position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:#1A1A1A}
 .reel iframe{position:absolute;left:0;top:-54px;width:100%;height:calc(100% + 300px);border:0}

@@ -10,6 +10,8 @@
   const D = window.FELICITY;
   const CASES = D.CASES;
   const ICON = {
+    play: '<path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"/>',
+    close: '<path d="M6 6l12 12M18 6L6 18"/>',
     wedding: '<circle cx="9" cy="14" r="6"/><circle cx="15" cy="14" r="6"/><path d="M9 4l1.5-2h3L15 4l-3 3z"/>',
     concert: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
     exhibition: '<path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/>',
@@ -59,7 +61,8 @@
   if (nums) nums.innerHTML = D.NUMS.map(([n, s, t]) => `<div data-a><b data-n="${n}" data-s="${s}">${(+n).toLocaleString('en-IN')}${s}</b><span>${t}</span></div>`).join('');
   const reels = $('#reels');
   // two copies of the videos so the row can glide forever without a jump
-  const reelCard = (id, copy) => `<div class="reel"${copy ? ' aria-hidden="true"' : ''}><iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture"${copy ? ' tabindex="-1"' : ''}></iframe></div>`;
+  // a clear button over each video opens it big in the video player (see "video player" below)
+  const reelCard = (id, copy) => `<div class="reel"${copy ? ' aria-hidden="true"' : ''}><iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1"></iframe><button class="reel-open" data-reel="${id}" aria-label="Play video full screen"${copy ? ' tabindex="-1"' : ''}><span>${svg('play')}</span></button></div>`;
   if (reels) reels.innerHTML = D.REELS.map(id => reelCard(id)).join('') + D.REELS.map(id => reelCard(id, 1)).join('');
   // glide the video row slowly and continuously, like the photo strip on the Our Work page.
   // Stops while the pointer is over it, for a while after a touch, while a video is being watched, and while off screen.
@@ -68,7 +71,7 @@
     const SPEED = 40; // pixels per second
     const tick = t => {
       const dt = last ? Math.min(t - last, 100) / 1000 : 0; last = t;
-      if (!hold && seen) {
+      if (!hold && seen && !reels.dataset.paused) {
         const half = reels.children[D.REELS.length].offsetLeft - reels.children[0].offsetLeft; // where the second copy starts
         if (Math.abs(reels.scrollLeft - pos) > 2) pos = reels.scrollLeft; // the visitor scrolled by hand
         pos += SPEED * dt;
@@ -285,6 +288,28 @@
     }, 60));
   }
   const lockScroll = on => { document.documentElement.style.overflow = on ? 'hidden' : ''; if (lenis) on ? lenis.stop() : lenis.start(); };
+
+  // video player: clicking a video in "From Vision to Reality" opens it big over a dark screen
+  if (reels) {
+    const vm = document.createElement('div');
+    vm.className = 'vm'; vm.setAttribute('role', 'dialog'); vm.setAttribute('aria-modal', 'true'); vm.setAttribute('aria-label', 'Video');
+    vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
+    document.body.appendChild(vm);
+    const frame = $('iframe', vm), xBtn = $('.vm-x', vm);
+    let opener = null;
+    const openVm = (id, btn) => {
+      opener = btn; frame.src = `https://www.instagram.com/reel/${id}/embed/?autoplay=1`;
+      vm.classList.add('open'); reels.dataset.paused = '1'; lockScroll(true); xBtn.focus();
+    };
+    const closeVm = () => {
+      vm.classList.remove('open'); frame.src = 'about:blank'; delete reels.dataset.paused; lockScroll(false);
+      if (opener) opener.focus({ preventScroll: true });
+    };
+    reels.addEventListener('click', e => { const b = e.target.closest('.reel-open'); if (b) openVm(b.dataset.reel, b); });
+    xBtn.addEventListener('click', closeVm);
+    vm.addEventListener('click', e => { if (e.target === vm) closeVm(); });
+    addEventListener('keydown', e => { if (vm.classList.contains('open') && (e.key === 'Escape' || e.key === 'Tab')) { e.preventDefault(); if (e.key === 'Escape') closeVm(); } });
+  }
 
   // menu
   const burger = $('#burger'), mnav = $('#mnav');
