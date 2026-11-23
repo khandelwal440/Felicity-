@@ -57,6 +57,8 @@
 
   const nums = $('#nums');
   if (nums) nums.innerHTML = D.NUMS.map(([n, s, t]) => `<div data-a><b data-n="${n}" data-s="${s}">${(+n).toLocaleString('en-IN')}${s}</b><span>${t}</span></div>`).join('');
+  const reels = $('#reels');
+  if (reels) reels.innerHTML = D.REELS.map(id => `<div class="reel" data-a><iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture"></iframe></div>`).join('');
   const steps = $('#steps');
   if (steps) steps.innerHTML = D.STEPS.map(([t, d], i) => `<div class="step" data-a><span class="n">${pad(i + 1)}</span><h3>${t}</h3><p>${d}</p></div>`).join('');
   const why = $('#why');
