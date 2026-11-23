@@ -250,7 +250,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .case p{display:none}
 
 /* ============ NUMBERS ============ */
-.reels{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 60px)/4);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;scrollbar-color:#444 transparent}
+.reels{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 60px)/4);gap:20px;overflow-x:auto;scrollbar-width:none}
+.reels::-webkit-scrollbar{display:none}
 /* show only the video: hide Instagram's top bar (54px) and everything under the video by cropping the embed */
 .reel{scroll-snap-align:start;position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:#1A1A1A}
 .reel iframe{position:absolute;left:0;top:-54px;width:100%;height:calc(100% + 300px);border:0}

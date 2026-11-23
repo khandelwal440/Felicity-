@@ -58,7 +58,34 @@
   const nums = $('#nums');
   if (nums) nums.innerHTML = D.NUMS.map(([n, s, t]) => `<div data-a><b data-n="${n}" data-s="${s}">${(+n).toLocaleString('en-IN')}${s}</b><span>${t}</span></div>`).join('');
   const reels = $('#reels');
-  if (reels) reels.innerHTML = D.REELS.map(id => `<div class="reel" data-a><iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture"></iframe></div>`).join('');
+  // two copies of the videos so the row can glide forever without a jump
+  const reelCard = (id, copy) => `<div class="reel"${copy ? ' aria-hidden="true"' : ''}><iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture"${copy ? ' tabindex="-1"' : ''}></iframe></div>`;
+  if (reels) reels.innerHTML = D.REELS.map(id => reelCard(id)).join('') + D.REELS.map(id => reelCard(id, 1)).join('');
+  // glide the video row slowly and continuously, like the photo strip on the Our Work page.
+  // Stops while the pointer is over it, for a while after a touch, while a video is being watched, and while off screen.
+  if (reels && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let hold = false, seen = false, pos = 0, last = 0;
+    const SPEED = 40; // pixels per second
+    const tick = t => {
+      const dt = last ? Math.min(t - last, 100) / 1000 : 0; last = t;
+      if (!hold && seen) {
+        const half = reels.children[D.REELS.length].offsetLeft - reels.children[0].offsetLeft; // where the second copy starts
+        if (Math.abs(reels.scrollLeft - pos) > 2) pos = reels.scrollLeft; // the visitor scrolled by hand
+        pos += SPEED * dt;
+        if (pos >= half) pos -= half;
+        reels.scrollLeft = pos;
+      }
+      requestAnimationFrame(tick);
+    };
+    reels.addEventListener('pointerenter', () => { hold = true; });
+    reels.addEventListener('pointerleave', () => { hold = false; });
+    reels.addEventListener('touchstart', () => { hold = true; clearTimeout(reels._t); reels._t = setTimeout(() => { hold = false; }, 6000); }, { passive: true });
+    // clicking into a video moves focus into its frame: keep still while it plays
+    addEventListener('blur', () => { if (document.activeElement && reels.contains(document.activeElement)) hold = true; });
+    addEventListener('focus', () => { hold = false; });
+    new IntersectionObserver(([e]) => { seen = e.isIntersecting; }, { threshold: .2 }).observe(reels);
+    requestAnimationFrame(tick);
+  }
   const steps = $('#steps');
   if (steps) steps.innerHTML = D.STEPS.map(([t, d], i) => `<div class="step" data-a><span class="n">${pad(i + 1)}</span><h3>${t}</h3><p>${d}</p></div>`).join('');
   const why = $('#why');
