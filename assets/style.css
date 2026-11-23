@@ -77,6 +77,9 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .nav a:hover,.nav a.on{color:var(--black)}
 .nav a:hover::after,.nav a.on::after{transform:scaleX(1)}
 .hdr .btn{height:44px;padding:0 20px;font-size:14px}
+.hdr-act{display:flex;align-items:center;gap:14px}
+.social-hdr{gap:8px}
+.social-hdr .ig-logo{width:30px;height:30px}
 .burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);position:relative}
 .burger i{position:absolute;left:13px;right:13px;height:2px;background:var(--black);transition:transform .3s,opacity .3s}
 .burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:28px}
@@ -348,9 +351,15 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .foot ul{list-style:none;display:grid;gap:8px;font-size:15px}
 .foot ul a:hover{color:var(--white);text-decoration:underline;text-underline-offset:3px}
 /* Instagram link with its icon */
-.foot a.ig{display:inline-flex;align-items:center;gap:8px}
-.ig-ic{flex:none;width:18px;height:18px}
-.direct b.ig-b{display:flex;align-items:center;gap:8px}
+/* social icons (Instagram, LinkedIn): colourful icons only, side by side */
+.social{display:inline-flex;align-items:center;gap:10px}
+.ig-btn{display:inline-flex;border-radius:9px;transition:transform .25s var(--ease),box-shadow .25s}
+.ig-btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px -8px rgba(0,0,0,.45)}
+.ig-logo{display:block;width:34px;height:34px}
+.social-contact{margin-top:16px}
+.social-contact .ig-logo{width:42px;height:42px}
+.foot .social .ig-btn:hover{text-decoration:none}
+.mnav .ig-row{margin-top:4px}
 .foot .base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding:22px 64px 0 0;border-top:1px solid var(--line-d);font-size:14px;color:var(--muted-d)}
 .totop{position:fixed;right:20px;bottom:20px;z-index:90;width:48px;height:48px;border-radius:50%;background:var(--black);color:var(--white);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,visibility 0s .3s}
 .totop.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s,transform .3s}
@@ -382,7 +391,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:1080px){
-  .nav,.hdr .btn{display:none}
+  .nav,.hdr .btn,.social-hdr{display:none}
   .burger{display:block}
   .svc{grid-template-columns:repeat(2,1fr)}
   .svc .tile{aspect-ratio:16/10}
