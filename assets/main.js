@@ -49,7 +49,7 @@
   const cases = $('#cases');
   if (cases && wcatList.length) {
     // home: one card per photo category; each opens that category's photos
-    cases.innerHTML = wcatList.map((c, k) => `<button type="button" class="case" data-wcat="${k}" data-j="${c.photos.findIndex(p => p[0] === wcover(c))}" data-a aria-label="Open ${c.title} photos"><div class="im"><img src="${wurl(c, wcover(c), 1)}" alt="${c.title}" loading="lazy"><span class="count">${photoCount(c.photos.length)}</span></div><div class="meta"><span>${pad(k + 1)}</span><span>Felicity events</span></div><h3>${c.title}</h3></button>`).join('');
+    cases.innerHTML = wcatList.map((c, k) => `<button type="button" class="case" data-wcat="${k}" data-j="${c.photos.findIndex(p => p[0] === wcover(c))}" data-a aria-label="Open ${c.title} photos"><div class="im"><img src="${wurl(c, wcover(c), 1)}" alt="${c.title}" loading="lazy"><span class="count">${photoCount(c.photos.length)}</span></div><div class="meta"><span>${pad(k + 1)}</span></div><h3>${c.title}</h3></button>`).join('');
   } else if (cases) {
     const n = +(cases.dataset.limit || CASES.length);
     cases.innerHTML = CASES.slice(0, n).map((c, i) => `<button type="button" class="case" data-f="${c.f}" data-case="${i}" data-a aria-label="Open ${c.title} photos"><div class="im">${cover(c)}<span class="count">${photoCount(c.photos.length)}</span></div><div class="meta"><span>${c.label}</span><span>${c.place}</span></div><h3>${c.title}</h3><p>${c.line}</p></button>`).join('');
