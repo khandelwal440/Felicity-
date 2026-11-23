@@ -226,7 +226,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .filters button{height:40px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:600;color:#3A3A37;transition:all .25s}
 .filters button:hover{border-color:var(--black);color:var(--black)}
 .filters button.on{background:var(--black);border-color:var(--black);color:var(--white)}
-.cases{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.cases{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .case{min-width:0;text-align:left;display:block;width:100%;padding:10px 10px 16px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);transition:border-color .3s,box-shadow .3s,transform .3s}
 .case:hover{border-color:#CFCFCB;box-shadow:0 18px 36px -26px rgba(0,0,0,.35);transform:translateY(-3px)}
 .case.hide{display:none}
