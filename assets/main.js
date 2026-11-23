@@ -397,8 +397,8 @@
     const [p, t, d] = D.SERVICES[si2], n = D.SERVICES.length;
     $('#svmI').src = I(p); $('#svmT').textContent = t; $('#svmD').textContent = d;
     $('#svmNo').textContent = `${pad(si2 + 1)} / ${pad(n)}`;
-    // "View photos" opens this service's photo category on the Our Work page (Seminars & Workshops has none yet)
-    const cat = ['conferences', 'sports-events', 'live-concerts', 'mice', 'rides-stunts', 'weddings', 'retail-branding', 'exhibitions', 'experiential', null][si2];
+    // "View photos" opens this service's photo category on the Our Work page 
+    const cat = ['conferences', 'sports-events', 'live-concerts', 'mice', 'rides-stunts', 'weddings', 'retail-branding', 'exhibitions', 'experiential', 'theme'][si2];
     const vp = $('#svmV'); if (vp) { vp.hidden = !cat; vp.href = cat ? `work.html#cat-${cat}` : 'work.html'; }
     $('#svmP span').textContent = D.SERVICES[(si2 - 1 + n) % n][1];
     $('#svmN span').textContent = D.SERVICES[(si2 + 1) % n][1];
