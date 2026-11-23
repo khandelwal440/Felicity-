@@ -295,16 +295,33 @@
     vm.className = 'vm'; vm.setAttribute('role', 'dialog'); vm.setAttribute('aria-modal', 'true'); vm.setAttribute('aria-label', 'Video');
     vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
     document.body.appendChild(vm);
-    const frame = $('iframe', vm), xBtn = $('.vm-x', vm);
+    const frame = $('iframe', vm), box = $('.vm-box', vm), xBtn = $('.vm-x', vm);
     let opener = null;
+    // Instagram's player at 400px wide: 54px top bar, then a 400x500 video area with the tall (9:16) video
+    // centred in it, 281px wide. Scale the player so that tall video exactly fills the box,
+    // and the box is as big as the device screen allows.
+    // On a phone held upright the box is the whole screen and the video covers it (edges trimmed a little).
+    const fit = () => {
+      const W = box.clientWidth, H = box.clientHeight;
+      const s = Math.max(H / 500, W / 281.25);
+      const x = (W - 281.25 * s) / 2 - 59.4 * s, y = (H - 500 * s) / 2 - 54 * s;
+      frame.style.transform = `translate(${x}px, ${y}px) scale(${s})`;
+    };
     const openVm = (id, btn) => {
       opener = btn; frame.src = `https://www.instagram.com/reel/${id}/embed/?autoplay=1`;
-      vm.classList.add('open'); reels.dataset.paused = '1'; lockScroll(true); xBtn.focus();
+      vm.classList.add('open'); reels.dataset.paused = '1'; lockScroll(true); fit(); xBtn.focus();
+      // real full screen where the device allows it (hides the browser bars too)
+      if (vm.requestFullscreen) vm.requestFullscreen().then(fit).catch(() => {});
     };
     const closeVm = () => {
+      if (!vm.classList.contains('open')) return;
       vm.classList.remove('open'); frame.src = 'about:blank'; delete reels.dataset.paused; lockScroll(false);
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       if (opener) opener.focus({ preventScroll: true });
     };
+    addEventListener('resize', () => { if (vm.classList.contains('open')) fit(); });
+    // leaving full screen with the device's own back / Esc also closes the player
+    document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) closeVm(); else fit(); });
     reels.addEventListener('click', e => { const b = e.target.closest('.reel-open'); if (b) openVm(b.dataset.reel, b); });
     xBtn.addEventListener('click', closeVm);
     vm.addEventListener('click', e => { if (e.target === vm) closeVm(); });
