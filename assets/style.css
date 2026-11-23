@@ -43,7 +43,12 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 /* section heading row: heading on the left, intro text on the right, bottoms lined up, with a steady gap between */
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:clamp(40px,6vw,96px);margin-bottom:clamp(36px,4.5vw,56px)}
 .head>div:first-child{max-width:740px}
-.head .lead{flex:0 1 420px;max-width:420px;padding-bottom:.35em}
+.head .lead{flex:0 1 420px;max-width:420px;text-wrap:pretty}
+/* side by side: the intro starts level with the first line of the heading (below the small label) */
+@media (min-width:641px){
+  .head:not(:has(.head-sectors)){align-items:flex-start}
+  .head:not(:has(.head-sectors)) .lead{margin-top:calc(1.4em + 14px)}
+}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;font-size:15px;font-weight:700;white-space:nowrap;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
