@@ -63,8 +63,20 @@
   const reels = $('#reels');
   // two copies of the videos so the row can glide forever without a jump
   // a clear button over each video opens it big in the video player (see "video player" below)
-  const reelCard = (id, copy) => `<div class="reel"${copy ? ' aria-hidden="true"' : ''}><iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1"></iframe><button class="reel-open" data-reel="${id}" aria-label="Play video full screen"${copy ? ' tabindex="-1"' : ''}><span>${svg('play')}</span></button></div>`;
-  if (reels) reels.innerHTML = D.REELS.map(id => reelCard(id)).join('') + D.REELS.map(id => reelCard(id, 1)).join('');
+  // an entry ending in .mp4 is our own video file (plays silently in the row); anything else is an Instagram reel id
+  const reelCard = (id, copy) => {
+    const local = id.endsWith('.mp4');
+    const media = local
+      ? `<video src="${id}" muted loop playsinline preload="metadata" tabindex="-1"></video>`
+      : `<iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1"></iframe>`;
+    return `<div class="reel${local ? ' reel-local' : ''}"${copy ? ' aria-hidden="true"' : ''}>${media}<button class="reel-open" data-reel="${id}" aria-label="Play video full screen"${copy ? ' tabindex="-1"' : ''}><span>${svg('play')}</span></button></div>`;
+  };
+  if (reels) {
+    reels.innerHTML = D.REELS.map(id => reelCard(id)).join('') + D.REELS.map(id => reelCard(id, 1)).join('');
+    // our own videos play (muted) only while they are on screen, to save data
+    const vio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.play().catch(() => {}); else e.target.pause(); }), { threshold: .25 });
+    $$('video', reels).forEach(v => vio.observe(v));
+  }
   // glide the video row slowly and continuously, like the photo strip on the Our Work page.
   // Stops while the pointer is over it, for a while after a touch, while a video is being watched, and while off screen.
   if (reels && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -313,9 +325,9 @@
   if (reels) {
     const vm = document.createElement('div');
     vm.className = 'vm'; vm.setAttribute('role', 'dialog'); vm.setAttribute('aria-modal', 'true'); vm.setAttribute('aria-label', 'Video');
-    vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
+    vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe><video class="vm-video" controls playsinline></video></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
     document.body.appendChild(vm);
-    const frame = $('iframe', vm), box = $('.vm-box', vm), xBtn = $('.vm-x', vm);
+    const frame = $('iframe', vm), video = $('video', vm), box = $('.vm-box', vm), xBtn = $('.vm-x', vm);
     let opener = null;
     // Instagram's player at 400px wide: 54px top bar, then a 400x500 video area with the tall (9:16) video
     // centred in it, 281px wide. Scale the player so that tall video exactly fills the box,
@@ -328,14 +340,19 @@
       frame.style.transform = `translate(${x}px, ${y}px) scale(${s})`;
     };
     const openVm = (id, btn) => {
-      opener = btn; frame.src = `https://www.instagram.com/reel/${id}/embed/?autoplay=1`;
+      opener = btn;
+      const local = id.endsWith('.mp4');
+      vm.classList.toggle('local', local);
+      // our own video: real video player with sound and controls; Instagram reel: their player
+      if (local) { video.src = id; video.play().catch(() => {}); } else frame.src = `https://www.instagram.com/reel/${id}/embed/?autoplay=1`;
       vm.classList.add('open'); reels.dataset.paused = '1'; lockScroll(true); fit(); xBtn.focus();
       // real full screen where the device allows it (hides the browser bars too)
       if (vm.requestFullscreen) vm.requestFullscreen().then(fit).catch(() => {});
     };
     const closeVm = () => {
       if (!vm.classList.contains('open')) return;
-      vm.classList.remove('open'); frame.src = 'about:blank'; delete reels.dataset.paused; lockScroll(false);
+      vm.classList.remove('open'); frame.src = 'about:blank'; video.pause(); video.removeAttribute('src'); video.load();
+      delete reels.dataset.paused; lockScroll(false);
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       if (opener) opener.focus({ preventScroll: true });
     };
@@ -343,6 +360,20 @@
     // leaving full screen with the device's own back / Esc also closes the player
     document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) closeVm(); else fit(); });
     reels.addEventListener('click', e => { const b = e.target.closest('.reel-open'); if (b) openVm(b.dataset.reel, b); });
+
+    // left / right buttons: move the row by one video (the slow glide pauses while it moves)
+    const step = dir => {
+      const card = reels.firstElementChild; if (!card) return;
+      const w = card.getBoundingClientRect().width + parseFloat(getComputedStyle(reels).columnGap || 0);
+      const half = reels.children[D.REELS.length].offsetLeft - reels.children[0].offsetLeft;
+      // stay inside the doubled row so it never runs out in either direction
+      if (dir < 0 && reels.scrollLeft < w) reels.scrollLeft += half;
+      if (dir > 0 && reels.scrollLeft >= half) reels.scrollLeft -= half;
+      reels.dataset.paused = '1'; clearTimeout(reels._s);
+      reels.scrollBy({ left: dir * w, behavior: 'smooth' });
+      reels._s = setTimeout(() => { if (!vm.classList.contains('open')) delete reels.dataset.paused; }, 2500);
+    };
+    $$('.rn').forEach(b => b.addEventListener('click', () => step(+b.dataset.dir)));
     xBtn.addEventListener('click', closeVm);
     vm.addEventListener('click', e => { if (e.target === vm) closeVm(); });
     addEventListener('keydown', e => { if (vm.classList.contains('open') && (e.key === 'Escape' || e.key === 'Tab')) { e.preventDefault(); if (e.key === 'Escape') closeVm(); } });

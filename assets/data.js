@@ -65,7 +65,7 @@
     FILTERS: [['all', 'All projects'], ['corp', 'Corporate & MICE'], ['launch', 'Launches & concerts'], ['sports', 'Sports'], ['moto', 'Motorsport & rides'], ['act', 'Activations']],
 
     // latest Instagram reels from @fims.events, shown in the "From Vision to Reality" section
-    REELS: ['Deyy2HsRm10','DeOPcqIPHwY', 'DdqYKn6PjTw', 'DdjgWxEPL9N', 'Ddb3rUmIPpC', 'DZ5R1E4vGAo', 'DOLGM7-j7_G', 'DODkmfZjyjb', 'DOAeUP6DwUw'],
+    REELS: ['videos/felicity-1.mp4', 'videos/felicity-2.mp4', 'Deyy2HsRm10','DeOPcqIPHwY', 'DdqYKn6PjTw', 'DdjgWxEPL9N', 'Ddb3rUmIPpC','DOLGM7-j7_G', 'DODkmfZjyjb', 'DOAeUP6DwUw'],
     NUMS: [['125', '+', 'Conferences delivered for Nokia'], ['450', '', 'Guests at the AU Financiers meet in Goa'], ['250', '+', 'TVS AOG breakfast rides'], ['100', '+', 'TVS Apache stunt shows across India'], ['15500', ' ft', 'World-record stunt show at Komic, Spiti'], ['200', '+', 'School & college contact programmes']],
     STEPS: [['Fresh ideas', 'We start by understanding your vision, audience, and objectives before developing a creative concept tailored to your needs.'], ['Meticulous planning', 'From organizing information and developing creative concepts to managing complex logistics, we bring every element together under one roof.'], ['Flawless execution', 'It means turning an idea into reality while ensuring that everything happens exactly as planned — from the smallest detail to the biggest production element.'], ['Lasting impression', 'It\'s not just about hosting a beautiful event; it\'s about creating emotions, experiences, and moments that stay with people.']],
     WHY: [['250+ brands, 4,000+ projects', 'Our top clients are our longest-standing relationships.'], ['India & overseas', 'Creating moments today. Building memories that last forever.'], ['Design & data in-house', 'Well-equipped offices and ample resources.'], ['A decade of marketing', 'In-depth understanding of Indian consumers.'], ['Top-notch service', 'Half our team has been here almost a decade.']],
@@ -94,7 +94,7 @@
     ],
     SECTORS: ['Banking & Finance', 'Automobiles', 'Consumer Electronics', 'Retail', 'Telecom', 'FMCG', 'Insurance', 'Liquor & Tobacco', 'Real Estate', 'Sports'],
     FILMS: [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']],
-    OFFICES: [['Jaipur', 'Head office', 'F-2145 (A), RIICO Industrial Area, Ramchandrapura, Jaipur, Rajasthan 302022'], ['Ahmedabad', '', 'A-23, Ambalal Park, Opp. Someshwar Park–3, Near Gulab Tower, Thaltej, Ahmedabad 380054']],
+    OFFICES: [['Jaipur', 'Head office', 'F-2145 (A), RIICO Industrial Area, Ramchandrapura, Jaipur, Rajasthan 302022'], ['Ahmedabad', '', '3/B, Gaurav Park, Opp. Nand Bunglows, Ghatlodia, Ahmedabad 380061']],
     // same order as SERVICES, so "Enquire about this" picks the matching type
     TYPES: ['Conference', 'Sports event', 'Live concert', 'MICE / corporate offsite', 'Ride / stunt show', 'Wedding planning & execution', 'Retail fit-out, branding & merchandising', 'Exhibition', 'Experiential marketing (road show, SCP & CCP)', 'Theme & social event', 'Other'],
   };
