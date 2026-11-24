@@ -32,7 +32,8 @@
   /* ================= HOME PAGE ================= */
   const slides = $('#slides');
   if (slides) {
-    slides.innerHTML = D.SLIDES.map(([p, c], i) => `<img src="${I(p)}" alt="${c}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('');
+    // optional 3rd value in a slide = which part of the photo stays in view when it is cropped (CSS object-position)
+    slides.innerHTML = D.SLIDES.map(([p, c, pos], i) => `<img src="${I(p)}" alt="${c}"${pos ? ` style="object-position:${pos}"` : ''} ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('');
     $('#bars').innerHTML = D.SLIDES.map((s, i) => `<button type="button" aria-label="Show slide ${i + 1}: ${s[1]}"><i></i></button>`).join('');
   }
   const svc = $('#svc');
