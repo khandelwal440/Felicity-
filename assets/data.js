@@ -6,7 +6,7 @@
 
   window.FELICITY = {
     // only the high-resolution photos are used full-screen
-    SLIDES: [['hero-lights', 'Concerts & live shows'], ['hero-lsg', 'Lucknow Super Giants stadium entrance'], ['hero-wedding', 'Weddings & celebrations'], ['hero-starsports', 'Star Sports live show stage'], ['hero-ride', 'Motorcycle ride in the Himalayas']],
+    SLIDES: [['hero-lights', 'Concerts & live shows'], ['hero-lsg', 'Lucknow Super Giants stadium entrance'], ['hero-wedding', 'Weddings & celebrations'], ['hero-haldi', 'Haldi ceremony stage'], ['hero-starsports', 'Star Sports live show stage']],
 
     SERVICES: [
       // [photo, service, description shown in the service popup]
