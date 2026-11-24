@@ -6,7 +6,7 @@
 
   window.FELICITY = {
     // only the high-resolution photos are used full-screen
-    SLIDES: [['hero-lights', 'Concerts & live shows'], ['hero-lsg', 'Lucknow Super Giants stadium entrance'], ['hero-wedding', 'Weddings & celebrations'], ['hero-concert', 'Live concerts'], ['dinner', 'Theme gala dinners']],
+    SLIDES: [['hero-lights', 'Concerts & live shows'], ['hero-lsg', 'Lucknow Super Giants stadium entrance'], ['hero-wedding', 'Weddings & celebrations'], ['hero-concert', 'Live concerts'], ['hero-aog', 'TVS Apache Owners Group ride, live band'], ['dinner', 'Theme gala dinners']],
 
     SERVICES: [
       // [photo, service, description shown in the service popup]
