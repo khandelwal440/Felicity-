@@ -267,13 +267,7 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 /* our own video in the big player: whole video visible, with controls */
 .vm-video{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
 .vm.local .vm-video{display:block}
-.vm.local .vm-box{width:100vw;height:100vh;height:100dvh;aspect-ratio:auto}
-/* Felicity watermark over our own videos (same look as on the photos: white logo, bottom-right, soft shadow) */
-.vwm{position:absolute;z-index:1;pointer-events:none;opacity:.8;filter:drop-shadow(0 0 3px rgba(0,0,0,.55))}
-.reels .reel-local .vwm{right:3.5%;bottom:3%;width:24%}
-.vm-wm{display:none;z-index:2}
-.vm.local .vm-wm{display:block}
-.vm.local .vm-box iframe{display:none}
+.vm.local .vm-box{width:100vw;height:100vh;height:100dvh;aspect-ratio:auto}.vm.local .vm-box iframe{display:none}
 /* clear layer over each video: one click opens it big */
 .reel-open{position:absolute;inset:0;z-index:1;display:grid;place-items:center;border:0;background:transparent;cursor:pointer}
 .reel-open span{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;opacity:0;transform:scale(.85);transition:opacity .25s,transform .25s var(--ease)}

@@ -67,7 +67,7 @@
   const reelCard = (id, copy) => {
     const local = id.endsWith('.mp4');
     const media = local
-      ? `<video src="${id}" muted loop playsinline preload="metadata" tabindex="-1"></video><img class="vwm" src="images/logo-watermark.png" alt="" aria-hidden="true">`
+      ? `<video src="${id}" muted loop playsinline preload="metadata" tabindex="-1"></video>`
       : `<iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1"></iframe>`;
     return `<div class="reel${local ? ' reel-local' : ''}"${copy ? ' aria-hidden="true"' : ''}>${media}<button class="reel-open" data-reel="${id}" aria-label="Play video full screen"${copy ? ' tabindex="-1"' : ''}><span>${svg('play')}</span></button></div>`;
   };
@@ -325,7 +325,7 @@
   if (reels) {
     const vm = document.createElement('div');
     vm.className = 'vm'; vm.setAttribute('role', 'dialog'); vm.setAttribute('aria-modal', 'true'); vm.setAttribute('aria-label', 'Video');
-    vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe><video class="vm-video" controls playsinline controlslist="nodownload"></video><img class="vwm vm-wm" src="images/logo-watermark.png" alt="" aria-hidden="true"></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
+    vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe><video class="vm-video" controls playsinline controlslist="nodownload"></video></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
     document.body.appendChild(vm);
     const frame = $('iframe', vm), video = $('video', vm), box = $('.vm-box', vm), xBtn = $('.vm-x', vm);
     let opener = null;
@@ -356,21 +356,7 @@
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       if (opener) opener.focus({ preventScroll: true });
     };
-    // watermark on our own video in the big player: bottom-right of the picture itself (the video is letterboxed),
-    // sized like the watermark on the photos, kept clear of the play bar
-    const vmWm = $('.vm-wm', vm);
-    const placeWm = () => {
-      if (!video.videoWidth) return;
-      const W = box.clientWidth, H = box.clientHeight, s = Math.min(W / video.videoWidth, H / video.videoHeight);
-      const vw = video.videoWidth * s, vh = video.videoHeight * s, left = (W - vw) / 2, top = (H - vh) / 2;
-      const ww = Math.round(Math.max(vw, vh) * 0.075 + Math.min(vw, vh) * 0.02), m = Math.round(Math.min(vw, vh) * 0.035);
-      vmWm.style.width = ww + 'px';
-      vmWm.style.left = (left + vw - ww - m) + 'px';
-      vmWm.style.top = (top + vh - m - 56) + 'px';                 // 56px up so the player's controls never cover it
-      vmWm.style.transform = 'translateY(-100%)';
-    };
-    video.addEventListener('loadedmetadata', placeWm);
-    addEventListener('resize', () => { if (vm.classList.contains('open')) { fit(); placeWm(); } });
+    addEventListener('resize', () => { if (vm.classList.contains('open')) fit(); });
     // leaving full screen with the device's own back / Esc also closes the player
     document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) closeVm(); else fit(); });
     reels.addEventListener('click', e => { const b = e.target.closest('.reel-open'); if (b) openVm(b.dataset.reel, b); });
