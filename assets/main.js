@@ -52,7 +52,7 @@
   const cases = $('#cases');
   if (cases && wcatList.length) {
     // home: one card per photo category; each opens that category's photos
-    cases.innerHTML = wcatList.map((c, k) => `<button type="button" class="case" data-wcat="${k}" data-j="${c.photos.findIndex(p => p[0] === wcover(c))}" data-a aria-label="Open ${c.title} photos"><div class="im"><img src="${wurl(c, wcover(c), 1)}" alt="${c.title}" loading="lazy"><span class="count">${photoCount(c.photos.length)}</span></div><div class="meta"><span>${pad(k + 1)}</span></div><h3>${c.title}</h3></button>`).join('');
+    cases.innerHTML = wcatList.map((c, k) => `<button type="button" class="case" data-wcat="${k}" data-j="${c.photos.findIndex(p => p[0] === wcover(c))}" data-a aria-label="Open ${c.title} photos"><div class="im"><img src="${wurl(c, wcover(c), 1)}" alt="${c.title}" loading="lazy"></div><div class="meta"><span>${pad(k + 1)}</span></div><h3>${c.title}</h3></button>`).join('');
   } else if (cases) {
     const n = +(cases.dataset.limit || CASES.length);
     cases.innerHTML = CASES.slice(0, n).map((c, i) => `<button type="button" class="case" data-f="${c.f}" data-case="${i}" data-a aria-label="Open ${c.title} photos"><div class="im">${cover(c)}<span class="count">${photoCount(c.photos.length)}</span></div><div class="meta"><span>${c.label}</span><span>${c.place}</span></div><h3>${c.title}</h3><p>${c.line}</p></button>`).join('');
@@ -67,7 +67,7 @@
   const reelCard = (id, copy) => {
     const local = id.endsWith('.mp4');
     const media = local
-      ? `<video src="${id}" muted loop playsinline preload="metadata" tabindex="-1"></video>`
+      ? `<video src="${id}" muted loop playsinline preload="metadata" tabindex="-1"></video><img class="vwm" src="images/logo-watermark.png" alt="" aria-hidden="true">`
       : `<iframe src="https://www.instagram.com/reel/${id}/embed/" title="Felicity on Instagram" loading="lazy" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture" tabindex="-1"></iframe>`;
     return `<div class="reel${local ? ' reel-local' : ''}"${copy ? ' aria-hidden="true"' : ''}>${media}<button class="reel-open" data-reel="${id}" aria-label="Play video full screen"${copy ? ' tabindex="-1"' : ''}><span>${svg('play')}</span></button></div>`;
   };
@@ -126,7 +126,7 @@
     for (let r = 0; pool.some(l => l[r]); r++) pool.forEach(l => l[r] && items.push(l[r]));
     gal.innerHTML = items.map(([i, j, p]) => `<button type="button" data-case="${i}" data-j="${j}" aria-label="View ${CASES[i].title} photo ${j + 1}"><img src="${I(p)}" alt="${CASES[i].title}" loading="lazy"><span>${CASES[i].title}</span></button>`).join('');
     const more = $('#galMore');
-    const label = () => more.textContent = gal.classList.contains('short') ? `View all ${items.length} photos` : 'Show fewer photos';
+    const label = () => more.textContent = gal.classList.contains('short') ? 'View all photos' : 'Show fewer photos';
     label();
     more.addEventListener('click', () => { const s = gal.classList.toggle('short'); label(); if (ST) ST.refresh(); if (s) goTo('#gallery'); });
   }
@@ -154,14 +154,14 @@
     $('#reel').innerHTML = reel + reel;
 
     wcats.innerHTML = wcatList.map((c, k) => `<article class="wcat" id="cat-${c.slug}">
-      <header class="wcat-h" data-a><span class="no">${pad(k + 1)}</span><h2>${c.title}</h2><span class="count">${c.photos.length} photo${c.photos.length > 1 ? 's' : ''}</span></header>
+      <header class="wcat-h" data-a><span class="no">${pad(k + 1)}</span><h2>${c.title}</h2></header>
       <div class="wgrid${c.photos.length > 8 ? ' short' : ''}" data-a>${c.photos.map(([n, w, h], j) => `<button type="button" data-wcat="${k}" data-j="${j}" aria-label="View ${c.title} photo ${j + 1} of ${c.photos.length}"><img src="${wurl(c, n, 1)}" alt="${c.title}" width="${w}" height="${h}" loading="lazy"></button>`).join('')}</div>
-      ${c.photos.length > 8 ? `<div class="center"><button type="button" class="btn btn-outline wmore">View all ${c.photos.length} photos</button></div>` : ''}
+      ${c.photos.length > 8 ? `<div class="center"><button type="button" class="btn btn-outline wmore">View all photos</button></div>` : ''}
     </article>`).join('');
     wcats.addEventListener('click', e => {
       const b = e.target.closest('.wmore'); if (!b) return;
       const g = b.closest('.wcat').querySelector('.wgrid'), short = g.classList.toggle('short');
-      b.textContent = short ? `View all ${g.children.length} photos` : 'Show fewer photos';
+      b.textContent = short ? 'View all photos' : 'Show fewer photos';
       if (ST) ST.refresh();
       if (short) goTo('#' + b.closest('.wcat').id, true);
     });
@@ -325,7 +325,7 @@
   if (reels) {
     const vm = document.createElement('div');
     vm.className = 'vm'; vm.setAttribute('role', 'dialog'); vm.setAttribute('aria-modal', 'true'); vm.setAttribute('aria-label', 'Video');
-    vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe><video class="vm-video" controls playsinline></video></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
+    vm.innerHTML = `<div class="vm-box"><iframe title="Felicity on Instagram" scrolling="no" allowtransparency="true" allow="autoplay; encrypted-media; picture-in-picture; fullscreen"></iframe><video class="vm-video" controls playsinline controlslist="nodownload"></video><img class="vwm vm-wm" src="images/logo-watermark.png" alt="" aria-hidden="true"></div><button class="vm-x" aria-label="Close video">${svg('close')}</button>`;
     document.body.appendChild(vm);
     const frame = $('iframe', vm), video = $('video', vm), box = $('.vm-box', vm), xBtn = $('.vm-x', vm);
     let opener = null;
@@ -356,7 +356,21 @@
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
       if (opener) opener.focus({ preventScroll: true });
     };
-    addEventListener('resize', () => { if (vm.classList.contains('open')) fit(); });
+    // watermark on our own video in the big player: bottom-right of the picture itself (the video is letterboxed),
+    // sized like the watermark on the photos, kept clear of the play bar
+    const vmWm = $('.vm-wm', vm);
+    const placeWm = () => {
+      if (!video.videoWidth) return;
+      const W = box.clientWidth, H = box.clientHeight, s = Math.min(W / video.videoWidth, H / video.videoHeight);
+      const vw = video.videoWidth * s, vh = video.videoHeight * s, left = (W - vw) / 2, top = (H - vh) / 2;
+      const ww = Math.round(Math.max(vw, vh) * 0.075 + Math.min(vw, vh) * 0.02), m = Math.round(Math.min(vw, vh) * 0.035);
+      vmWm.style.width = ww + 'px';
+      vmWm.style.left = (left + vw - ww - m) + 'px';
+      vmWm.style.top = (top + vh - m - 56) + 'px';                 // 56px up so the player's controls never cover it
+      vmWm.style.transform = 'translateY(-100%)';
+    };
+    video.addEventListener('loadedmetadata', placeWm);
+    addEventListener('resize', () => { if (vm.classList.contains('open')) { fit(); placeWm(); } });
     // leaving full screen with the device's own back / Esc also closes the player
     document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) closeVm(); else fit(); });
     reels.addEventListener('click', e => { const b = e.target.closest('.reel-open'); if (b) openVm(b.dataset.reel, b); });
@@ -425,7 +439,7 @@
     show(j); lb.classList.add('open'); lockScroll(true); $('#lbX').focus();
   };
   const caseSet = c => ({ title: c.title, desc: `${c.line} · ${c.place}`, full: c.photos.map(I), thumb: c.photos.map(I) });
-  const catSet = c => ({ title: c.title, desc: `${c.photos.length} photos · Felicity Integrated Marketing Services`, full: c.photos.map(([n]) => wurl(c, n)), thumb: c.photos.map(([n]) => wurl(c, n, 1)) });
+  const catSet = c => ({ title: c.title, desc: 'Felicity Integrated Marketing Services', full: c.photos.map(([n]) => wurl(c, n)), thumb: c.photos.map(([n]) => wurl(c, n, 1)) });
   const closeLb = () => { lb.classList.remove('open'); lockScroll(false); if (back) back.focus({ preventScroll: true }); };
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-case], [data-wcat]'); if (!b || lb.contains(b)) return;
