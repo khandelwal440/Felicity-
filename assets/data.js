@@ -72,8 +72,8 @@
     // client logos, one row per sector (images/clients/)
     CLIENT_GROUPS: [
       ['Banking & Finance', [['HDFC Bank', 'hdfc-bank.svg'], ['IDFC First Bank', 'idfc-first-bank.svg'], ['ICICI Bank', 'icici-bank.svg'], ['Axis Bank', 'axis-bank.svg'], ['AU Small Finance Bank', 'au-bank.svg']]],
-      ['Automobiles', [['TVS Motor Company', 'tvs.svg'], ['Bajaj', 'bajaj.svg'], ['Maruti Suzuki', 'maruti-suzuki.svg'], ['Mahindra', 'mahindra.svg'], ['Suzuki', 'suzuki.svg'], ['Harley-Davidson', 'harley-davidson.svg'], ['Ultraviolette', 'ultraviolette.svg']]],
-      ['Consumer Electronics', [['HP', 'hp.svg'], ['Nokia', 'nokia.svg'], ['Samsung', 'samsung.png'], ['Intel', 'intel.svg'], ['Dish TV', 'dish-tv.svg'], ['Tata Sky', 'tata-sky.png']]],
+      ['Automobiles', [['TVS Motor Company', 'tvs.svg'], ['Bajaj', 'bajaj.svg'], ['Maruti Suzuki', 'maruti-suzuki.svg'], ['Mahindra', 'mahindra.svg'], ['Suzuki', 'suzuki.svg'], ['Harley-Davidson', 'harley-davidson.svg'], ['Ultraviolette', 'ultraviolette.svg'], ['NBC Bearings', 'nbc-bearings.png']]],
+      ['Consumer Electronics', [['HP', 'hp.svg'], ['Nokia', 'nokia.svg'], ['Samsung', 'samsung.png'], ['Intel', 'intel.svg'], ['Tata Electronics', 'tata-electronics.svg'], ['Dish TV', 'dish-tv.svg'], ['Tata Sky', 'tata-sky.png']]],
       ['Retail', [['Big Bazaar', 'big-bazaar.svg'], ['Central', 'central.png']]],
       ['Telecom', [['Tata Indicom', 'tata-indicom.svg'], ['Tata Docomo', 'tata-docomo.png'], ['Vi', 'vi.svg'], ['Idea', 'idea.svg'], ['Airtel', 'airtel.svg'], ['Jio', 'jio.svg'], ['Samsung', 'samsung.png']]],
       ['FMCG', [['Lifebuoy', 'lifebuoy.png'], ['Snickers', 'snickers.svg'], ['7UP', '7up.svg'], ['Dabur', 'dabur.svg'], ['Britannia', 'britannia.svg'], ['Lux', 'lux.png'], ['Pepsi', 'pepsi.svg'], ['Coca-Cola', 'coca-cola.svg'], ["Kwality Wall's", 'kwality-walls.svg'], ['Sunsilk', 'sunsilk.png']]],
@@ -90,7 +90,7 @@
       ['Encompass', 'encompass.svg'], ['Hansa Vision', 'hansa-vision.svg'], ['Fountainhead', 'fountainhead-hd.png'],
       ['DDB Mudramax', 'ddb-mudramax-hd.png'], ['Candid', 'candid.svg'], ['MOMS Outdoor Media Solutions', 'moms.svg'],
       ['Impact Marketing Services', 'impact-sharp.png'], ['Impresario', 'impresario.png'], ['Inextis Events', 'inextis.png'],
-      ['Beep', 'beep-sharp.png'], ['Acme Events India', 'acme-hd.png'],
+      ['Beep', 'beep-sharp.png'], ['Acme Events India', 'acme-hd.png'], ['Pavilions & Interiors', 'pavilions-interiors.png'],
     ],
     SECTORS: ['Banking & Finance', 'Automobiles', 'Consumer Electronics', 'Retail', 'Telecom', 'FMCG', 'Insurance', 'Liquor & Tobacco', 'Real Estate', 'Sports'],
     FILMS: [['#AOGRideToSariska', 'Ride film'], ['AOG Kolhapur', 'Community'], ['#AOGRideToSpitiValley', 'Ride film'], ["AOG North Chapter's ride to Mandawa", 'Ride film'], ['Apache Pro Performance, Nagpur', 'Stunt show'], ['Petronas TVS Racing', 'Motorsport'], ["TVS Apache — celebrating Women's Day", 'Brand story'], ['AOG ride to Leh-Ladakh 2021', 'Ride film'], ['TVS AOG South Chapter 2021, Coorg', 'Ride film']],

@@ -44,6 +44,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:clamp(40px,6vw,96px);margin-bottom:clamp(36px,4.5vw,56px)}
 .head>div:first-child{max-width:740px}
 .head .lead{flex:0 1 420px;max-width:420px;text-wrap:pretty}
+/* What We Do intro: justified, both edges straight */
+.head .lead.lead-just{text-align:justify;text-align-last:left;hyphens:auto}
 /* side by side: the intro starts level with the first line of the heading (below the small label) */
 @media (min-width:641px){
   .head:not(:has(.head-sectors)){align-items:flex-start}
