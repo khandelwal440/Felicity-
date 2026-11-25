@@ -72,9 +72,9 @@
     // client logos, one row per sector (images/clients/)
     CLIENT_GROUPS: [
       ['Banking & Finance', [['HDFC Bank', 'hdfc-bank.svg'], ['IDFC First Bank', 'idfc-first-bank.svg'], ['ICICI Bank', 'icici-bank.svg'], ['Axis Bank', 'axis-bank.svg'], ['AU Small Finance Bank', 'au-bank.svg']]],
-      ['Automobiles', [['TVS Motor Company', 'tvs.svg'], ['Bajaj', 'bajaj.svg'], ['Maruti Suzuki', 'maruti-suzuki.svg'], ['Mahindra', 'mahindra.svg'], ['Suzuki', 'suzuki.svg'], ['Harley-Davidson', 'harley-davidson.svg'], ['Ultraviolette', 'ultraviolette.svg'], ['NBC Bearings', 'nbc-bearings.png']]],
+      ['Automobiles', [['TVS Motor Company', 'tvs.svg'], ['Bajaj', 'bajaj.svg'], ['Maruti Suzuki', 'maruti-suzuki.svg'], ['Mahindra', 'mahindra.svg'], ['Suzuki', 'suzuki.svg'], ['Harley-Davidson', 'harley-davidson.svg'], ['Ultraviolette', 'ultraviolette.svg']]],
       ['Consumer Electronics', [['HP', 'hp.svg'], ['Nokia', 'nokia.svg'], ['Samsung', 'samsung.png'], ['Intel', 'intel.svg'], ['Tata Electronics', 'tata-electronics.svg'], ['Dish TV', 'dish-tv.svg'], ['Tata Sky', 'tata-sky.png']]],
-      ['Retail', [['Big Bazaar', 'big-bazaar.svg'], ['Central', 'central.png']]],
+      ['Retail', [['Big Bazaar', 'big-bazaar.svg'], ['Central', 'central.png'], ['Nothing Before Coffee', 'nothing-before-coffee.png']]],
       ['Telecom', [['Tata Indicom', 'tata-indicom.svg'], ['Tata Docomo', 'tata-docomo.png'], ['Vi', 'vi.svg'], ['Idea', 'idea.svg'], ['Airtel', 'airtel.svg'], ['Jio', 'jio.svg'], ['Samsung', 'samsung.png']]],
       ['FMCG', [['Lifebuoy', 'lifebuoy.png'], ['Snickers', 'snickers.svg'], ['7UP', '7up.svg'], ['Dabur', 'dabur.svg'], ['Britannia', 'britannia.svg'], ['Lux', 'lux.png'], ['Pepsi', 'pepsi.svg'], ['Coca-Cola', 'coca-cola.svg'], ["Kwality Wall's", 'kwality-walls.svg'], ['Sunsilk', 'sunsilk.png']]],
       ['Insurance', [['HDFC Ergo', 'hdfc-ergo.svg'], ['Max Bupa', 'max-bupa.svg'], ['Exide Life', 'exide-life.svg'], ['Apollo Munich', 'apollo-munich.png'], ['Bharti AXA', 'bharti-axa.svg'], ['Futures First', 'futures-first.svg']]],
