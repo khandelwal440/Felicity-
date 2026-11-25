@@ -544,6 +544,8 @@ h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08}
 .wgrid img.ok,#cases .im img.ok{opacity:1}
 .wgrid button:hover img{transform:scale(1.05)}
 .wgrid.short button:nth-child(n+9){display:none}
+/* each event (series) of photos starts on a new line */
+.wgrid button.ns{grid-column-start:1}
 .wcat .center{margin-top:20px}
 @media (max-width:900px){.wgrid{grid-template-columns:repeat(3,1fr)}.wgrid.short button:nth-child(n+7){display:none}}
 @media (max-width:640px){.wgrid{grid-template-columns:repeat(2,1fr);gap:6px}.wcat-h{flex-wrap:wrap;gap:4px 10px}.wcat-h .count{margin-left:0;width:100%}}

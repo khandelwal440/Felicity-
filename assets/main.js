@@ -155,7 +155,7 @@
 
     wcats.innerHTML = wcatList.map((c, k) => `<article class="wcat" id="cat-${c.slug}">
       <header class="wcat-h" data-a><span class="no">${pad(k + 1)}</span><h2>${c.title}</h2></header>
-      <div class="wgrid${c.photos.length > 8 ? ' short' : ''}" data-a>${c.photos.map(([n, w, h], j) => `<button type="button" data-wcat="${k}" data-j="${j}" aria-label="View ${c.title} photo ${j + 1} of ${c.photos.length}"><img src="${wurl(c, n, 1)}" alt="${c.title}" width="${w}" height="${h}" loading="lazy"></button>`).join('')}</div>
+      <div class="wgrid${c.photos.length > 8 ? ' short' : ''}" data-a>${c.photos.map(([n, w, h, s], j) => `<button type="button"${j && s !== c.photos[j - 1][3] ? ' class="ns"' : ''} data-wcat="${k}" data-j="${j}" aria-label="View ${c.title} photo ${j + 1} of ${c.photos.length}"><img src="${wurl(c, n, 1)}" alt="${c.title}" width="${w}" height="${h}" loading="lazy"></button>`).join('')}</div>
       ${c.photos.length > 8 ? `<div class="center"><button type="button" class="btn btn-outline wmore">View all photos</button></div>` : ''}
     </article>`).join('');
     wcats.addEventListener('click', e => {
